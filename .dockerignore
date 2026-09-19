@@ -1,0 +1,19 @@
+.git
+.github
+.scaffold
+.output
+.nitro
+.tanstack
+.vscode
+node_modules
+data
+coverage
+playwright-report
+test-results
+*.log
+.env
+Desencadenado-Entrenos con peso corporal/*.pdf
+Desencadenado-Entrenos con peso corporal/*.epub
+Desencadenado-Entrenos con peso corporal/*.mobi
+Desencadenado-Entrenos con peso corporal/*.xlsx
+Desencadenado-Entrenos con peso corporal/*.md

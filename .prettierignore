@@ -1,0 +1,10 @@
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.output
+coverage
+playwright-report
+test-results
+Desencadenado-Entrenos con peso corporal
+plan.md
+.cta.json

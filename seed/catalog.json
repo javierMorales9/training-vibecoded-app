@@ -1,0 +1,3238 @@
+{
+  "version": 1,
+  "generatedFrom": "Desencadenado-Entrenos con peso corporal/exercises.md",
+  "exercises": [
+    {
+      "name": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "pageStart": 19,
+      "pageEnd": 31
+    },
+    {
+      "name": "Flexión vertical",
+      "exerciseType": "VERTICAL_PUSH",
+      "bodyGroup": "Torso - empuje vertical (hombros, tríceps y trapecios)",
+      "pageStart": 32,
+      "pageEnd": 38
+    },
+    {
+      "name": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "pageStart": 39,
+      "pageEnd": 54
+    },
+    {
+      "name": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "pageStart": 55,
+      "pageEnd": 65
+    },
+    {
+      "name": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "pageStart": 66,
+      "pageEnd": 80
+    },
+    {
+      "name": "Burpees",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "name": "Escaladores",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "name": "Escaladores inversos",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "pageStart": 82,
+      "pageEnd": 82
+    },
+    {
+      "name": "Jumping Jacks",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "pageStart": 82,
+      "pageEnd": 82
+    },
+    {
+      "name": "Flexión a Plancha",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "pageStart": 83,
+      "pageEnd": 83
+    },
+    {
+      "name": "Levantamiento con impulso",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "pageStart": 83,
+      "pageEnd": 83
+    },
+    {
+      "name": "Levantamientos de rodillas",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "pageStart": 84,
+      "pageEnd": 84
+    },
+    {
+      "name": "Esprintar",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "pageStart": 84,
+      "pageEnd": 85
+    }
+  ],
+  "variants": [
+    {
+      "id": "019bcc57-9765-7b70-b79e-2ffba055d107",
+      "slug": "flexion-manos-elevadas",
+      "name": "Manos elevadas",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 1,
+      "difficultyMax": 1,
+      "description": "Para hacer el ejercicio más sencillo al principio apoya las manos sobre una superficie a la altura de las caderas, por ejemplo una mesa.\r\n\r\nSi no puedes hacer más de 5-10 flexiones con las manos sobre la mesa, empieza empujando contra la pared, llegando en este caso a tocar casi la pared con la cabeza. Cuando puedas hacer fácilmente 15-20 flexiones contra la pared, regresa a la mesa. Recuerda mantener el cuerpo recto y tenso.\r\n\r\nLógicamente, cuanto más elevada esté la superficie contra la que empujas más fácil es la flexión.\r\n\r\nRequisitos para pasar de nivel, apoyándote en una superficie a la altura de las caderas:\r\n\r\nHombres: 30 repeticiones. Mujeres: 20 repeticiones",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019bee75-677a-768a-b648-884f78baa1dd",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-resumen-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Manos elevadas (1)"
+        },
+        {
+          "id": "019c644f-693e-78f8-afb3-5c17277828e2",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-1-manos-elevadas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Manos elevadas (2)"
+        },
+        {
+          "id": "019c4779-a9e7-778d-a36d-dc209769965a",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-1-manos-elevadas-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Manos elevadas (3)"
+        },
+        {
+          "id": "019c0381-6e41-7008-8541-cc0a9bd59d12",
+          "position": 3,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-1-manos-elevadas-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Manos elevadas (4)"
+        }
+      ]
+    },
+    {
+      "id": "019c697b-3da1-7aa9-95eb-02bbc0a5409c",
+      "slug": "flexion-de-rodillas",
+      "name": "De rodillas",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 2,
+      "difficultyMax": 2,
+      "description": "Túmbate en el suelo como si fueras a hacer una flexión normal, pero en vez de apoyarte en las puntas de los pies, apóyate en las rodillas. Si sientes molestias utiliza un poco de acolchamiento debajo de las rodillas, como por ejemplo una toalla enrollada.\r\n\r\nBaja hasta que el pecho esté a pocos centímetros del suelo.\r\n\r\nRequisitos para pasar de nivel:\r\n\r\nHombres: 30 repeticiones. Mujeres: 20 repeticiones",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019b8053-c18e-7e4b-b3ad-898434787bb8",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-2-de-rodillas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — De rodillas (1)"
+        },
+        {
+          "id": "019bb7b7-7c24-7e09-beaa-356cffde07c2",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-2-de-rodillas-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — De rodillas (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c192c-a733-7d91-8929-75a9cc59415c",
+      "slug": "flexion-flexion-clasica",
+      "name": "Flexión clásica",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 3,
+      "difficultyMax": 3,
+      "description": "Es la flexión tradicional, milenaria, en la que te apoyas sobre el suelo únicamente con las manos y las puntas de los pies. Representa un nivel intermedio de fuerza, y si has completado los dos niveles anteriores deberías superar este nivel en pocas semanas. Si al principio te cuesta acercar el pecho al suelo desciende sólo hasta la mitad, pero asegúrate de que en cada entrenamiento vas bajando más el pecho, manteniendo siempre el cuerpo totalmente recto.\r\n\r\nRequisitos para pasar de nivel:\r\n\r\nHombres: 30 repeticiones. Mujeres: 20 repeticiones.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019c26f0-b444-7443-98a9-a438f37ecacb",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-3-flexion-clasica-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexión clásica (1)"
+        },
+        {
+          "id": "019c338c-be94-77d0-bbfe-89ca64e33a70",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-3-flexion-clasica-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexión clásica (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c0000-1acf-7cbf-9bc5-eb2f2ebf225b",
+      "slug": "flexion-pies-elevados",
+      "name": "Pies elevados",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 4,
+      "difficultyMax": 4,
+      "description": "La técnica es similar a la flexión clásica, pero con los pies apoyados sobre una superficie elevada, al nivel de la rodilla o un poco más. Al elevar los pies, se desplaza más peso hacia adelante, requiriendo más trabajo de los pectorales y de los músculos de los hombros.\r\n\r\nRequisitos para pasar de nivel:\r\n\r\nHombres: 30 repeticiones. Mujeres: 20 repeticiones.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019c0b0f-ee9e-7675-993e-beaf69a76ede",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-4-pies-elevados-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Pies elevados (1)"
+        },
+        {
+          "id": "019c4217-3a5e-7a9b-a469-9fb3c9c0e3cf",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-4-pies-elevados-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Pies elevados (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c5600-84a4-758e-8d6e-7fa0b0525806",
+      "slug": "flexion-con-una-mano",
+      "name": "Con una mano",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 5,
+      "difficultyMax": 5,
+      "description": "Si bien hay variantes más duras, podemos decir que la flexión con una mano, hecha con la técnica correcta, es la máxima expresión de la fuerza del pecho, hombro y brazo, trabajando coordinadamente.\r\n\r\nEmpieza con el cuerpo recto, apoyado sobre los brazos estirados, y separa las piernas para facilitar el equilibrio. Una vez estabilizado, pon una mano detrás de la espalda (o apoyada sobre el muslo del mismo lado), y desciende lentamente de manera controlada, hasta que tu pecho esté a 5 centímetros del suelo. Empuja ahora con todas tus fuerzas para volver a la posición original. Tensa los abdominales y glúteos para evitar que tu cuerpo se gire hacia el lado sin apoyo.\r\n\r\nAl igual que comenté en el nivel 3, puedes empezar bajando sólo hasta la mitad en las primeras sesiones, bajando cada vez más el pecho a medida que ganas fuerza.\r\n\r\nRequisitos para lograr el nivel 5 (¡nivel Revolucionario!):\r\n\r\nHombres: 10 repeticiones con cada mano. Mujeres: 8 repeticiones con cada mano.\r\n\r\nEste es el primer ejercicio unilateral del programa, que se refiere a trabajar los lados del cuerpo por separado. Es muy importante que tu programa de entrenamiento incluya este tipo de ejercicios, por dos motivos: 1) Solemos tener más fuerza en los músculos de un lado. En los ejercicios donde trabajamos ambos lados a la vez el lado fuerte subsidia al débil, haciendo que éste permanezca retrasado siempre. Este desequilibrio muscular perjudica el rendimiento y eleva el riesgo de lesión. Al trabajar ambos lados por separado la fuerza se va equilibrando con el tiempo. Empieza siempre por el lado menos fuerte. 2) Los ejercicios unilaterales trabajan músculos estabilizadores que no se activan cuando apoyamos ambos lados.\r\n\r\nPasar del nivel 4 al 5 puede tomar varias semanas de entrenamiento, incluso meses. Para facilitar esta transición puedes usar la misma estrategia de progreso, haciendo flexiones a una mano sobre una superficie elevada antes de pasar al suelo.\r\n\r\nTambién puedes usar una variante que mantiene cierto apoyo del brazo ‘inactivo’, permitiendo ir desarrollando la fuerza necesaria de manera gradual. Para realizar este ejercicio necesitas un balón, de futbol, baloncesto o similar.\r\n\r\nSitúate en la postura inicial de la flexión clásica, pero con una mano extendida hacia un lado sobre un balón. Cuanto más lejos pongas el balón mayor fuerza se requiere del brazo principal, lo que te permite ir modulando el esfuerzo hasta que estés listo para abordar el nivel 5.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019ba6c0-3bbc-791c-b1db-81c5038620a6",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-5-con-una-mano-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Con una mano (1)"
+        },
+        {
+          "id": "019c5ca8-d358-790a-ac73-a73691df046a",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-5-con-una-mano-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Con una mano (2)"
+        },
+        {
+          "id": "019b7ab6-8bf5-78e3-9882-43e676969e95",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-5-con-una-mano-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Con una mano (3)"
+        },
+        {
+          "id": "019c5b22-a475-7af8-b38a-6bd42f51da02",
+          "position": 3,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-nivel-5-con-una-mano-04.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Con una mano (4)"
+        }
+      ]
+    },
+    {
+      "id": "019c614b-a6bb-7d89-aed0-01da4379bc70",
+      "slug": "flexion-flexiones-con-manos-juntas",
+      "name": "Flexiones con manos juntas",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "También denominadas flexiones ‘diamante’, porque la postura recomendada es con los dedos pulgares e índice de cada mano tocándose, formando una especie de rombo. Esta postura hace más énfasis en los tríceps. Cuando domines este ejercicio, hazlo más difícil apoyando los pies sobre una silla.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019bba0c-4bfa-7ca2-82d6-299522306c60",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-con-manos-juntas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones con manos juntas (1)"
+        }
+      ]
+    },
+    {
+      "id": "019c63df-5154-77f0-805e-e92b0051d872",
+      "slug": "flexion-flexiones-t",
+      "name": "Flexiones “T”",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "Esta flexión recibe su nombre de la posición final del ejercicio, donde tu cuerpo queda en forma de “T”. Es un ejercicio excelente para trabajar tus abdominales oblicuos y mejorar tu equilibrio.\r\n\r\nLa parte inicial del ejercicio es idéntica a una flexión clásica, pero al final, con el impulso de tu cuerpo al ascender levantas una mano hacia el techo y giras tu torso para quedar apoyado únicamente por las puntas de los pies y una mano, en forma de “T”. Mantén esta postura, con el cuerpo recto, durante un par de segundos y repite de nuevo la flexión, levantándote cada vez por un lado diferente.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019b9662-2ea8-76cb-8feb-a2192741577e",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-t-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones “T” (1)"
+        }
+      ]
+    },
+    {
+      "id": "019c738c-258e-7793-a71b-a4a85c5970aa",
+      "slug": "flexion-flexiones-sobre-balones",
+      "name": "Flexiones sobre balones",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "El hecho de tener una mano apoyada sobre un balón trabaja más tus músculos estabilizadores y tu zona abdominal, que debe esforzarse más para mantener el equilibrio. Intenta que el hombro del lado opuesto al balón llegue lo más cerca posible del suelo.\r\n\r\nPara forzar aún más tus tríceps puedes poner ambas manos sobre el balón.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019c082e-ba70-75b7-a94e-c731e710182e",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-sobre-balones-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones sobre balones (1)"
+        },
+        {
+          "id": "019b86ab-662e-74b3-bd3a-73aa150bf1ba",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-sobre-balones-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones sobre balones (2)"
+        },
+        {
+          "id": "019c2cf6-5efa-73bb-a33c-d433af4de758",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-sobre-balones-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones sobre balones (3)"
+        },
+        {
+          "id": "019b840d-8d74-7a19-b5db-517ffe153b28",
+          "position": 3,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-sobre-balones-04.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones sobre balones (4)"
+        }
+      ]
+    },
+    {
+      "id": "019c259b-e9cf-76c1-9b4a-f38fc166398a",
+      "slug": "flexion-flexiones-sobre-balon-alternando",
+      "name": "Flexiones sobre balón alternando",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "Es similar al ejercicio anterior, con la diferencia de que en vez de realizar varias flexiones seguidas con cada mano, las alternas en cada repetición, utilizando un movimiento explosivo para realizar el cambio de una mano a otra.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019bd9ac-f8a1-7db7-9856-10c8429b0259",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-sobre-balon-alternando-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones sobre balón alternando (1)"
+        },
+        {
+          "id": "019bba40-5863-7e5f-9aec-c112c333f536",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://www.youtube.com/watch?v=JuXURLPwZww",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Flexión — Flexiones sobre balón alternando"
+        }
+      ]
+    },
+    {
+      "id": "019c5918-2181-7551-88ef-e74dbb05407f",
+      "slug": "flexion-flexiones-superman",
+      "name": "Flexiones superman",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 4,
+      "difficultyMax": 5,
+      "description": "Es uno de los tipos de flexión más difíciles. Requiere gran fuerza en los abdominales y en la zona lumbar, convirtiéndolo en un ejercicio ideal para trabajar este grupo muscular.\r\n\r\nTúmbate en el suelo, con los brazos estirados delante de ti. Pon en tensión todo tu cuerpo y levántalo lo más alto que puedas.\r\n\r\nPuedes ir progresando en este ejercicio, empezando con las manos inicialmente por delante de la cabeza pero no tan estiradas, adelantando un poco las manos cada día hasta que puedas hacer la flexión con los brazos casi totalmente estirados. Otra forma de simplificarlo es apoyando las rodillas.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019bfb43-3cab-7240-ae7c-919f803263db",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-superman-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones superman (1)"
+        },
+        {
+          "id": "019bc475-7640-7c0a-9189-eabe489ea3bc",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-superman-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones superman (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c4528-e196-7a2a-aed7-cae50b2b0cf0",
+      "slug": "flexion-flexiones-con-palmada",
+      "name": "Flexiones con palmada",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 4,
+      "difficultyMax": 4,
+      "description": "La técnica es igual que en la flexión tradicional, pero debes empujar el suelo con fuerza suficiente para ‘despegar’, haciendo que tus manos se separen de la tierra lo suficiente como para dar una palmada y volver a colocarlas en la posición original para aterrizar con seguridad y amortiguar el descenso. Este ejercicio desarrolla una gran potencia muscular.\r\n\r\nSi no te despegas suficiente del suelo como para dar una palmada, puedes practicar este movimiento con niveles más bajos del ejercicio, por ejemplo de rodillas o incluso apoyándote en la pared. Recuerda que lo importante es el progreso, no la perfección.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019c2a5b-282b-75e6-9005-e7e595cd70aa",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-con-palmada-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones con palmada (1)"
+        },
+        {
+          "id": "019bb6e7-c6f2-7f98-96f9-4f0227ba9caa",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://www.youtube.com/watch?v=_AaVMv24mao",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Flexión — Flexiones con palmada"
+        }
+      ]
+    },
+    {
+      "id": "019bd23b-3bc5-7119-bd3a-57fd69c21a09",
+      "slug": "flexion-flexiones-espartanas",
+      "name": "Flexiones espartanas",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 4,
+      "difficultyMax": 5,
+      "description": "La posición de inicio es similar a la flexión normal, pero con la mano de un lado adelantada respecto a la posición estándar y la otra un poco más atrasada. Por ejemplo una mano 10-12 cm por delante del hombro y la otra 10-12 cm por detrás. Al hacer la flexión, impúlsate con suficiente velocidad para poder hacer el cambio de posición de las manos en el aire, asegurando que, al aterrizar, la mano que estaba adelantada queda detrás y viceversa. Este ejercicio es similar a la flexión con salto porque está orientado a desarrollar potencia muscular, pero atacando los músculos en diferentes ángulos.\r\n\r\nPara hacerlo más sencillo apóyate sobre las rodillas, una superficie elevada o directamente la pared (similar al nivel 1 de la flexión normal). Otra posibilidad para simplificar es alternar las manos pero sin el salto.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019bc7d2-51d8-7411-ad9f-6a51f1607617",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-espartanas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones espartanas (1)"
+        },
+        {
+          "id": "019bc1c7-ce1d-7e7d-9d27-e2c72913b62b",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://www.youtube.com/watch?v=n_bRQBQ5EPQ",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Flexión — Flexiones espartanas"
+        }
+      ]
+    },
+    {
+      "id": "019c5f1e-74ab-7adf-9469-eac69f80b7cf",
+      "slug": "flexion-fondos-en-paralelas-o-dips",
+      "name": "Fondos en paralelas o Dips",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "Para realizar este ejercicio en casa puedes utilizar dos sillas (sólidas) u otras superficies que estén a una altura similar, con una separación un poco mayor que tus hombros. Con los brazos estirados, las manos apoyadas sobre los soportes, y las piernas colgando, desciendes flexionando los codos hasta que el pecho esté al nivel de las manos, y los bíceps paralelos al suelo. Cuanto más recto esté el tronco más énfasis pones en los tríceps, mientras que si inclinas el tronco hacia delante pones más foco en los pectorales.\r\n\r\nSi utilizas sillas, como hago yo en la foto, te recomiendo que las coloques sobre una alfombra para evitar que se deslicen.\r\n\r\nSi no tienes las sillas adecuadas u otra plataforma que te sirva, puedes hacer este ejercicio con tres sillas de cualquier tipo, como indico abajo. Si te resulta muy difícil, puedes apoyar los pies en el suelo, desarrollando gradualmente la fuerza.\r\n\r\nOtra forma de realizar estos ejercicios es construyendo tus propias paralettes, como explico aquí.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019c0e5f-eceb-7379-aae2-835ab4d89b16",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-fondos-en-paralelas-o-dips-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Fondos en paralelas o Dips (1)"
+        },
+        {
+          "id": "019c138d-e424-768c-918c-80d2ad10b458",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-fondos-en-paralelas-o-dips-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Fondos en paralelas o Dips (2)"
+        },
+        {
+          "id": "019c275b-befa-7672-ab97-252089e131c7",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-fondos-en-paralelas-o-dips-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Fondos en paralelas o Dips (3)"
+        },
+        {
+          "id": "019c3107-f4e7-75d9-b63b-6c69604aa464",
+          "position": 3,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-fondos-en-paralelas-o-dips-04.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Fondos en paralelas o Dips (4)"
+        }
+      ]
+    },
+    {
+      "id": "019b8eec-4541-77f0-83e2-8a9f311095ad",
+      "slug": "flexion-flexiones-profundas",
+      "name": "Flexiones profundas",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "Por lo general, cuanto más rango de movimiento tenga un ejercicio más útil es, ya que involucra más músculos (que se activan en diferentes momentos del recorrido). Esto es especialmente cierto en el caso de las flexiones, y para hacer este ejercicio sólo tienes que utilizar tres sillas, como muestro a continuación.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019bc18c-821e-770a-afef-5274e16c156d",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-profundas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones profundas (1)"
+        },
+        {
+          "id": "019c0a47-d3af-72c9-808b-b3b86795c209",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-flexiones-profundas-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Flexiones profundas (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c3f40-3913-7272-a25d-19ff44b8370e",
+      "slug": "flexion-extensiones-de-triceps",
+      "name": "Extensiones de tríceps",
+      "exerciseName": "Flexión",
+      "exerciseType": "PUSH_UP",
+      "bodyGroup": "Torso - empuje horizontal (pectorales, tríceps, hombros y core)",
+      "difficultyMin": 2,
+      "difficultyMax": 4,
+      "description": "Excelente ejercicio para desarrollar tus tríceps, y lo que mejores aquí te ayudará directamente a progresar en el nivel de tus flexiones. Puedes hacer el ejercicio más sencillo o más difícil variando el apalancamiento o, en otras palabras, la altura donde apoyas las manos.\r\n\r\nEn su nivel más básico es parecido a una flexión contra la pared, pero con las manos algo más juntas para enfatizar el trabajo de los tríceps. A medida que avanzas, vete apoyando las manos en zonas más bajas de la pared, hasta que ya te cueste mantener el equilibrio.\r\n\r\nCuando desarrolles más fuerza, intenta encontrar una barra o superficie a la altura de la mitad del muslo o de la cadera, que te permita pasar la cabeza por debajo (por ejemplo una mesa), focalizando al máximo el esfuerzo en los tríceps.\r\n\r\nO más difícil todavía, por debajo de una superficie a la altura de las rodillas.",
+      "sourcePageStart": 19,
+      "sourcePageEnd": 31,
+      "media": [
+        {
+          "id": "019c7081-adbc-7ed5-bf24-97cffa2a5b6d",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-extensiones-de-triceps-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Extensiones de tríceps (1)"
+        },
+        {
+          "id": "019baead-8a3b-7fc1-80d4-069c8d119185",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-extensiones-de-triceps-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Extensiones de tríceps (2)"
+        },
+        {
+          "id": "019c6da9-b82c-7475-b76d-c823d05511a9",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-extensiones-de-triceps-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Extensiones de tríceps (3)"
+        },
+        {
+          "id": "019bfa53-395e-78ad-9ac0-e853755a4f20",
+          "position": 3,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-extensiones-de-triceps-04.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión — Extensiones de tríceps (4)"
+        }
+      ]
+    },
+    {
+      "id": "019c4956-a352-77be-b073-56b22374f91e",
+      "slug": "flexion-vertical-posicion-vertical-sobre-la-cabeza",
+      "name": "Posición vertical sobre la cabeza",
+      "exerciseName": "Flexión vertical",
+      "exerciseType": "VERTICAL_PUSH",
+      "bodyGroup": "Torso - empuje vertical (hombros, tríceps y trapecios)",
+      "difficultyMin": 1,
+      "difficultyMax": 1,
+      "description": "El objetivo de este primer nivel es acostumbrarte a estar cabeza abajo, ya que antes de desarrollar la fuerza debes trabajar la coordinación muscular y el equilibrio.\r\n\r\nColoca una almohada o cojín cerca de la pared, apoya tu cabeza sobre él, pon tus manos en el suelo formando un triángulo con tu cabeza, eleva una pierna y después la otra hasta que ‘encuentres’ la pared, manteniendo las piernas rectas. Tensiona tus brazos y abdominales para lograr equilibrarte contra la pared. Al contrario que en la flexión normal, tu espalda puede tener un poco de curvatura, para ayudarte a mantener el equilibrio.\r\n\r\nSi te cuesta levantar las piernas para alcanzar la pared pide a alguien te ayude hasta que te acostumbres. Tu cabeza debería estar a 15-20 cm de la pared, de tal manera que sólo tus talones se apoyen contra la misma.\r\n\r\nCalienta un poco el cuello antes, realizando giros lentos y movimientos laterales. Si tienes problemas de cervicales, tienes sobrepeso o te duele el cuello habitualmente ten cuidado con este ejercicio. Te recomiendo empezar ‘escalando la pared’, como indico en el siguiente nivel.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: aguantar la posición por 45 segundos. Mujeres: aguantar la posición por 45 segundos.",
+      "sourcePageStart": 32,
+      "sourcePageEnd": 38,
+      "media": [
+        {
+          "id": "019bb6b9-915a-7b49-b30e-44f4d9167f4e",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-resumen-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Posición vertical sobre la cabeza (1)"
+        },
+        {
+          "id": "019c0515-ba95-7ae8-bd0a-df0877fe380a",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-nivel-1-posicion-vertical-sobre-la-cabeza-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Posición vertical sobre la cabeza (2)"
+        }
+      ]
+    },
+    {
+      "id": "019b8fda-3eee-7267-b43b-094a2df7e3f8",
+      "slug": "flexion-vertical-posicion-vertical-sobre-las-manos",
+      "name": "Posición vertical sobre las manos",
+      "exerciseName": "Flexión vertical",
+      "exerciseType": "VERTICAL_PUSH",
+      "bodyGroup": "Torso - empuje vertical (hombros, tríceps y trapecios)",
+      "difficultyMin": 2,
+      "difficultyMax": 2,
+      "description": "Superado el nivel 1, debes trabajar en mantener la posición vertical invertida apoyándote únicamente en tus manos, a una distancia de 15-20 cm de la pared, manteniendo los brazos extendidos y con sólo los talones apoyados en la pared. Te recomiendo que al principio mantengas la almohada debajo de tu cabeza por si acaso pierdes el equilibrio. Si superaste el nivel 1, este no debería ser mucho más difícil, aunque necesitarás mayor empuje de las piernas para alcanzar la pared. Así empezarás a desarrollar la fuerza necesaria en los hombros para abordar el siguiente nivel.\r\n\r\nEmpieza practicando el kick-up o pateo de piernas, intentando llegar cada vez más alto. Te ayudará también a perderle el miedo a la postura.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: aguantar la posición 45 segundos. Mujeres: aguantar la posición 45 segundos.\r\n\r\nPara algunas personas es más fácil empezar a practicar este nivel ‘escalando’ la pared en vez de con un empujón de las piernas. Para ello, ponte en cuclillas de espaldas a la pared y vete escalando con los pies, a la vez que avanzas con las manos por el suelo, hasta que estés lo más cerca posible de la posición vertical. Intenta aguantar 45 segundos en esta posición y haz el camino inverso (camina con las manos hacia delante y desciende con los pies) para regresar al suelo.\r\n\r\nComo consejo doméstico, te recomiendo utilizar calcetines para este ejercicio, o tu pared corre serio peligro de quedar marcada para toda la vida (como la mía).\r\n\r\nSi te estancas en este nivel, o tienes miedo de hacerte daño, practica el tercer nivel. Requiere algo más de fuerza pero no tiene la componente de equilibrio.",
+      "sourcePageStart": 32,
+      "sourcePageEnd": 38,
+      "media": [
+        {
+          "id": "019c5496-842e-7db3-b5b8-8832f081348d",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-nivel-2-posicion-vertical-sobre-las-manos-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Posición vertical sobre las manos (1)"
+        },
+        {
+          "id": "019c3732-255c-71cf-a0c6-9d9ca2049962",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-nivel-2-posicion-vertical-sobre-las-manos-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Posición vertical sobre las manos (2)"
+        },
+        {
+          "id": "019c29c6-f9ea-73f3-aeb3-b3623df9247d",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-nivel-2-posicion-vertical-sobre-las-manos-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Posición vertical sobre las manos (3)"
+        },
+        {
+          "id": "019bc434-34e4-7e77-b961-b7b6cd8df5ed",
+          "position": 3,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-nivel-2-posicion-vertical-sobre-las-manos-04.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Posición vertical sobre las manos (4)"
+        },
+        {
+          "id": "019c03c3-aabf-7bb5-abd3-6072b7cf26f8",
+          "position": 4,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://youtu.be/Y_4FaAK3Se4",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Flexión vertical — Posición vertical sobre las manos"
+        }
+      ]
+    },
+    {
+      "id": "019ba453-b059-7765-b9c9-e6b1b3768bd5",
+      "slug": "flexion-vertical-semi-flexion-vertical",
+      "name": "Semi-flexión vertical",
+      "exerciseName": "Flexión vertical",
+      "exerciseType": "VERTICAL_PUSH",
+      "bodyGroup": "Torso - empuje vertical (hombros, tríceps y trapecios)",
+      "difficultyMin": 3,
+      "difficultyMax": 3,
+      "description": "A estas alturas tus hombros están preparados para el siguiente nivel, y tu sistema vestibular (equilibrio) está ya acostumbrado a mantenerte cabeza abajo. El nivel 3 consiste en realizar una flexión invertida pero reduciendo el peso a levantar, fortaleciendo los hombros de manera gradual. Para ello apoya los pies sobre una mesa o cualquier otra superficie a la altura de la rodilla o mitad del muslo, con las piernas rectas y las manos apoyadas en el suelo, formando un ángulo de unos 90° entre tu cuerpo superior e inferior. Desde esta posición, flexiona los brazos hasta llegar con la cabeza a pocos centímetros del suelo.\r\n\r\nAl descender debes mantener el tronco derecho y las piernas lo más rectas posibles. Si no tienes buena flexibilidad puedes doblar ligeramente las rodillas.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 10 repeticiones. Mujeres: 8 repeticiones.",
+      "sourcePageStart": 32,
+      "sourcePageEnd": 38,
+      "media": [
+        {
+          "id": "019c0f90-d2ad-7615-993f-1a193d38cd81",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-nivel-3-semi-flexion-vertical-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Semi-flexión vertical (1)"
+        },
+        {
+          "id": "019bc8c8-bc4a-7070-9134-6e1e0ecce6b1",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-nivel-3-semi-flexion-vertical-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Semi-flexión vertical (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c3798-e6a3-7cfc-92a3-4aa0a71310bf",
+      "slug": "flexion-vertical-flexion-vertical",
+      "name": "Flexión vertical",
+      "exerciseName": "Flexión vertical",
+      "exerciseType": "VERTICAL_PUSH",
+      "bodyGroup": "Torso - empuje vertical (hombros, tríceps y trapecios)",
+      "difficultyMin": 4,
+      "difficultyMax": 4,
+      "description": "Si superaste el tercer nivel estás listo para el siguiente desafío, la auténtica flexión vertical. Colócate en la posición inicial (manos apoyadas en el suelo, abdominales tensos y espalda ligeramente arqueada con los talones apoyados en la pared). Doblando los codos acerca tu cabeza hasta unos centímetros del suelo, y empuja para regresar a la posición original.\r\n\r\nMuy poca gente puede realizar este ejercicio incluso en su nivel 4, y sin embargo es mucho más eficiente para desarrollar tus hombros, tríceps y trapecios que muchas de las máquinas especializadas que te encuentras en los gimnasios.\r\n\r\nSigue siendo una buena idea que mantengas la almohada debajo de tu cabeza mientras no desarrolles suficiente fuerza y equilibrio.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 10 repeticiones. Mujeres: 8 repeticiones.",
+      "sourcePageStart": 32,
+      "sourcePageEnd": 38,
+      "media": [
+        {
+          "id": "019b822a-2350-788c-b3b0-50fe9c832e7f",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-nivel-4-flexion-vertical-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Flexión vertical (1)"
+        }
+      ]
+    },
+    {
+      "id": "019c0fe5-0340-7532-8983-ab711b930a9d",
+      "slug": "flexion-vertical-flexion-vertical-profunda",
+      "name": "Flexión vertical profunda",
+      "exerciseName": "Flexión vertical",
+      "exerciseType": "VERTICAL_PUSH",
+      "bodyGroup": "Torso - empuje vertical (hombros, tríceps y trapecios)",
+      "difficultyMin": 5,
+      "difficultyMax": 5,
+      "description": "El problema del ejercicio en nivel 4 es que tus hombros no desarrollan todo su rango de movimiento.\r\n\r\nEl nivel 5 es similar al 4, con la dificultad añadida de que tus manos deben estar apoyadas sobre superficies elevadas (por ejemplo libros gordos o sillas bajas), de tal manera que tu cabeza pueda bajar por debajo de tus manos.\r\n\r\nAsegúrate de que los objetos que utilizas como superficie son sólidos y no se deslizan (una recomendación es que estén sobre una alfombra fina por ejemplo). Yo utilizo unos soportes para flexiones como estos.\r\n\r\nMientras practicas inicialmente este ejercicio puedes pedirle ayuda a alguien para echarte una mano si es necesario.\r\n\r\nRequisitos para lograr el nivel Revolucionario:\r\n\r\nHombres: 10 repeticiones. Mujeres: 8 repeticiones",
+      "sourcePageStart": 32,
+      "sourcePageEnd": 38,
+      "media": [
+        {
+          "id": "019bc9f0-5aa6-73dc-bcb2-686c89481656",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-nivel-5-flexion-vertical-profunda-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Flexión vertical profunda (1)"
+        }
+      ]
+    },
+    {
+      "id": "019bef95-c250-7000-90b4-ce545861ba89",
+      "slug": "flexion-vertical-flexion-hindu",
+      "name": "Flexión hindú",
+      "exerciseName": "Flexión vertical",
+      "exerciseType": "VERTICAL_PUSH",
+      "bodyGroup": "Torso - empuje vertical (hombros, tríceps y trapecios)",
+      "difficultyMin": 2,
+      "difficultyMax": 3,
+      "description": "La flexión hindú es una mezcla entre una flexión tradicional y una flexión vertical.\r\n\r\nLa postura inicial es con el cuerpo en forma de ‘V’, con las manos y los pies apoyados sobre el suelo. Si no tienes suficiente flexibilidad puedes levantar ligeramente los talones del suelo y/o doblar un poco las rodillas, como muestro en las fotos. Desde esta posición dobla los codos hasta que tu cabeza esté entre tus manos, casi tocando el suelo, y empuja de nuevo con los brazos para volver a la postura inicial. Mantén los abdominales tensos y las piernas lo más rectas posibles.\r\n\r\nSi el ejercicio te resulta difícil, apoya las manos sobre una superficie elevada.",
+      "sourcePageStart": 32,
+      "sourcePageEnd": 38,
+      "media": [
+        {
+          "id": "019bb5b0-3779-72eb-8501-bc2f148e4d85",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-flexion-hindu-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Flexión hindú (1)"
+        },
+        {
+          "id": "019c3a0d-569f-77b1-8484-47a9db375005",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-flexion-hindu-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Flexión hindú (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c56f7-1a46-767d-8fbb-0c1044d2dcf8",
+      "slug": "flexion-vertical-bombardero-en-picado-dive-bomber",
+      "name": "Bombardero en picado - Dive Bomber",
+      "exerciseName": "Flexión vertical",
+      "exerciseType": "VERTICAL_PUSH",
+      "bodyGroup": "Torso - empuje vertical (hombros, tríceps y trapecios)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "Se trata de una variante más dura de la flexión hindú. La posición de inicio es la misma (cuerpo en forma de ‘V’), y el primer movimiento también es igual, cabeza entre las manos a pocos centímetros del suelo. Desde esta posición, estira las piernas para que tu cuerpo quede casi recto y paralelo al suelo, y desde aquí, sin detenerte, estira los brazos para levantar el tronco, lo más recto que puedas, manteniendo la cadera cerca del suelo. Vuelve a la posición inicial realizando el movimiento inverso: baja el tronco para quedar paralelo al suelo, y empuja con los brazos para regresar a la forma de ‘V’ original.\r\n\r\nEste ejercicio te permite trabajar duramente los pectorales, tríceps, hombros y músculos abdominales/lumbares, así como mejorar la flexibilidad de tu espalda.",
+      "sourcePageStart": 32,
+      "sourcePageEnd": 38,
+      "media": [
+        {
+          "id": "019c58f9-0c10-7bff-b162-20a42b77cc72",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-vertical-bombardero-en-picado-dive-bomber-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión vertical — Bombardero en picado - Dive Bomber (1)"
+        },
+        {
+          "id": "019ba51d-c964-7f32-8957-11923bb6dae1",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://youtu.be/8tn1K8KRLTc",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Flexión vertical — Bombardero en picado - Dive Bomber"
+        }
+      ]
+    },
+    {
+      "id": "019c4605-4de1-7c3f-a332-3b7acd95262a",
+      "slug": "dominada-colgarse",
+      "name": "Colgarse",
+      "exerciseName": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "difficultyMin": 1,
+      "difficultyMax": 1,
+      "description": "Uno de los factores limitantes en los principiantes es la fuerza de agarre y la fuerza básica de los músculos. Para trabajar ambos cuélgate con las dos manos de la barra e intenta aguantar 30 segundos inicialmente, con los brazos estirados y los hombros tensionados. En la foto de la izquierda simplemente me estoy colgando (cuelgue pasivo). En la foto de la derecha tenso los músculos de los brazos, hombros y dorsales, fortaleciéndolos y reduciendo la tensión en las articulaciones. Esta es la postura que debes intentar mantener en este nivel.\r\n\r\nEste sencillo ejercicio fortalecerá también los músculos de tus manos y muñecas. Cuando desarrolles un poco de fuerza, ayúdate de una silla o simplemente salta, para colgarte con los brazos flexionados y la barbilla por encima de la barra hasta que estés exhausto. Cuando no puedas más desciende lo más lentamente posible. Practica varias veces al día, sin llegar al agotamiento, y notarás la mejora mucho más rápido.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: aguantar 45 segundos colgado con los brazos estirados (y hombros tensos) y 20 segundos colgado con los brazos flexionados, con la barbilla por encima de la barra, con un descanso de 30 segundos entre ambos. Mujeres: aguantar 40 segundos colgada con los brazos estirados (y hombros tensos) y 15 segundos colgada con los brazos flexionados, con la barbilla por encima de la barra, con un descanso de 30 segundos entre ambos.\r\n\r\nNota: dejarse colgar sin tensar los músculos tiene también beneficios, pero hay que hacerlo de manera progresiva, como explico en este artículo.",
+      "sourcePageStart": 39,
+      "sourcePageEnd": 54,
+      "media": [
+        {
+          "id": "019c70ab-3128-7997-9264-62c10c8c653d",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-general-01.jpeg",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Colgarse (1)"
+        },
+        {
+          "id": "019bc94c-466e-70c3-9fd5-de4ab6c2ae42",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-tecnica-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Colgarse (2)"
+        },
+        {
+          "id": "019bd54e-ed53-7e4d-bb86-25580303c627",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-tecnica-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Colgarse (3)"
+        },
+        {
+          "id": "019b786d-61b3-765f-9ff4-4aaeec874e7b",
+          "position": 3,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-tecnica-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Colgarse (4)"
+        },
+        {
+          "id": "019bafbf-530b-7db6-b32e-232e4ec93b02",
+          "position": 4,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-tecnica-04.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Colgarse (5)"
+        },
+        {
+          "id": "019c55f1-9e79-7024-b603-67bb6860cb90",
+          "position": 5,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-tecnica-05.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Colgarse (6)"
+        },
+        {
+          "id": "019b9e80-9ea0-7aa8-9a99-1fe1a47c73db",
+          "position": 6,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-resumen-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Colgarse (7)"
+        },
+        {
+          "id": "019bce51-7e0a-72f6-9e6d-faab5682e81d",
+          "position": 7,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-1-colgarse-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Colgarse (8)"
+        },
+        {
+          "id": "019c6c42-0952-720e-92ed-51a47c11dfc4",
+          "position": 8,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-1-colgarse-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Colgarse (9)"
+        }
+      ]
+    },
+    {
+      "id": "019c3c03-1c0e-7c5e-8b01-7b6fa62f3610",
+      "slug": "dominada-dominadas-asistidas",
+      "name": "Dominadas asistidas",
+      "exerciseName": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "difficultyMin": 2,
+      "difficultyMax": 2,
+      "description": "Coloca una silla (o cualquier apoyo) debajo de la barra. Apoyando uno o dos pies realiza las dominadas intentando hacer el máximo uso de los músculos superiores (utiliza las piernas lo menos posible). A medida que ganas fuerza empuja hacia delante el apoyo, ya que al no estar directamente bajo tus piernas hará que debas ejercer mayor tensión sobre tu musculatura superior. Recuerda descender hasta que tus brazos estén casi totalmente estirados.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 10 repeticiones. Mujeres: 8 repeticiones.",
+      "sourcePageStart": 39,
+      "sourcePageEnd": 54,
+      "media": [
+        {
+          "id": "019c0f4d-151b-7ae3-a008-f32e9993bd90",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-2-dominadas-asistidas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominadas asistidas (1)"
+        }
+      ]
+    },
+    {
+      "id": "019c7152-e7c6-7074-8110-2481c8f03f7c",
+      "slug": "dominada-dominada-clasica",
+      "name": "Dominada clásica",
+      "exerciseName": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "difficultyMin": 3,
+      "difficultyMax": 3,
+      "description": "La posición inicial es colgado de la barra, con los brazos casi completamente estirados pero tensionados, al igual que los hombros. Los brazos deben estar un poco más separados que los hombros (pero experimenta para descubrir la separación que más te acomoda). Al ascender, tu barbilla debe pasar por encima de la barra, y al descender debes volver a la posición original, con los brazos estirados.\r\n\r\nDurante todo el ejercicio tus piernas deben permanecer inmóviles (idealmente rectas, pero por la altura de la puerta es normal que debas cruzarlas); tensa también los abdominales para mantener el cuerpo recto.\r\n\r\nMucha gente balancea las piernas para ganar impulso, pero es trampa. Como mucho, puedes impulsarte con tus piernas al final de la serie, para lograr una repetición adicional, pero no como parte de tu técnica habitual.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 10 repeticiones. Mujeres: 7 repeticiones.",
+      "sourcePageStart": 39,
+      "sourcePageEnd": 54,
+      "media": [
+        {
+          "id": "019c1f8d-b20f-75fb-91c3-efe513e1e6ee",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-3-dominada-clasica-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominada clásica (1)"
+        }
+      ]
+    },
+    {
+      "id": "019ba628-15ab-7778-9388-ac87b776397f",
+      "slug": "dominada-dominadas-con-mano-y-media",
+      "name": "Dominadas con mano y media",
+      "exerciseName": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "difficultyMin": 4,
+      "difficultyMax": 4,
+      "description": "Recomiendo hacer los niveles 4 y 5 con agarre supino inicialmente, es decir, con la palma de la mano hacia ti, ya que facilita el progreso. Pero si lo prefieres hacer con el agarre prono, ¡adelante!\r\n\r\nToma la barra con una mano, y con la otra mano agarra la muñeca de la mano que está sujetando la barra. El brazo del que te cuelgas debe estar casi recto y, como siempre, tensionado.\r\n\r\nA partir de esta posición inicial, tira con ambos brazos para levantar tu cuerpo hasta que tu barbilla sobrepase la barra, y desciende lentamente.\r\n\r\nEste ejercicio es excelente para fortalecer tu agarre, preparándote para el nivel máximo, la dominada con una mano. Si te cuesta sujetar todo tu peso con una sola mano, repite el nivel 1 (agarre) pero en vez de colgarte con las dos manos utiliza una de cada vez.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 8 repeticiones con cada mano. Mujeres: 5 repeticiones con cada mano.",
+      "sourcePageStart": 39,
+      "sourcePageEnd": 54,
+      "media": [
+        {
+          "id": "019c32da-6ef7-7412-9d47-ddc5f0616819",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-4-dominadas-con-mano-y-media-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominadas con mano y media (1)"
+        },
+        {
+          "id": "019c128b-68f3-7ce8-96d3-8cef18286eff",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-4-dominadas-con-mano-y-media-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominadas con mano y media (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c7231-7be7-70ea-9c30-a0757c90a14f",
+      "slug": "dominada-dominadas-con-una-mano",
+      "name": "Dominadas con una mano",
+      "exerciseName": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "difficultyMin": 5,
+      "difficultyMax": 5,
+      "description": "Muy pocos culturistas pueden levantar su peso con una mano. Uno de los inconvenientes de no ir al gimnasio es que no puedes asombrar al resto de miembros con esta hazaña. Te aseguro que todos se detendrían a verte.\r\n\r\nAgarra la barra con una mano, colocando el brazo opuesto cruzado por delante del cuerpo o estirado hacia delante si te ayuda a estabilizarte. Tensa todo tu cuerpo y levántalo con la fuerza de tu brazo (y el resto de músculos que lo apoyan), hasta que tu barbilla supere la altura de la barra, descendiendo de manera controlada. Si consigues hacer más de un par de repeticiones estarás en la élite del fitness.\r\n\r\nPersonalmente creo que este ejercicio es el más difícil de todos los que presento en el libro, y muy poca gente (incluido el tipo más musculado del gimnasio) es capaz de realizarlo. Yo todavía lo estoy perfeccionando, y como ves en la foto mi técnica es claramente mejorable.\r\n\r\nDada la dificultad del ejercicio, incluyo algunas ideas que te pueden ayudar a conquistar este nivel:\r\n\r\nIgual que expliqué previamente en el nivel 2 para lograr realizar tu primera dominada (nivel 3), puedes utilizar un apoyo (por ejemplo una silla) para ir incrementando la fuerza de tu brazo. También puedes utilizar una cinta o banda elástica (como esta ), que venden en muchas tiendas de deporte. Es buena opción para ayudarte en esta fase (y también cuando estás intentando hacer tus primeras dominadas). Hay cintas de diferentes grosores, para ir ajustando el apoyo según progresas. Coloca la cinta como indico en la foto, apoyando un pie en el otro extremo de la cinta, rodeada por el otro pie para que no se escape.\r\n\r\nEnrolla una toalla en la barra para la mano de apoyo, situándola más alejada del hombro. Intenta hacer la dominada con la mano principal. La de apoyo, al estar agarrada a la toalla, y más separada de tu cuerpo, aporta menos al movimiento, y obliga a los músculos del otro lado a emplearse con más fuerza. Obviamente debes ir alternando los brazos para mantener la simetría muscular.\r\n\r\nRealiza dominadas con peso, por ejemplo atándote una pesa a la cintura (en la foto estoy usando una Kettlebell ). Es una buena forma de desarrollar todavía más fuerza, pero no lo intentes hasta que puedas hacer al menos 5-8 repeticiones buenas sin peso.\r\n\r\nReduce gradualmente el número de dedos que utilizas en la mano de apoyo. Esto hace que ayude menos y te obliga a desarrollar más fuerza en el lado que estás entrenando. Puedes empezar por utilizar tres dedos, después dos, y en algún momento te ayudarás sólo con un dedo, hasta que ya seas capaz de realizar la dominada con una única mano.\r\n\r\nPractica la dominada con “mano y media” (nivel 4), pero alejando cada vez más la mano de apoyo. Empieza sujetando la muñeca, después el antebrazo, el codo, el bíceps, y por último el hombro.\r\n\r\nComo última recomendación, te propongo utilizar la técnica GTG ( Grease The Groove ), que funciona bastante bien para este desafío. Consiste básicamente en intentar hacer el ejercicio varias veces cada día, pero con pocas repeticiones (por ejemplo cada vez que vayas a la habitación donde tienes colgada la barra).\r\n\r\nSé paciente, el camino para lograr la dominada con una mano te puede llevar muchos meses, pero no abandones, merece la pena el esfuerzo.\r\n\r\nRequisitos para lograr el nivel Revolucionario:\r\n\r\nHombres: 3 repeticiones con cada mano. Mujeres: 1 repetición con cada mano (en realidad no conozco a ninguna mujer que pueda realizarla, si lo logras por favor escríbeme).",
+      "sourcePageStart": 39,
+      "sourcePageEnd": 54,
+      "media": [
+        {
+          "id": "019bdccd-36d1-7d76-b7ad-213e3c5a3001",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-5-dominadas-con-una-mano-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominadas con una mano (1)"
+        },
+        {
+          "id": "019c42ec-8c97-7e25-b292-d82dea7a167f",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-5-dominadas-con-una-mano-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominadas con una mano (2)"
+        },
+        {
+          "id": "019c2ffe-6332-71f9-8e7e-23adaad9020b",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-5-dominadas-con-una-mano-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominadas con una mano (3)"
+        },
+        {
+          "id": "019bc6f9-d8ff-74b2-91c2-5ae5ef94d2f8",
+          "position": 3,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-5-dominadas-con-una-mano-04.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominadas con una mano (4)"
+        },
+        {
+          "id": "019c7586-41d3-7eb7-9a04-2b03ccbaa3de",
+          "position": 4,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-5-dominadas-con-una-mano-05.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominadas con una mano (5)"
+        },
+        {
+          "id": "019bcbf9-5329-78d0-955f-5ce6a6ad0da0",
+          "position": 5,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-5-dominadas-con-una-mano-06.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominadas con una mano (6)"
+        },
+        {
+          "id": "019c4217-3ee2-7c21-ad1c-8de68ef12e18",
+          "position": 6,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-5-dominadas-con-una-mano-07.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominadas con una mano (7)"
+        },
+        {
+          "id": "019bb90b-e011-7129-b32d-21bda5d6ee21",
+          "position": 7,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-nivel-5-dominadas-con-una-mano-08.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominadas con una mano (8)"
+        }
+      ]
+    },
+    {
+      "id": "019bab11-43a2-7fe6-8d0e-985a1793a523",
+      "slug": "dominada-dominada-con-manos-juntas",
+      "name": "Dominada con manos juntas",
+      "exerciseName": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "En la mayoría de los casos, el factor limitante a la hora de realizar más dominadas o de llegar a realizar dominadas con una mano es la fuerza de los brazos. Al poner las manos juntas (con agarre prono), los músculos de la espalda apoyan menos, y te obliga a realizar más esfuerzo con los brazos, fortaleciéndolos más rápido.",
+      "sourcePageStart": 39,
+      "sourcePageEnd": 54,
+      "media": [
+        {
+          "id": "019b958e-6906-722a-a4e9-5b129354e7e9",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-dominada-con-manos-juntas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominada con manos juntas (1)"
+        },
+        {
+          "id": "019c0f38-efee-7d0d-9c8f-899aac6d3d8e",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://www.youtube.com/watch?v=Cfns-ZYmpr4",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Dominada — Dominada con manos juntas"
+        }
+      ]
+    },
+    {
+      "id": "019b9a97-5130-727e-843d-d2d32265059f",
+      "slug": "dominada-semi-dominada-horizontal",
+      "name": "Semi-dominada horizontal",
+      "exerciseName": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "difficultyMin": 2,
+      "difficultyMax": 2,
+      "description": "Agarra los pomos de una puerta, coloca los pies a la altura de las manos, sujetando la puerta. Estira completamente los brazos, echando el cuerpo hacia atrás, y contráelos para empujar tu cuerpo hasta que tu pecho esté a unos centímetros de la puerta. En este punto tus piernas deberían estar dobladas, y tus muslos formando un ángulo recto con tu tronco. Puedes hacer este ejercicio más difícil poniendo los pies un poco más adelante o hacerlo más fácil acercando los pies a tu cuerpo.\r\n\r\nCambiando el agarre de tus manos (por encima de los pomos, por debajo o lateral) alteras los músculos del antebrazo sobre los que haces énfasis, por lo que te recomiendo ir cambiando periódicamente la posición de las manos. Si bien me encanta entrenar descalzo, en este ejercicio conviene usar calzado con suela de goma para evitar resbalones, las consecuencias no son agradables (especialmente si eres hombre).\r\n\r\nSi estás entrenando en un parque u otro sitio sin puertas, puedes utilizar cualquier barra, incluso una valla o similar.",
+      "sourcePageStart": 39,
+      "sourcePageEnd": 54,
+      "media": [
+        {
+          "id": "019b902c-b770-7bdb-ae6e-f7e5be66f3e9",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-semi-dominada-horizontal-01.jpeg",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Semi-dominada horizontal (1)"
+        }
+      ]
+    },
+    {
+      "id": "019b87c6-4ca8-7086-93ac-7cc408b81a76",
+      "slug": "dominada-dominada-horizontal-o-remo-invertido",
+      "name": "Dominada horizontal o remo invertido",
+      "exerciseName": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "difficultyMin": 2,
+      "difficultyMax": 3,
+      "description": "Para hacer este ejercicio necesitas una barra a la altura de la cintura (o un poco más alta). La posición inicial es agarrando la barra, con los brazos estirados y el cuerpo recto, apoyado sobre los talones. Desde esta posición encoge los brazos hasta que tu pecho esté a pocos centímetros de la barra, y retorna lentamente a la posición original. Al igual que las dominadas normales, puedes hacerlo con diferentes tipos de agarre.\r\n\r\nPara hacer el ejercicio en casa puedes improvisar con un par de sillas y una escoba. Para hacerlo un poco más fácil, apoya los pies completamente, con las piernas dobladas.\r\n\r\nTambién puede servir una mesa sólida, como muestro en las fotos.\r\n\r\nPara añadir dificultad, eleva los pies, poniendo algún objeto debajo de ellos (con las piernas estiradas).",
+      "sourcePageStart": 39,
+      "sourcePageEnd": 54,
+      "media": [
+        {
+          "id": "019bd59d-79e7-7fcc-99b7-53285c45fe1b",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-dominada-horizontal-o-remo-invertido-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominada horizontal o remo invertido (1)"
+        },
+        {
+          "id": "019c1ca6-e8ee-7b90-b14b-d7d4d485f4da",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-dominada-horizontal-o-remo-invertido-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominada horizontal o remo invertido (2)"
+        },
+        {
+          "id": "019c58e1-9fc8-7dec-a34e-ad0c9abaa901",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-dominada-horizontal-o-remo-invertido-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominada horizontal o remo invertido (3)"
+        },
+        {
+          "id": "019c26e8-b2ea-7bbc-889e-64f63bc6c7a6",
+          "position": 3,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-dominada-horizontal-o-remo-invertido-04.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominada horizontal o remo invertido (4)"
+        },
+        {
+          "id": "019bdb9c-7fd4-7412-9935-1181d948eaaf",
+          "position": 4,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-dominada-horizontal-o-remo-invertido-05.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominada horizontal o remo invertido (5)"
+        },
+        {
+          "id": "019c3f90-9b36-79d1-b840-476a30ea56b1",
+          "position": 5,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-dominada-horizontal-o-remo-invertido-06.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominada horizontal o remo invertido (6)"
+        }
+      ]
+    },
+    {
+      "id": "019c0525-60fe-7cca-ae2e-9c5c67035265",
+      "slug": "dominada-dominada-comando",
+      "name": "Dominada ‘comando’",
+      "exerciseName": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "Cuando hablé de los tipos de agarre mencioné el ‘comando’, poco conocido, y que más que un tipo de agarre yo considero una variante particular de la dominada.\r\n\r\nPara realizarla, sitúate justo debajo de la barra, pero con tu cuerpo perpendicular a ella en vez de paralelo. Agarra la barra con ambas manos, por lados opuestos, situando una un poco detrás de la otra. Eleva tu cuerpo hasta que tu cabeza supere casi completamente la barra por un lado, desciende hasta casi estirar los brazos por completo y repite el movimiento pero pasando la cabeza por el otro lado. Completa las repeticiones indicadas, alternando lados.\r\n\r\nSi quieres hacer el ejercicio más duro (y más completo), cuando estés arriba eleva las rodillas hasta la altura de los codos (y si puedes haz que tus pies toquen la barra). De esta manera activas todavía más los abdominales.",
+      "sourcePageStart": 39,
+      "sourcePageEnd": 54,
+      "media": [
+        {
+          "id": "019c2344-b68d-79be-a37b-26d49f81cac0",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-dominada-comando-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — Dominada ‘comando’ (1)"
+        }
+      ]
+    },
+    {
+      "id": "019b7f17-1973-7cd3-9ead-e853a5026305",
+      "slug": "dominada-muscle-up",
+      "name": "‘Muscle-up’",
+      "exerciseName": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "difficultyMin": 4,
+      "difficultyMax": 5,
+      "description": "Es un ejercicio muy difícil, que tiene como base una dominada explosiva. Desde la posición de partida (cuerpo colgado con brazos estirados y hombros tensionados), te debes impulsar con suficiente potencia como para que la mitad de tu pecho pase por encima de la barra, permitiéndote desde ahí empujar con los brazos hasta estirarlos completamente, quedando la barra a la altura de las caderas.\r\n\r\nAparte de requerir bastante fuerza, es un ejercicio muy técnico, por lo que no lo incluyo en el programa de ejercicios que detallo posteriormente en el libro, pero te animo a que cuando domines el nivel 3 de dominadas (y puedas hacer 10-12 Dips) lo empieces a practicar de vez en cuando (yo todavía estoy trabajando en mejorarlo).\r\n\r\nLa aplicabilidad de este ejercicio en la vida real es clara: te permite sobrepasar cualquier obstáculo al que puedas llegar con las manos (aunque sea saltando).",
+      "sourcePageStart": 39,
+      "sourcePageEnd": 54,
+      "media": [
+        {
+          "id": "019c62f5-5aad-774a-b1ae-8161fdf3adec",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "dominada-muscle-up-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Dominada — ‘Muscle-up’ (1)"
+        },
+        {
+          "id": "019c4a61-de96-7e63-ad14-73bf0d8d7bb8",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://www.youtube.com/watch?v=rxf-HeXWyh4",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Dominada — ‘Muscle-up’"
+        }
+      ]
+    },
+    {
+      "id": "019c46cf-781d-7d99-8909-6986fb86f18e",
+      "slug": "dominada-dominada-negativa",
+      "name": "Dominada negativa",
+      "exerciseName": "Dominada",
+      "exerciseType": "PULL_UP",
+      "bodyGroup": "Torso - tirón (dorsales, bíceps, antebrazos y core)",
+      "difficultyMin": null,
+      "difficultyMax": null,
+      "description": "Más que una variante de la dominada, es una técnica que puedes emplear para abordar el nivel 3 y los siguientes. Consiste en realizar sólo la parte negativa o excéntrica del ejercicio (la bajada), lo más lenta posible. Es decir, si estás estancado en el nivel 2, puedes probar a apoyarte en la silla para colocarte en la posición final del ejercicio (brazos flexionados y barbilla por encima de la barra), y desde ahí (ya sin apoyarte en la silla), ir descendiendo lentamente para llegar a la posición final. Repite este movimiento con las repeticiones indicadas e irás desarrollando poco a poco la fuerza necesaria para realizar la dominada clásica.\r\n\r\nPuedes también emplear esta técnica para lograr llegar a la dominada con una mano, trabajando primeramente la parte negativa del movimiento (cuando ya superes las dominadas con mano y media). Es decir, cuélgate de la barra con los dos brazos flexionados (en este nivel ya no te hace falta la silla) y la barbilla por encima de la barra. Suelta un brazo y con el otro resiste con todas tus fuerzas para que la bajada sea lo más lenta posible. Practica, alternando los brazos, hasta lograr la fuerza necesaria para realizar este ejercicio de élite.\r\n\r\nEsta estrategia, de poner foco en la parte excéntrica del movimiento, puede utilizarse en realidad con cualquier ejercicio, pero es con las dominadas donde es más útil, al ser para muchos el ejercicio más difícil.\r\n\r\nPor lo mismo, si te cuesta aumentar el número de dominadas puedes revisar este artículo, donde doy algunas ideas adicionales.\r\n\r\n---\r\n\r\n<a id=\"sentadilla\"></a>",
+      "sourcePageStart": 39,
+      "sourcePageEnd": 54,
+      "media": []
+    },
+    {
+      "id": "019c3889-04c9-7ac1-94b7-3416b49e1764",
+      "slug": "sentadilla-sentadilla-media-con-apoyo",
+      "name": "Sentadilla media con apoyo",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 1,
+      "difficultyMax": 1,
+      "description": "En la versión más sencilla utilizaremos un apoyo, por ejemplo una silla. Ponte en la posición inicial delante de una silla o sofá a la altura de la rodilla.\r\n\r\nEstira los brazos delante de ti, mantén la espalda recta y desciende lentamente hasta que estés sentado, sin llegar a apoyar todo tu peso. Desde esta posición, levántate de nuevo tensionando tus piernas. No te impulses con el torso, como hacemos muchas veces para levantarnos. Toda la fuerza debe ser realizada por tus piernas.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 30 repeticiones. Mujeres: 30 repeticiones.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019be8d5-bc05-76ab-9625-cbbd4b78638e",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-resumen-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla media con apoyo (1)"
+        },
+        {
+          "id": "019b9c41-93ce-723a-a6d4-1f93da0e29a9",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-nivel-1-sentadilla-media-con-apoyo-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla media con apoyo (2)"
+        },
+        {
+          "id": "019bc7c4-0391-7bcf-9139-f7c7f04cf0e8",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-nivel-1-sentadilla-media-con-apoyo-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla media con apoyo (3)"
+        }
+      ]
+    },
+    {
+      "id": "019ba974-35fa-7fcb-b755-9c8625a38ebd",
+      "slug": "sentadilla-sentadilla-completa-con-apoyo",
+      "name": "Sentadilla completa con apoyo",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 2,
+      "difficultyMax": 2,
+      "description": "En este caso debes hacer la sentadilla completa (la parte trasera de tus muslos debe tocar tus gemelos), pero te apoyarás sobre una superficie elevada, como una silla, mesa, o incluso el marco de una puerta. Esto te permite modular el peso que ejerces con tus piernas, complementando según sea necesario con la fuerza de los brazos (intenta que sea cada vez menos).\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 30 repeticiones. Mujeres: 30 repeticiones.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019bd18e-4b09-7ec1-ada5-754ae70d825e",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-nivel-2-sentadilla-completa-con-apoyo-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla completa con apoyo (1)"
+        },
+        {
+          "id": "019c3ab1-5d03-7ed5-b956-34c88b3127e0",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-nivel-2-sentadilla-completa-con-apoyo-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla completa con apoyo (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c0e25-8180-7fc6-b2e1-ba83905f5ea9",
+      "slug": "sentadilla-sentadilla-tradicional",
+      "name": "Sentadilla tradicional",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 3,
+      "difficultyMax": 3,
+      "description": "Si ya eres capaz de realizar las repeticiones indicadas en los niveles anteriores, estás listo para la sentadilla tradicional. Para asegurar una técnica correcta, comienza haciendo sentadillas de cara a la pared, con tus pies a unos 15 cm de la misma. Esto evita que tus rodillas se adelanten mucho por delante de los pies y que dobles demasiado el torso hacia adelante. En la posición final (muslos tocando los gemelos), detente un segundo, antes de volver a subir.\r\n\r\nPara facilitar el equilibrio te recomiendo de nuevo extender los brazos hacia adelante al principio, pero también puedes cruzarlos delante del pecho o juntar las manos detrás de la cabeza, lo que te resulte más natural.\r\n\r\nEsta posición final de la sentadilla (salvo por los brazos estirados), ha sido durante miles de años la forma natural de descanso, y si viajas por Asia todavía veras a muchas personas charlando en una plaza o esperando el autobús en esta postura.\r\n\r\nPor desgracia, pasar tanto tiempo sentados nos hace perder movilidad básica de tobillos y cadera, que recuperarás poco a poco gracias a este poderoso ejercicio.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 30 repeticiones. Mujeres: 30 repeticiones",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019c498e-6791-712a-9861-7ae160342d34",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-nivel-3-sentadilla-tradicional-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla tradicional (1)"
+        },
+        {
+          "id": "019c5929-07c2-7fc0-a72e-5d5241c581cd",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-nivel-3-sentadilla-tradicional-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla tradicional (2)"
+        }
+      ]
+    },
+    {
+      "id": "019bdcd9-5770-79e8-9885-bcf0617ab7cd",
+      "slug": "sentadilla-sentadilla-con-una-pierna-asistida",
+      "name": "Sentadilla con una pierna asistida",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 4,
+      "difficultyMax": 4,
+      "description": "En este nivel la cosa se complica. La sentadilla con una pierna es un ejercicio avanzado, por eso recomiendo este paso intermedio, como puente hacia el último nivel.\r\n\r\nEs importante que calientes bien las piernas antes de realizar este movimiento, ya que es exigente tanto en la pierna que soportará el peso como en la contraria, que deberás mantener estirada delante de ti y puede acalambrarse.\r\n\r\nEn este nivel debes utilizar un apoyo del lado de la pierna que vas a ejercitar, por ejemplo una mesa, una silla o el marco de una puerta. Partiendo de la posición inicial, adelanta una pierna, manteniéndola recta y con el pie en el aire.\r\n\r\nEmpieza el descenso de manera controlada hasta llegar a la posición final, detente un segundo y levántate de nuevo, ayudándote del apoyo, e intentando depender cada vez menos de él.\r\n\r\nSi no es suficiente apoyarte con una mano, utiliza un marco de puerta para empujar con ambas manos.\r\n\r\nEs normal que te resulte más fácil el ejercicio con una pierna que con otra. Los desequilibrios musculares sólo son aparentes con ejercicios unilaterales. Pon especial énfasis en tu pierna débil. Una recomendación es empezar con el lado débil, estando fresco, igualando después el número de repeticiones con el lado fuerte.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 15 repeticiones con cada pierna. Mujeres: 10 repeticiones con cada pierna.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019c0499-6eb0-7d85-980a-425192863e71",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-nivel-4-sentadilla-con-una-pierna-asistida-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla con una pierna asistida (1)"
+        },
+        {
+          "id": "019b91fc-eab3-7bf5-a63e-870d829c50d3",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-nivel-4-sentadilla-con-una-pierna-asistida-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla con una pierna asistida (2)"
+        },
+        {
+          "id": "019c2a79-e0c3-7952-a2a8-ef84e1eb7da7",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-nivel-4-sentadilla-con-una-pierna-asistida-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla con una pierna asistida (3)"
+        }
+      ]
+    },
+    {
+      "id": "019bd259-2117-7e82-bafe-f0c2bb68b869",
+      "slug": "sentadilla-sentadilla-con-una-pierna",
+      "name": "Sentadilla con una pierna",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 5,
+      "difficultyMax": 5,
+      "description": "Este ejercicio es igual que el anterior, pero ahora sin apoyo. Todo el peso lo soportará tu pierna, y es la mejor manera de fortalecer todos sus músculos. Recuerda descender hasta que la cadera baje por debajo de la rodilla de la pierna de apoyo.\r\n\r\nSi tiendes a caerte hacia atrás prueba a sujetar algún peso con tus manos estiradas, hasta que desarrolles el equilibrio necesario (y de paso fortaleces los brazos). Es probable que se deba a una limitación en la dorsiflexión del tobillo, que irás mejorando poco a poco.\r\n\r\nAl igual que expliqué en el caso de la flexión con una mano, puedes atacar el nivel 5 por fases, descendiendo inicialmente sólo hasta la mitad, e ir bajando cada vez más en las siguientes sesiones hasta que puedas realizarla completa.\r\n\r\nRequisitos para lograr el nivel Revolucionario:\r\n\r\nHombres: 10 repeticiones con cada pierna. Mujeres: 8 repeticiones con cada pierna.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019b843d-6100-768b-a386-203cde00fbef",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-nivel-5-sentadilla-con-una-pierna-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla con una pierna (1)"
+        },
+        {
+          "id": "019bd343-66db-7c6f-8c55-d74f51bf2d7a",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-nivel-5-sentadilla-con-una-pierna-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla con una pierna (2)"
+        }
+      ]
+    },
+    {
+      "id": "019bf401-4af7-713e-b925-1d32ff379b71",
+      "slug": "sentadilla-saltos-sobre-plataforma",
+      "name": "Saltos sobre plataforma",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 2,
+      "difficultyMax": 4,
+      "description": "Es raro ver a alguien saltando en el gimnasio, y sin embargo es un ejercicio fundamental para desarrollar potencia en el cuerpo inferior.\r\n\r\nPara reducir el impacto del aterrizaje puedes empezar saltando sobre una superficie elevada, a la altura de la rodilla más o menos.\r\n\r\nPara tomar impulso debes agacharte hasta hacer media sentadilla (sin bajar más), y saltar manteniendo tus pies lo más arriba posible, para garantizar que no chocas contra la plataforma y para hacer además el ejercicio más efectivo. Para que la repetición sea válida debes estirar las piernas encima de la plataforma (es decir, abrir la cadera), y de ahí saltar de nuevo al suelo.\r\n\r\nUna buena idea es hacer el ejercicio en una escalera, ya que te permite ir midiendo tu progreso a medida que pasas de escalón. También puedes saltar sobre una silla sólida, pero en este caso colócala sobre una alfombra para evitar que resbale.\r\n\r\nSi no estás acostumbrado a saltar, te recomiendo que al principio sólo hagas el salto sobre la plataforma, y que desciendas con una pierna de cada vez (sin saltar de vuelta al suelo). Muchos aterrizajes seguidos sin adaptación previa pueden lastimar el tendón de Aquiles.\r\n\r\nSi quieres hacer el ejercicio más duro, salta con una sola pierna. Esto desarrolla no sólo fuerza, sino también equilibrio y coordinación.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019bc0a7-e52c-7b6d-bebb-900fde355a04",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-saltos-sobre-plataforma-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Saltos sobre plataforma (1)"
+        },
+        {
+          "id": "019bc8c6-25c5-7f59-8c79-d8e2937c9c68",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://www.youtube.com/watch?v=7WiwGR-1VZI",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Sentadilla — Saltos sobre plataforma"
+        }
+      ]
+    },
+    {
+      "id": "019c03da-c6de-7fbe-8b5f-52013631e133",
+      "slug": "sentadilla-sentadilla-con-salto",
+      "name": "Sentadilla con salto",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "Es la versión pliométrica (explosiva) de la sentadilla. Desde la posición final de la sentadilla normal impúlsate lo más rápido que puedas para saltar y despegar los pies del suelo, al menos 20-30 cm (o lo que puedas inicialmente). Al aterrizar, apoya primero la parte delantera de los pies, doblando inmediatamente las rodillas para amortiguar la bajada y tomar impulso para la siguiente repetición.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019c6ab2-e68e-73f0-9c4c-e3989eb9bc49",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-sentadilla-con-salto-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla con salto (1)"
+        },
+        {
+          "id": "019badbc-b8f1-7700-8372-c12fc74848f8",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://www.youtube.com/watch?v=CyAEd_0TEH0",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Sentadilla — Sentadilla con salto"
+        }
+      ]
+    },
+    {
+      "id": "019c5a00-8a3a-73fa-9f41-b95929419331",
+      "slug": "sentadilla-rodillas-a-pecho",
+      "name": "Rodillas a pecho",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 2,
+      "difficultyMax": 3,
+      "description": "Consiste básicamente en realizar saltos continuos, flexionando ligeramente las rodillas para realizar cada salto (no tanto como en el caso de las sentadillas con salto). Eleva las rodillas lo más que puedas, idealmente por encima de la cadera. Para guiarte coloca las palmas de las manos abiertas delante de tu cuerpo, intentando golpearlas con las rodillas en cada salto.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019c5a3e-f50c-7e79-baf2-d3b8ba8d13c7",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-rodillas-a-pecho-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Rodillas a pecho (1)"
+        },
+        {
+          "id": "019c0dc3-49c1-755b-b531-2752f006a153",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-rodillas-a-pecho-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Rodillas a pecho (2)"
+        }
+      ]
+    },
+    {
+      "id": "019b8274-815e-7a81-86dd-a22f4677d660",
+      "slug": "sentadilla-desplantes",
+      "name": "Desplantes",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 2,
+      "difficultyMax": 3,
+      "description": "La posición inicial es de pie, con los brazos estirados a lo largo del cuerpo o con las manos detrás de la cabeza. Da una zancada hacia delante con una pierna, hasta que ambas rodillas formen un ángulo aproximado de 90°, y desde aquí regresa a la posición inicial impulsándote con la pierna adelantada. Repite el movimiento con la otra pierna.\r\n\r\nEs un gran ejercicio para glúteos y muslos, pero también para los abdominales y los músculos extensores de la cadera.\r\n\r\nSi puedes hacer más de 10-15 repeticiones con cada pierna, sostén algo pesado con las manos para hacer el ejercicio más difícil y desarrollar tu fuerza.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019c69eb-29f4-7f27-95a8-1093b2948b41",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-desplantes-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Desplantes (1)"
+        },
+        {
+          "id": "019bc013-607d-7be4-9a65-4b30bbbee935",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-desplantes-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Desplantes (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c3ef5-d3a7-7634-9e17-439a50f6a4a5",
+      "slug": "sentadilla-desplantes-laterales",
+      "name": "Desplantes laterales",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 2,
+      "difficultyMax": 3,
+      "description": "Los músculos principales trabajados son los mismos que en el desplante normal, pero con diferentes intensidades y ángulos, convirtiéndolo en un complemento ideal. Empieza dando una zancada hacia un lado, doblando la rodilla unos 90° y manteniendo la otra pierna recta. Haz una pequeña pausa en la posición final, volviendo después a la posición inicial y repitiendo por el lado opuesto.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019bd0aa-6810-7160-9474-8f9434517e85",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-desplantes-laterales-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Desplantes laterales (1)"
+        }
+      ]
+    },
+    {
+      "id": "019c148c-07bf-75a1-ab23-d428b6fe92a1",
+      "slug": "sentadilla-desplantes-con-salto",
+      "name": "Desplantes con salto",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "Se trata de un desplante donde el cambio entre la postura final con una pierna y con la otra se realiza mediante un salto, lo que desarrolla capacidad explosiva en las piernas (potencia) y mejora tu equilibrio.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019b93b1-6ae0-77c0-a458-49de62585f86",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-desplantes-con-salto-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Desplantes con salto (1)"
+        },
+        {
+          "id": "019beff2-696d-742a-b59f-5cf26d9caa00",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://youtu.be/ub50Zj4T5b8",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Sentadilla — Desplantes con salto"
+        }
+      ]
+    },
+    {
+      "id": "019c5a9b-28b1-78cd-933b-848c2d7bf8ae",
+      "slug": "sentadilla-elevaciones-de-talones",
+      "name": "Elevaciones de talones",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 2,
+      "difficultyMax": 3,
+      "description": "En realidad no es una variante de una sentadilla, pero lo incluyo porque es un ejercicio muy sencillo y eficaz para desarrollar tus gemelos.\r\n\r\nApoya la parte delantera (almohadillas) de los pies sobre el borde de un escalón (o cualquier superficie elevada sobre el suelo), apóyate en una pared para mantener el equilibrio y eleva los talones hasta ponerte de puntillas (lo más alto que puedas), descendiendo después hasta que los talones estén por debajo de la superficie sobre la que se apoyan las puntas de los pies, y sientas que se estiran las pantorrillas.\r\n\r\nSi llegas a 12-15 repeticiones, haz el ejercicio con una sola pierna de cada vez. Modificando el ángulo de tus pies puedes poner más foco en el gemelo interior (pie apuntando ligeramente hacia afuera) o exterior (pie apuntando ligeramente hacia adentro). Si necesitas más intensidad sujeta un peso con la mano libre.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019c50e8-5bb3-738d-8d3f-eabd18091f50",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-elevaciones-de-talones-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Elevaciones de talones (1)"
+        },
+        {
+          "id": "019bead3-83a2-78b6-a531-a8258a52f4c1",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-elevaciones-de-talones-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Elevaciones de talones (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c4268-34e5-7e7d-9fa3-9ef5dfc92a7e",
+      "slug": "sentadilla-sentadilla-bulgara",
+      "name": "Sentadilla búlgara",
+      "exerciseName": "Sentadilla",
+      "exerciseType": "SQUAT",
+      "bodyGroup": "Tren inferior (cuádriceps, glúteos, isquiotibiales, gemelos y cadera)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "Es un buen paso intermedio para llegar a la sentadilla con una pierna. Coloca el empeine de un pie sobre un banco (o silla), soportando tu peso sobre la otra pierna. Dobla esta pierna de apoyo hasta que la rodilla pase ligeramente la punta del pie, formando un ángulo recto entre el muslo y la pantorrilla.\r\n\r\nMantén los brazos a lo largo del cuerpo o estirados hacia delante si necesitas ayuda para equilibrarte.\r\n\r\nPara fortalecer todavía más las piernas (y glúteos) puedes hacer el ejercicio con algo de peso, tomando por ejemplo un bidón de agua en cada mano o poniéndote una mochila cargada de libros sobre tus hombros.",
+      "sourcePageStart": 55,
+      "sourcePageEnd": 65,
+      "media": [
+        {
+          "id": "019c727f-8bbc-7cc9-9560-e09161f62030",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-sentadilla-bulgara-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla búlgara (1)"
+        },
+        {
+          "id": "019bcaac-5eff-7ef8-979d-bc2e5679020e",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-sentadilla-bulgara-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla búlgara (2)"
+        },
+        {
+          "id": "019bd6eb-b042-78b9-b5e8-e9171911338c",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "sentadilla-sentadilla-bulgara-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Sentadilla — Sentadilla búlgara (3)"
+        }
+      ]
+    },
+    {
+      "id": "019bcdb0-fd60-7918-b02f-5dc2ea1373c3",
+      "slug": "abdominales-abdominales-en-silla",
+      "name": "Abdominales en silla",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 1,
+      "difficultyMax": 1,
+      "description": "Siéntate en el extremo de una silla o banco. Manteniendo la espalda recta, inclínate un poco hacia atrás, sujétate con las manos al borde de la silla y estira las piernas, con los talones en el aire. Desde esta posición dobla las piernas hasta que tus muslos estén formando un ángulo recto con tu cuerpo superior. Como siempre, mantén los abdominales tensionados y controla la respiración (inspirando cuando estires las piernas y espirando cuando las contraigas). Tus pies no deben tocar el suelo hasta el final del ejercicio.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 30 repeticiones Mujeres: 30 repeticiones",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019c72e9-e942-740d-9c78-afbe7c9ada36",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-general-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Abdominales en silla (1)"
+        },
+        {
+          "id": "019c602c-b82f-73b2-9c6b-709cf19b7615",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-general-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Abdominales en silla (2)"
+        },
+        {
+          "id": "019bd841-2c25-7bec-a848-c4b7c26e2bdb",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-resumen-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Abdominales en silla (3)"
+        },
+        {
+          "id": "019bbf5c-a3fd-7027-828b-37e3485fc629",
+          "position": 3,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-nivel-1-abdominales-en-silla-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Abdominales en silla (4)"
+        },
+        {
+          "id": "019c1326-d45a-792f-a92c-aa66df22d513",
+          "position": 4,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-nivel-1-abdominales-en-silla-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Abdominales en silla (5)"
+        }
+      ]
+    },
+    {
+      "id": "019bf2b1-57ca-7e76-b498-ee8b4295bc40",
+      "slug": "abdominales-levantamiento-de-piernas-en-el-suelo-piernas-encogidas",
+      "name": "Levantamiento de piernas en el suelo (piernas encogidas)",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 2,
+      "difficultyMax": 2,
+      "description": "Túmbate boca arriba en el suelo, con las piernas estiradas y los brazos paralelos al cuerpo. Dobla las rodillas hasta que tus muslos estén perpendiculares al cuerpo superior y tus pantorrillas paralelas al suelo. Aguanta un segundo en esta posición, y estira de nuevo las piernas, sin que tus pies lleguen a tocar el suelo.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 30 repeticiones Mujeres: 30 repeticiones\r\n\r\nNota: Al levantar las piernas involucras también los flexores de cadera, que están conectados a tu columna. Si tienes una musculatura lumbar débil puedes notar dolor con este ejercicio. Si es tu caso prioriza ejercicios alternativos como la plancha, que veremos más adelante. Lo mismo aplica para los niveles 4 y 5.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019c4cb9-3fa1-7918-8d9d-02a337f771a9",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-nivel-2-levantamiento-de-piernas-en-el-suelo-piernas-encogidas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Levantamiento de piernas en el suelo (piernas encogidas) (1)"
+        },
+        {
+          "id": "019c27e9-9ad2-7380-950a-2af9b6bb4a23",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-nivel-2-levantamiento-de-piernas-en-el-suelo-piernas-encogidas-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Levantamiento de piernas en el suelo (piernas encogidas) (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c05c6-3892-773b-a68f-334048cba116",
+      "slug": "abdominales-levantamiento-de-piernas-en-el-suelo-piernas-estiradas",
+      "name": "Levantamiento de piernas en el suelo (piernas estiradas)",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 3,
+      "difficultyMax": 3,
+      "description": "Este ejercicio es similar al anterior, con la diferencia de que tus piernas deben mantenerse estiradas al subir y al bajar. En la posición final tus piernas formarán un ángulo recto con el suelo. Al descender, tus pies deben quedar a 5-10cm del suelo, sin tocarlo. Intenta mantener las piernas lo más rectas posibles, pero es aceptable que dobles ligeramente las rodillas en la posición final (como en la foto) si no tienes suficiente flexibilidad para formar un ángulo de 90°.\r\n\r\nTus abdominales tendrán que trabajar más duro que en el nivel anterior, preparándose para los siguientes niveles.\r\n\r\nComo en los casos anteriores, inspira cuando bajes las piernas y espira cuando las subas.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 25 repeticiones Mujeres: 25 repeticiones",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019beb31-ce20-7bcc-8065-9b3155c10723",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-nivel-3-levantamiento-de-piernas-en-el-suelo-piernas-estiradas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Levantamiento de piernas en el suelo (piernas estiradas) (1)"
+        }
+      ]
+    },
+    {
+      "id": "019c50f4-63ed-7605-97cc-553667b4de4f",
+      "slug": "abdominales-levantamiento-de-piernas-colgado-piernas-encogidas",
+      "name": "Levantamiento de piernas colgado (piernas encogidas)",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 4,
+      "difficultyMax": 4,
+      "description": "Cuélgate de una barra, con los brazos estirados y perpendiculares al suelo. Desde esta posición inicial levanta las piernas doblando las rodillas, hasta que tus muslos estén paralelos al suelo y tus pantorrillas verticales al suelo.\r\n\r\nEste ejercicio, además de ser más duro que el anterior, te permite trabajar los músculos serratus, ya que al estar colgado actúan de “conexión” entre tus brazos y tu abdomen.\r\n\r\nRequisitos para progresar:\r\n\r\nHombres: 15 repeticiones Mujeres: 15 repeticiones",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019c6b87-5f8f-7fa4-a6e6-2cb65e9fa3cd",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-nivel-4-levantamiento-de-piernas-colgado-piernas-encogidas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Levantamiento de piernas colgado (piernas encogidas) (1)"
+        },
+        {
+          "id": "019bc128-3d17-776f-a708-6e91a5789c73",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-nivel-4-levantamiento-de-piernas-colgado-piernas-encogidas-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Levantamiento de piernas colgado (piernas encogidas) (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c465d-2d36-7f07-8231-60b6be6d86dd",
+      "slug": "abdominales-levantamiento-de-piernas-colgado-piernas-estiradas",
+      "name": "Levantamiento de piernas colgado (piernas estiradas)",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 5,
+      "difficultyMax": 5,
+      "description": "La posición inicial es idéntica a la del nivel anterior, pero debes elevar las piernas completamente estiradas (sin doblar las rodillas), hasta que estén paralelas al suelo. Exhala mientras subes las piernas para que en la posición final hayas expulsado todo el aire y puedas contraer completamente los abdominales. Es tentador balancear las piernas para facilitar el ejercicio, pero no lo hagas, mantén todo tu cuerpo tensionado y realiza el ejercicio lentamente, dos segundos para subir y dos segundos para bajar.\r\n\r\nRequisitos para lograr el nivel Revolucionario:\r\n\r\nHombres: 10 repeticiones Mujeres: 10 repeticiones",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019c465d-cf12-7b46-9dc6-0162e8a9a48a",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-nivel-5-levantamiento-de-piernas-colgado-piernas-estiradas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Levantamiento de piernas colgado (piernas estiradas) (1)"
+        }
+      ]
+    },
+    {
+      "id": "019bf339-2063-7444-97c6-e103fed6dfce",
+      "slug": "abdominales-plancha",
+      "name": "Plancha",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 2,
+      "difficultyMax": 3,
+      "description": "Sin duda uno de mis ejercicios favoritos para desarrollar los abdominales. Es muy efectivo y no requiere ningún equipamiento.\r\n\r\nApoya tu cuerpo sobre las puntas de los pies y tus codos (justo debajo de los hombros), manteniendo tu cuerpo recto como una plancha, tensando la zona abdominal y los glúteos. Intenta aguantar inicialmente 30 segundos.\r\n\r\nSi tus abdominales (o lumbares, que también se trabajan duramente) son demasiado débiles para aguantar la plancha durante 30 segundos, empieza apoyándote sobre las rodillas en vez de las puntas de los pies. Puedes también intentar maximizar la tensión de la plancha durante 10-15 segundos, descansar 10 segundos y volver a realizar otra plancha corta de 10-15 segundos.\r\n\r\nEste tipo de ejercicios, que producen tensión muscular sin movimiento, se denominan isométricos, y es muy recomendable que los incorpores para mejorar tu core. El motivo es que el papel de los abdominales no es tanto crear movimiento como evitarlo, y es precisamente lo que logramos con estos ejercicios.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019c734e-3f1b-7904-9a3b-1d25467cabcf",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-plancha-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Plancha (1)"
+        }
+      ]
+    },
+    {
+      "id": "019bb113-99a8-75df-9b32-8ae09ae620be",
+      "slug": "abdominales-plancha-lateral",
+      "name": "Plancha lateral",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 3,
+      "difficultyMax": 3,
+      "description": "Para trabajar tus oblicuos puedes realizar una plancha lateral, apoyándote sobre un codo, con la mano opuesta situada sobre la cintura o estirada. Empieza con 30 segundos por cada lado y vete aumentando a medida que tus músculos se fortalecen.\r\n\r\nTambién puedes hacer la plancha lateral apoyándote en la mano en vez del codo.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019ba2ae-6a28-7b8b-8604-d84c835a93a0",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-plancha-lateral-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Plancha lateral (1)"
+        },
+        {
+          "id": "019b9878-1757-705a-9370-9ae6e506cf45",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-plancha-lateral-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Plancha lateral (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c5f45-2ec2-7727-832c-03e4faae00c5",
+      "slug": "abdominales-plancha-con-flexion",
+      "name": "Plancha con flexión",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 3,
+      "difficultyMax": 3,
+      "description": "Es similar a la plancha normal, con la diferencia de que no es un ejercicio isométrico (sin movimiento), ya que desde la posición inicial (plancha) debes flexionar los abdominales, levantando el trasero hasta que tu cuerpo forme una especie de “V” invertida. Realiza el movimiento de flexión de manera explosiva: contrae los abdominales lo más que puedas, aguanta dos segundos en esta postura y regresa lentamente a la posición inicial para la siguiente repetición.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019c2188-a5fd-7445-87d6-7cdc3b21dec6",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-plancha-con-flexion-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Plancha con flexión (1)"
+        }
+      ]
+    },
+    {
+      "id": "019c5458-2957-7f55-8e88-60359cd52773",
+      "slug": "abdominales-plancha-lateral-con-flexion",
+      "name": "Plancha lateral con flexión",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 3,
+      "difficultyMax": 3,
+      "description": "La postura de inicio es igual que en la plancha lateral, pero con la cadera casi tocando el suelo. Desde esa posición haz un impulso rápido con los oblicuos para levantar la cadera lo más alto que puedas, aguanta ahí un par de segundos y desciende lentamente hasta que tu cadera llegue de nuevo al suelo, para repetir el movimiento explosivo.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019be3b9-fc77-7864-bc40-32b1e6ef0d36",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-plancha-lateral-con-flexion-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Plancha lateral con flexión (1)"
+        },
+        {
+          "id": "019c467d-cd9d-7558-9321-7507cf880c36",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-plancha-lateral-con-flexion-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Plancha lateral con flexión (2)"
+        }
+      ]
+    },
+    {
+      "id": "019b9ba3-8043-7c08-b925-304e7aef3a93",
+      "slug": "abdominales-levantamiento-de-caderas",
+      "name": "Levantamiento de caderas",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 3,
+      "difficultyMax": 3,
+      "description": "Túmbate boca arriba en el suelo, con las rodillas dobladas y los pies apoyados en el suelo. Eleva las caderas lo más que puedas, manteniendo los abdominales y los glúteos tensos. Aguanta esta posición por 1-2 segundos y desciende a la posición original.\r\n\r\nEs también un excelente ejercicio para activar los glúteos y estirar los flexores de la cadera, que tienden a acortarse en las personas que pasan mucho tiempo sentadas.\r\n\r\nPara hacer el ejercicio más difícil mantén una pierna estirada y empuja únicamente con la otra.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019bc4b6-a4d6-753e-878b-d1c38cd92c95",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-levantamiento-de-caderas-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Levantamiento de caderas (1)"
+        },
+        {
+          "id": "019b96fb-bf34-7fae-8e5f-f260671a324e",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-levantamiento-de-caderas-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Levantamiento de caderas (2)"
+        },
+        {
+          "id": "019bdcbc-c2d8-7067-8dc5-5aa7b760913f",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-levantamiento-de-caderas-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Levantamiento de caderas (3)"
+        }
+      ]
+    },
+    {
+      "id": "019bf73f-b16a-70e6-b9da-8f00162fb8ff",
+      "slug": "abdominales-lumbares",
+      "name": "Lumbares",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 2,
+      "difficultyMax": 3,
+      "description": "Túmbate boca abajo en el suelo, con los pies bajo algún soporte o contra la pared, para evitar que se muevan las piernas. Pon una toalla (o mat de yoga) enrollada bajo tu cadera, sitúa las manos en la espalda y levanta el tronco lo más alto que puedas, sin mover los pies. Intenta mirar al frente en la parte más alta del ejercicio, apretando los glúteos y los músculos de la espalda.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019beb92-c8f3-7218-b0ed-bc2e4de5db98",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-lumbares-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Lumbares (1)"
+        },
+        {
+          "id": "019c3dea-02bc-7708-942b-c050da48e0d2",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-lumbares-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Lumbares (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c1e8c-32d3-7284-98c4-a0d952885621",
+      "slug": "abdominales-abdominales-en-v",
+      "name": "Abdominales en V",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 4,
+      "difficultyMax": 5,
+      "description": "Túmbate boca arriba, con los brazos estirados por encima de tu cabeza, y las piernas también estiradas a unos 10-15 cm del suelo. Levanta las piernas y el tronco de manera simultánea manteniendo sólo la espalda baja sobre el suelo, hasta tocar los pies con las manos (o llegar lo más cerca que puedas). Desde aquí vuelve a la situación de partida pero sin llegar a apoyar totalmente los hombros. Este ejercicio trabaja no sólo tus abdominales, sino también tu coordinación y flexibilidad.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019c4be2-143e-7c94-bff2-5827924336d7",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-abdominales-en-v-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Abdominales en V (1)"
+        },
+        {
+          "id": "019c4ecb-6881-7481-a91a-a1ae7606d31b",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-abdominales-en-v-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Abdominales en V (2)"
+        }
+      ]
+    },
+    {
+      "id": "019c23f6-8244-72bc-93bb-667d4e3435fc",
+      "slug": "abdominales-flexion-s-m",
+      "name": "Flexión S&M",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "La postura inicial es a “cuatro patas”, apoyado sobre las rodillas y las palmas de las manos. A partir de esta posición estira un brazo y la pierna opuesta, ambos lo más rectos que puedas. Mantén esta postura por 3-5 segundos, regresa a la posición inicial y haz lo mismo con las extremidades opuestas. Con este ejercicio trabajas los músculos de tu core, y entrenas también tu coordinación y sistema propioceptivo.\r\n\r\nPuedes hacer el ejercicio más difícil apoyándote sobre la punta del pie en vez de sobre la rodilla.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019c5dd3-ec3a-7a4f-bfc2-771da54c4c1f",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-flexion-s-y-m-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Flexión S&M (1)"
+        },
+        {
+          "id": "019bfa10-6c57-7eed-84d1-19feeeaf4d3d",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-flexion-s-y-m-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Flexión S&M (2)"
+        }
+      ]
+    },
+    {
+      "id": "019be980-1ad3-7e96-a3ff-da9adc8ee703",
+      "slug": "abdominales-bicicleta",
+      "name": "Bicicleta",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "Túmbate en el suelo con las manos detrás de la cabeza y los pies apoyados en el suelo, con las rodillas dobladas. De manera alternada, lleva un codo a la rodilla contraria, levantando y doblando el torso, a la vez que levantas la rodilla. Cuando contraes una rodilla, debes estirar la pierna contraria.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019bad6a-15eb-7ad7-9066-59193b586abb",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-bicicleta-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Bicicleta (1)"
+        },
+        {
+          "id": "019bec61-d6fd-7709-ae63-a19c69673dfe",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-bicicleta-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Bicicleta (2)"
+        }
+      ]
+    },
+    {
+      "id": "019b7d68-b8d9-7345-801f-c45c5aca385f",
+      "slug": "abdominales-pies-a-manos",
+      "name": "Pies a manos",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 5,
+      "difficultyMax": 5,
+      "description": "Es la versión más difícil de los abdominales realizados en la barra. No sólo debes levantar las piernas hasta que estén paralelas al suelo, sino todo el trayecto hasta que pasen la barra. Esto maximiza el trabajo abdominal.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019c5c17-3f11-72d7-b8a0-e526d443adb5",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-pies-a-manos-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Pies a manos (1)"
+        }
+      ]
+    },
+    {
+      "id": "019c1ad9-6596-769b-afd4-40957ad5b15c",
+      "slug": "abdominales-bandera",
+      "name": "Bandera",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 5,
+      "difficultyMax": 5,
+      "description": "Este ejercicio es sólo para los revolucionarios de élite, donde pronto estarás si sigues el programa.\r\n\r\nPuedes realizar el ejercicio en un banco de gimnasio o en el suelo (sobre una alfombra u otra superficie blanda), pero necesitas algún agarre sólido para tus manos, cercano a tu cabeza. Apoyándote sobre tus hombros (no tu cuello), dobla las rodillas ligeramente y levanta todo el cuerpo, estirando las piernas hasta que estén casi perpendiculares al suelo. A partir de esta posición, manteniendo el cuerpo totalmente tenso, desciende lentamente hasta que tus pies estén a 20-30 cm del suelo (o del banco), y desde ahí levanta nuevamente el cuerpo hasta la posición inicial. Mientras logras la fuerza necesaria en tu core para realizar bien el ejercicio puedes hacerlo doblando las rodillas (no la cintura).",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019bd74b-a30c-75bb-91d1-ccd338599363",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-bandera-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Bandera (1)"
+        },
+        {
+          "id": "019bf54d-7493-7afe-860f-595730294b3a",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://www.youtube.com/watch?v=18mLBFWO9IA",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Abdominales — Bandera"
+        }
+      ]
+    },
+    {
+      "id": "019ba64f-e78c-7d7b-9e8f-b69d9bb46d1e",
+      "slug": "abdominales-rueda-de-abdominales",
+      "name": "Rueda de abdominales",
+      "exerciseName": "Abdominales",
+      "exerciseType": "ABDOMINAL",
+      "bodyGroup": "Core (abdominales, oblicuos, lumbares y estabilizadores de cadera)",
+      "difficultyMin": 4,
+      "difficultyMax": 5,
+      "description": "Espero haberte convencido a estas alturas de que no necesitas gran cosa para estar en forma, y de que entrenar con tu cuerpo es superior en casi todos los ámbitos a utilizar los absurdos productos que anuncian en las revistas.\r\n\r\nDicho esto, hay sin duda muchos equipamientos útiles, y la rueda de abdominales es uno de ellos.\r\n\r\nEn realidad te hace trabajar mucho más que los músculos abdominales (fortalece tus lumbares, brazos, hombros…), por eso estuve tentado de incluirlo en el siguiente apartado “ejercicios de cuerpo completo”, pero por coherencia con su nombre, lo incluyo como variante de los abdominales.\r\n\r\nAntes de probar este ejercicio debes tener un nivel mínimo de fuerza en abdominales y hombros. Si no puedes aguantar una plancha de 45 segundos o realizar 10-15 flexiones, no utilices todavía la rueda.\r\n\r\nVeamos la técnica. Coloca las rodillas sobre un mat o toalla doblada, agarra la rueda con ambas manos, ligeramente adelantada de tus rodillas, brazos totalmente estirados y espalda ligeramente encorvada. Desde esta posición haz que la rueda avance, manteniendo tensos los abdominales y sin doblar los brazos, hasta que tu pecho llegue a pocos centímetros del suelo. Contrae los abdominales hasta regresar a la postura original. Repite.\r\n\r\nTe recomiendo que empieces haciendo el ejercicio sobre una alfombra, para ofrecer un poco más de fricción a la rueda y evitar que se te escape hacia delante dándote de bruces contra el suelo, se han visto casos. También puedes rodar hacia una pared, que actúa de tope para evitar deslizarte más allá de lo que puedes (regresar es la parte más dura). Si no puedes llegar muy abajo al principio, progresa poco a poco, intentando avanzar cada día unos centímetros más.\r\n\r\nLa versión más avanzada de este ejercicio consiste en realizarlo desde los pies en vez de las rodillas.\r\n\r\nPara alcanzar este nivel puedes utilizar una tabla, inclinada al principio 45º sobre la que vas rodando la rueda. Poco a poco vas reduciendo la inclinación de la tabla hasta que finalmente estás haciendo el ejercicio en el suelo. Llegar a este nivel puede llevarte meses, pero lograrás unos abdominales increíbles.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 80,
+      "media": [
+        {
+          "id": "019b8318-9fc1-766e-84b0-dc8f92a16d24",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-rueda-de-abdominales-01.jpeg",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Rueda de abdominales (1)"
+        },
+        {
+          "id": "019c2c7c-0596-7bec-bb5a-7a9f1a153852",
+          "position": 1,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-rueda-de-abdominales-02.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Rueda de abdominales (2)"
+        },
+        {
+          "id": "019c224d-84a2-7323-baf4-b4a57194a0b4",
+          "position": 2,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "abdominales-rueda-de-abdominales-03.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Abdominales — Rueda de abdominales (3)"
+        },
+        {
+          "id": "019c1721-bac6-7af9-acfc-11944fdc2ad6",
+          "position": 3,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://youtu.be/_9rhqnPS4aE",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Abdominales — Rueda de abdominales"
+        }
+      ]
+    },
+    {
+      "id": "019bedd7-ae29-7d3d-938b-1762f1d39cda",
+      "slug": "burpees",
+      "name": "Burpees",
+      "exerciseName": "Burpees",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "difficultyMin": 4,
+      "difficultyMax": 5,
+      "description": "Un ejercicio muy completo, que combina flexión, sentadilla y salto. Te permite ejercitar simultáneamente muchos músculos de tu cuerpo al mismo tiempo.",
+      "sourcePageStart": 81,
+      "sourcePageEnd": 81,
+      "media": [
+        {
+          "id": "019c62ca-3367-7c54-8cc0-e608546b199a",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "burpees-ejecucion-estandar-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Burpees — Burpees (1)"
+        },
+        {
+          "id": "019c0089-539f-7fde-8143-0b87ef5ead6d",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://youtu.be/NqNqGok2gXQ",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Burpees — Burpees"
+        }
+      ]
+    },
+    {
+      "id": "019bbe94-f094-701b-9928-89ed7f3018d5",
+      "slug": "escaladores",
+      "name": "Escaladores",
+      "exerciseName": "Escaladores",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "difficultyMin": 2,
+      "difficultyMax": 3,
+      "description": "Partiendo de la misma posición inicial que para realizar una flexión, debes traer hacia adelante cada una de las piernas de manera alternada, realizando un salto para el cambio de posición de las piernas. Este ejercicio trabaja principalmente abdominales, piernas y glúteos, fortaleciendo también tus dorsales y hombros.",
+      "sourcePageStart": 81,
+      "sourcePageEnd": 81,
+      "media": [
+        {
+          "id": "019c38a7-2d9e-778c-a633-f490033f3927",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "escaladores-ejecucion-estandar-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Escaladores — Escaladores (1)"
+        },
+        {
+          "id": "019bcfa2-6c19-7219-906b-cf3ea12ca3c4",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://youtu.be/CXOeTH0KfLg",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Escaladores — Escaladores"
+        }
+      ]
+    },
+    {
+      "id": "019c0975-7706-779e-b7de-aa2b49189ae7",
+      "slug": "escaladores-inversos",
+      "name": "Escaladores inversos",
+      "exerciseName": "Escaladores inversos",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "Similar al ejercicio anterior, pero mirando hacia arriba y levantando las piernas alternadamente, realizando un salto en el cambio, intentando que no estén las dos piernas a la vez en el suelo. Los músculos que trabaja este ejercicio son similares al escalador normal, pero con más foco en los lumbares, por lo que es el complemento perfecto.\r\n\r\nPara combinarlos puedes por ejemplo completar 20 escaladores normales (10 con cada pierna), y sin descansar te das la vuelta y realizas ahora 20 escaladores inversos.",
+      "sourcePageStart": 82,
+      "sourcePageEnd": 82,
+      "media": [
+        {
+          "id": "019c3cb1-e540-70a9-8785-2b3774f12ab3",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "escaladores-inversos-ejecucion-estandar-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Escaladores inversos — Escaladores inversos (1)"
+        },
+        {
+          "id": "019c15b8-45f7-754b-bc08-68ade4ac139c",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://www.youtube.com/watch?v=1LIWjeXEo-0",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Escaladores inversos — Escaladores inversos"
+        }
+      ]
+    },
+    {
+      "id": "019c5cd0-b096-7958-9a46-6c3d3fa315f2",
+      "slug": "jumping-jacks",
+      "name": "Jumping Jacks",
+      "exerciseName": "Jumping Jacks",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "difficultyMin": 2,
+      "difficultyMax": 2,
+      "description": "En español no tiene un nombre estándar, algunos lo llaman saltos de tijera, otros saltos de títere, otros mariposa… así que nos quedamos con el nombre inglés, jumping jacks.\r\n\r\nEs un buen ejercicio aeróbico, ideal como parte del calentamiento previo al entrenamiento, que consiste en saltar entre dos posiciones: una con las piernas abiertas y las manos juntas sobre la cabeza, y la otra con las piernas juntas y los brazos estirados a los lados del cuerpo.",
+      "sourcePageStart": 82,
+      "sourcePageEnd": 82,
+      "media": [
+        {
+          "id": "019bf838-a19c-7c59-b127-137430be7184",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "jumping-jacks-ejecucion-estandar-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Jumping Jacks — Jumping Jacks (1)"
+        },
+        {
+          "id": "019c1c25-9cf2-7662-8909-1a6e35521536",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://youtu.be/t1cx53-zfkE",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Jumping Jacks — Jumping Jacks"
+        }
+      ]
+    },
+    {
+      "id": "019be32c-235e-7a62-aa5b-5e7eeaf3cf73",
+      "slug": "flexion-a-plancha",
+      "name": "Flexión a Plancha",
+      "exerciseName": "Flexión a Plancha",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "difficultyMin": 2,
+      "difficultyMax": 3,
+      "description": "Este ejercicio es una mezcla entre una flexión y una plancha. Partiendo de la misma posición inicial de la flexión, desciende con un brazo hasta apoyarte con el codo en el suelo, y después haz lo mismo con el otro brazo, quedando en la posición de plancha. Desde esta posición, sin descansar, empujas con un brazo y después con el otro hasta regresar a la posición original de flexión. Para contar una repetición debes estirar los dos brazos, o lo que es lo mismo, cuenta las repeticiones cuando estires el brazo con el que no empiezas.\r\n\r\nSi bien el foco de este ejercicio es la zona abdominal y lumbar, al combinar la plancha tradicional con la flexión logras un ejercicio de cuerpo completo muy efectivo.",
+      "sourcePageStart": 83,
+      "sourcePageEnd": 83,
+      "media": [
+        {
+          "id": "019bd477-13cb-7fcc-8237-08917f67bbbf",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "flexion-a-plancha-ejecucion-estandar-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Flexión a Plancha — Flexión a Plancha (1)"
+        },
+        {
+          "id": "019c14fb-7837-7696-b27c-ac1855858e66",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://www.youtube.com/watch?v=q7AXzcZwDpk",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Flexión a Plancha — Flexión a Plancha"
+        }
+      ]
+    },
+    {
+      "id": "019bb71c-b963-77ac-a05b-18f6092bf9c5",
+      "slug": "levantamiento-con-impulso",
+      "name": "Levantamiento con impulso",
+      "exerciseName": "Levantamiento con impulso",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "difficultyMin": 3,
+      "difficultyMax": 4,
+      "description": "La posición inicial es tumbado, con los brazos estirados en el suelo por encima de la cabeza. Mueve rápido los brazos hacia delante, eleva el torso, dobla las piernas y levántate sin apoyar las manos en el suelo, regresando inmediatamente a la posición inicial. Además de requerir agilidad necesitas un mínimo de dorsiflexión en los tobillos.",
+      "sourcePageStart": 83,
+      "sourcePageEnd": 83,
+      "media": [
+        {
+          "id": "019c282b-1584-7066-9aad-54ea520890b7",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "levantamiento-con-impulso-ejecucion-estandar-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Levantamiento con impulso — Levantamiento con impulso (1)"
+        },
+        {
+          "id": "019c4f52-ad99-7717-91b2-cdb33e8e2681",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://youtu.be/_CzjY79rUNU",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Levantamiento con impulso — Levantamiento con impulso"
+        }
+      ]
+    },
+    {
+      "id": "019bf1a0-766e-70b5-a44a-0625174a8838",
+      "slug": "levantamientos-de-rodillas",
+      "name": "Levantamientos de rodillas",
+      "exerciseName": "Levantamientos de rodillas",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "difficultyMin": 2,
+      "difficultyMax": 3,
+      "description": "Consiste básicamente en ‘correr en el sitio’, alternando saltos con cada pierna e intentando llegar lo más alto posible con la rodilla (al menos por encima de la cadera).",
+      "sourcePageStart": 84,
+      "sourcePageEnd": 84,
+      "media": [
+        {
+          "id": "019bedc6-a673-717a-a713-fd4f0f4e9db2",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "levantamientos-de-rodillas-ejecucion-estandar-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Levantamientos de rodillas — Levantamientos de rodillas (1)"
+        },
+        {
+          "id": "019c71a2-9516-7ae1-9894-66306bf23a59",
+          "position": 1,
+          "kind": "VIDEO",
+          "storageKind": "EXTERNAL_URL",
+          "storageKey": null,
+          "externalUrl": "https://www.youtube.com/watch?v=h7ccMm1Q70I",
+          "mimeType": "text/html",
+          "altText": "Vídeo de Levantamientos de rodillas — Levantamientos de rodillas"
+        }
+      ]
+    },
+    {
+      "id": "019c08f0-cd00-75c9-8a9f-f5bad7375470",
+      "slug": "esprintar",
+      "name": "Esprintar",
+      "exerciseName": "Esprintar",
+      "exerciseType": "FULL_BODY",
+      "bodyGroup": "Cuerpo completo",
+      "difficultyMin": null,
+      "difficultyMax": null,
+      "description": "Esprintar, es decir, correr a toda velocidad, es un ejercicio muy completo, que ofrece importantes beneficios a nivel hormonal, facilitando el desarrollo muscular y la pérdida de grasa.\r\n\r\nPor desgracia, es una cualidad que perdemos en el mundo moderno al no practicarla, por lo que deberás recuperarla poco a poco. Una buena alternativa si hace tiempo que no corres es esprintar ladera arriba en una colina, o en una calle con bastante inclinación. Al ir contra la gravedad alcanzarás menos velocidad, reduciendo el riesgo de lesión pero sin perder efectividad. Lo importante es la intensidad del esfuerzo, y no tanto la velocidad que alcances.\r\n\r\nEl Programa Desencadenado, que describo en el siguiente capítulo, no incluye esprintar de manera explícita, ya que entiendo que generalmente entrenarás en casa y no creo que tengas pasillos tan largos.\r\n\r\nSin embargo, los beneficios de realizar este ejercicio con cierta frecuencia son enormes. Mi recomendación es que selecciones uno de los días libres a la semana (que no entrenas) y hagas una sesión específica de sprints. Es suficiente con 6-8 sprints, o incluso 4-6 para empezar.\r\n\r\nCada sprint debería durar 10-20 segundos, a máxima intensidad. Descansa un minuto entre cada sprint, o incluso algo más si lo necesitas.",
+      "sourcePageStart": 84,
+      "sourcePageEnd": 85,
+      "media": [
+        {
+          "id": "019bf2c9-7a44-745f-a900-716a7edc1494",
+          "position": 0,
+          "kind": "IMAGE",
+          "storageKind": "LOCAL",
+          "storageKey": "esprintar-ejecucion-estandar-01.png",
+          "externalUrl": null,
+          "mimeType": "image/png",
+          "altText": "Esprintar — Esprintar (1)"
+        }
+      ]
+    }
+  ],
+  "capabilityDefinitions": [
+    {
+      "id": "019bf045-2de1-7e5b-8e0f-7b37cc0ed68e",
+      "capability": "PUSH_UP",
+      "level": 1,
+      "exerciseVariantId": "019bcc57-9765-7b70-b79e-2ffba055d107",
+      "instructions": "30 repeticiones.",
+      "requirements": [
+        {
+          "id": "019babf8-e797-7656-88d1-70ec246bc9ba",
+          "position": 0,
+          "label": "30 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 30
+        }
+      ]
+    },
+    {
+      "id": "019c3690-0fdc-7dc5-baf1-a53e19b98a50",
+      "capability": "PUSH_UP",
+      "level": 2,
+      "exerciseVariantId": "019c697b-3da1-7aa9-95eb-02bbc0a5409c",
+      "instructions": "30 repeticiones.",
+      "requirements": [
+        {
+          "id": "019bae1c-dd56-76a8-95df-4f7d3b67ca00",
+          "position": 0,
+          "label": "30 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 30
+        }
+      ]
+    },
+    {
+      "id": "019ba964-a840-7bed-a1ae-e8cee8165207",
+      "capability": "PUSH_UP",
+      "level": 3,
+      "exerciseVariantId": "019c192c-a733-7d91-8929-75a9cc59415c",
+      "instructions": "30 repeticiones.",
+      "requirements": [
+        {
+          "id": "019b9029-6ca5-7ae3-971c-44938e782b6f",
+          "position": 0,
+          "label": "30 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 30
+        }
+      ]
+    },
+    {
+      "id": "019c5d7c-f32e-70e2-b470-27d1bb9c780b",
+      "capability": "PUSH_UP",
+      "level": 4,
+      "exerciseVariantId": "019c0000-1acf-7cbf-9bc5-eb2f2ebf225b",
+      "instructions": "30 repeticiones.",
+      "requirements": [
+        {
+          "id": "019c7576-700a-7534-91ac-e4cdaf57c996",
+          "position": 0,
+          "label": "30 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 30
+        }
+      ]
+    },
+    {
+      "id": "019c0d84-b710-777b-899c-368bce2d70fb",
+      "capability": "PUSH_UP",
+      "level": 5,
+      "exerciseVariantId": "019c5600-84a4-758e-8d6e-7fa0b0525806",
+      "instructions": "10 repeticiones con cada mano.",
+      "requirements": [
+        {
+          "id": "019c2689-f365-7456-8fdb-c02ffbf90f88",
+          "position": 0,
+          "label": "10 repeticiones con cada mano",
+          "metricKind": "REPETITIONS",
+          "scope": "PER_HAND",
+          "requiredValue": 10
+        }
+      ]
+    },
+    {
+      "id": "019c1dfc-3159-714d-8f8b-9ff67915fd59",
+      "capability": "VERTICAL_PUSH",
+      "level": 1,
+      "exerciseVariantId": "019c4956-a352-77be-b073-56b22374f91e",
+      "instructions": "aguantar la posición por 45 segundos.",
+      "requirements": [
+        {
+          "id": "019bf3dc-d9f7-7ee7-bdf9-e44b5dd0e7a9",
+          "position": 0,
+          "label": "aguantar la posición por 45 segundos",
+          "metricKind": "DURATION",
+          "scope": "TOTAL",
+          "requiredValue": 45000
+        }
+      ]
+    },
+    {
+      "id": "019c5b9f-e519-7e64-8cda-8de04821cfa7",
+      "capability": "VERTICAL_PUSH",
+      "level": 2,
+      "exerciseVariantId": "019b8fda-3eee-7267-b43b-094a2df7e3f8",
+      "instructions": "aguantar la posición 45 segundos.",
+      "requirements": [
+        {
+          "id": "019be846-9b25-7114-966e-30e8153f9b59",
+          "position": 0,
+          "label": "aguantar la posición 45 segundos",
+          "metricKind": "DURATION",
+          "scope": "TOTAL",
+          "requiredValue": 45000
+        }
+      ]
+    },
+    {
+      "id": "019c064b-218e-730e-9831-ab61913ffd66",
+      "capability": "VERTICAL_PUSH",
+      "level": 3,
+      "exerciseVariantId": "019ba453-b059-7765-b9c9-e6b1b3768bd5",
+      "instructions": "10 repeticiones.",
+      "requirements": [
+        {
+          "id": "019b802b-1ed9-7e63-a0a3-ec2e801b9d12",
+          "position": 0,
+          "label": "10 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 10
+        }
+      ]
+    },
+    {
+      "id": "019c471e-f1d4-7d52-bd91-45252fe8d969",
+      "capability": "VERTICAL_PUSH",
+      "level": 4,
+      "exerciseVariantId": "019c3798-e6a3-7cfc-92a3-4aa0a71310bf",
+      "instructions": "10 repeticiones.",
+      "requirements": [
+        {
+          "id": "019bd9e2-ea9b-7331-9b38-b00cf11e75c6",
+          "position": 0,
+          "label": "10 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 10
+        }
+      ]
+    },
+    {
+      "id": "019bc581-d8dd-7368-bf90-cd1c54199bf8",
+      "capability": "VERTICAL_PUSH",
+      "level": 5,
+      "exerciseVariantId": "019c0fe5-0340-7532-8983-ab711b930a9d",
+      "instructions": "10 repeticiones.",
+      "requirements": [
+        {
+          "id": "019bd240-8f7f-7f9a-9dc3-d355aa5b2b67",
+          "position": 0,
+          "label": "10 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 10
+        }
+      ]
+    },
+    {
+      "id": "019c6c04-090d-7fba-8abd-74b8d2f0b318",
+      "capability": "PULL_UP",
+      "level": 1,
+      "exerciseVariantId": "019c4605-4de1-7c3f-a332-3b7acd95262a",
+      "instructions": "aguantar 45 segundos colgado con los brazos estirados (y hombros tensos) y 20 segundos colgado con los brazos flexionados, con la barbilla por encima de la barra, con un descanso de 30 segundos entre ambos.",
+      "requirements": [
+        {
+          "id": "019b8dfd-f340-73fd-aacb-be2d30de552d",
+          "position": 0,
+          "label": "Colgado con brazos estirados y hombros tensos",
+          "metricKind": "DURATION",
+          "scope": "TOTAL",
+          "requiredValue": 45000
+        },
+        {
+          "id": "019c3bb5-1006-71e7-bdcb-1fa9762785b1",
+          "position": 1,
+          "label": "Colgado con brazos flexionados y barbilla sobre la barra",
+          "metricKind": "DURATION",
+          "scope": "TOTAL",
+          "requiredValue": 20000
+        }
+      ]
+    },
+    {
+      "id": "019c269b-2f5a-7c2b-8de1-8645e71c4b04",
+      "capability": "PULL_UP",
+      "level": 2,
+      "exerciseVariantId": "019c3c03-1c0e-7c5e-8b01-7b6fa62f3610",
+      "instructions": "10 repeticiones.",
+      "requirements": [
+        {
+          "id": "019c15e4-68ef-7133-9c68-032aba037807",
+          "position": 0,
+          "label": "10 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 10
+        }
+      ]
+    },
+    {
+      "id": "019c5422-01cf-7692-a5b7-5548338fac5d",
+      "capability": "PULL_UP",
+      "level": 3,
+      "exerciseVariantId": "019c7152-e7c6-7074-8110-2481c8f03f7c",
+      "instructions": "10 repeticiones.",
+      "requirements": [
+        {
+          "id": "019bfaad-8937-73f4-afa0-addf0607f5cf",
+          "position": 0,
+          "label": "10 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 10
+        }
+      ]
+    },
+    {
+      "id": "019c7364-3916-775e-b354-0959be3302ff",
+      "capability": "PULL_UP",
+      "level": 4,
+      "exerciseVariantId": "019ba628-15ab-7778-9388-ac87b776397f",
+      "instructions": "8 repeticiones con cada mano.",
+      "requirements": [
+        {
+          "id": "019bb6b9-b480-7f89-ac58-697fac4524b6",
+          "position": 0,
+          "label": "8 repeticiones con cada mano",
+          "metricKind": "REPETITIONS",
+          "scope": "PER_HAND",
+          "requiredValue": 8
+        }
+      ]
+    },
+    {
+      "id": "019c2314-9ff3-720a-93d3-fcc320fe5b1b",
+      "capability": "PULL_UP",
+      "level": 5,
+      "exerciseVariantId": "019c7231-7be7-70ea-9c30-a0757c90a14f",
+      "instructions": "3 repeticiones con cada mano.",
+      "requirements": [
+        {
+          "id": "019b7ec7-0e88-7f08-b17c-552df68ec028",
+          "position": 0,
+          "label": "3 repeticiones con cada mano",
+          "metricKind": "REPETITIONS",
+          "scope": "PER_HAND",
+          "requiredValue": 3
+        }
+      ]
+    },
+    {
+      "id": "019bce24-3823-7dff-b5f3-6078aede5a01",
+      "capability": "SQUAT",
+      "level": 1,
+      "exerciseVariantId": "019c3889-04c9-7ac1-94b7-3416b49e1764",
+      "instructions": "30 repeticiones.",
+      "requirements": [
+        {
+          "id": "019c09d6-5d23-76ba-b30a-7d9c1009f5cb",
+          "position": 0,
+          "label": "30 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 30
+        }
+      ]
+    },
+    {
+      "id": "019c405d-24e0-755a-9e11-2898007be973",
+      "capability": "SQUAT",
+      "level": 2,
+      "exerciseVariantId": "019ba974-35fa-7fcb-b755-9c8625a38ebd",
+      "instructions": "30 repeticiones.",
+      "requirements": [
+        {
+          "id": "019c33dc-1c6c-76a4-acf7-a7a20c6325d6",
+          "position": 0,
+          "label": "30 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 30
+        }
+      ]
+    },
+    {
+      "id": "019bfdf8-dbf2-7779-891e-758c7eba42c2",
+      "capability": "SQUAT",
+      "level": 3,
+      "exerciseVariantId": "019c0e25-8180-7fc6-b2e1-ba83905f5ea9",
+      "instructions": "30 repeticiones.",
+      "requirements": [
+        {
+          "id": "019b7e66-d342-7f3b-ad32-339f07beaa6c",
+          "position": 0,
+          "label": "30 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 30
+        }
+      ]
+    },
+    {
+      "id": "019c3320-d8e2-712d-b988-9f256168a11b",
+      "capability": "SQUAT",
+      "level": 4,
+      "exerciseVariantId": "019bdcd9-5770-79e8-9885-bcf0617ab7cd",
+      "instructions": "15 repeticiones con cada pierna.",
+      "requirements": [
+        {
+          "id": "019c2f01-8015-7667-8bac-8d8abe7e77f4",
+          "position": 0,
+          "label": "15 repeticiones con cada pierna",
+          "metricKind": "REPETITIONS",
+          "scope": "PER_LEG",
+          "requiredValue": 15
+        }
+      ]
+    },
+    {
+      "id": "019c374c-f320-7c4a-9fe4-1b6e02fb277e",
+      "capability": "SQUAT",
+      "level": 5,
+      "exerciseVariantId": "019bd259-2117-7e82-bafe-f0c2bb68b869",
+      "instructions": "10 repeticiones con cada pierna.",
+      "requirements": [
+        {
+          "id": "019be040-d591-7d58-bd2d-20f08f8c4804",
+          "position": 0,
+          "label": "10 repeticiones con cada pierna",
+          "metricKind": "REPETITIONS",
+          "scope": "PER_LEG",
+          "requiredValue": 10
+        }
+      ]
+    },
+    {
+      "id": "019bd872-f1ab-77e2-9e7b-766d5c0d839b",
+      "capability": "ABDOMINAL",
+      "level": 1,
+      "exerciseVariantId": "019bcdb0-fd60-7918-b02f-5dc2ea1373c3",
+      "instructions": "30 repeticiones",
+      "requirements": [
+        {
+          "id": "019c2a27-5dc5-7edd-aaeb-0055939173e2",
+          "position": 0,
+          "label": "30 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 30
+        }
+      ]
+    },
+    {
+      "id": "019b8cff-11f6-7ee2-ae8e-995bb9beae0b",
+      "capability": "ABDOMINAL",
+      "level": 2,
+      "exerciseVariantId": "019bf2b1-57ca-7e76-b498-ee8b4295bc40",
+      "instructions": "30 repeticiones",
+      "requirements": [
+        {
+          "id": "019c6cfd-46c5-7ad5-b1cb-7449e64cc129",
+          "position": 0,
+          "label": "30 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 30
+        }
+      ]
+    },
+    {
+      "id": "019c5cca-66d8-7aac-87d7-f40a152762c2",
+      "capability": "ABDOMINAL",
+      "level": 3,
+      "exerciseVariantId": "019c05c6-3892-773b-a68f-334048cba116",
+      "instructions": "25 repeticiones",
+      "requirements": [
+        {
+          "id": "019bea50-cce1-7a82-a7c8-a1933d841c37",
+          "position": 0,
+          "label": "25 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 25
+        }
+      ]
+    },
+    {
+      "id": "019bdf9a-5b91-7ebd-8056-4ffe53bc3fb3",
+      "capability": "ABDOMINAL",
+      "level": 4,
+      "exerciseVariantId": "019c50f4-63ed-7605-97cc-553667b4de4f",
+      "instructions": "15 repeticiones",
+      "requirements": [
+        {
+          "id": "019c1bb8-f161-7017-abe3-44459606ab20",
+          "position": 0,
+          "label": "15 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 15
+        }
+      ]
+    },
+    {
+      "id": "019bb5f8-dd2c-79cb-9c4a-f0f6d8e2abb0",
+      "capability": "ABDOMINAL",
+      "level": 5,
+      "exerciseVariantId": "019c465d-2d36-7f07-8231-60b6be6d86dd",
+      "instructions": "10 repeticiones",
+      "requirements": [
+        {
+          "id": "019b7c1c-d3f2-74ff-b66b-c8e09ab24ec7",
+          "position": 0,
+          "label": "10 repeticiones",
+          "metricKind": "REPETITIONS",
+          "scope": "TOTAL",
+          "requiredValue": 10
+        }
+      ]
+    }
+  ]
+}

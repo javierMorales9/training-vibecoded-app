@@ -1,0 +1,24 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.env
+.nitro
+.tanstack
+.wrangler
+.output
+.vinxi
+__unconfig*
+todos.json
+data/
+coverage/
+playwright-report/
+test-results/
+.scaffold/
+*.log
+.cta.json
+Desencadenado-Entrenos con peso corporal/*.pdf
+Desencadenado-Entrenos con peso corporal/*.epub
+Desencadenado-Entrenos con peso corporal/*.mobi
+Desencadenado-Entrenos con peso corporal/**/*.xlsx
