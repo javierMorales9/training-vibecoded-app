@@ -438,6 +438,20 @@ export function getWorkout(workoutId: string) {
   }
 }
 
+export function getWorkoutInputForExecution(
+  workoutId: string,
+  sqlite: Database.Database = getDatabase().sqlite,
+) {
+  const workout = sqlite
+    .prepare(`SELECT * FROM workouts WHERE id = ? AND status = 'PENDING'`)
+    .get(workoutId) as WorkoutRow | undefined
+  if (!workout) return null
+  return {
+    workout,
+    input: inputForValidation(getInputFromRows(sqlite, workout)),
+  }
+}
+
 export function listWorkoutQueue() {
   const sqlite = getDatabase().sqlite
   const rows = sqlite

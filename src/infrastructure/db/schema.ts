@@ -1,5 +1,6 @@
 import {
   integer,
+  real,
   sqliteTable,
   text,
   uniqueIndex,
@@ -223,3 +224,45 @@ export const workoutBlockItemTargets = sqliteTable(
     maximumValue: integer('maximum_value').notNull(),
   },
 )
+
+export const trainingSessions = sqliteTable('training_sessions', {
+  id: text('id').primaryKey(),
+  workoutId: text('workout_id')
+    .notNull()
+    .references(() => workouts.id, { onDelete: 'restrict' }),
+  workoutNameSnapshot: text('workout_name_snapshot').notNull(),
+  snapshotJson: text('snapshot_json').notNull(),
+  status: text('status').notNull(),
+  phase: text('phase').notNull(),
+  currentUnitPosition: integer('current_unit_position'),
+  startedAt: integer('started_at').notNull(),
+  completedAt: integer('completed_at'),
+  cancelledAt: integer('cancelled_at'),
+  cancelReason: text('cancel_reason'),
+  completionRatio: real('completion_ratio'),
+  totalWorkMs: integer('total_work_ms').notNull(),
+  totalRestMs: integer('total_rest_ms').notNull(),
+  createdAt: integer('created_at').notNull(),
+  updatedAt: integer('updated_at').notNull(),
+})
+
+export const trainingSessionUnits = sqliteTable('training_session_units', {
+  id: text('id').primaryKey(),
+  trainingSessionId: text('training_session_id')
+    .notNull()
+    .references(() => trainingSessions.id, { onDelete: 'cascade' }),
+  position: integer('position').notNull(),
+  blockPosition: integer('block_position').notNull(),
+  method: text('method').notNull(),
+  blockNameSnapshot: text('block_name_snapshot').notNull(),
+  instructionsSnapshot: text('instructions_snapshot'),
+  itemsSnapshotJson: text('items_snapshot_json').notNull(),
+  plannedWorkMs: integer('planned_work_ms'),
+  plannedRestMs: integer('planned_rest_ms').notNull(),
+  status: text('status').notNull(),
+  startedAt: integer('started_at'),
+  completedAt: integer('completed_at'),
+  restStartedAt: integer('rest_started_at'),
+  restCompletedAt: integer('rest_completed_at'),
+  actualResultJson: text('actual_result_json'),
+})

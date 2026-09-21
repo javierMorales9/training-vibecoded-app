@@ -171,6 +171,28 @@ a {
   border-radius: 10px;
   background: #291a18;
 }
+.active-session-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid #65752d;
+  border-radius: 14px;
+  background: #1d2411;
+}
+.active-session-banner > div {
+  display: grid;
+  gap: 0.2rem;
+}
+.active-session-banner .eyebrow {
+  margin: 0;
+}
+.active-session-banner span {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
 .workout-queue {
   display: grid;
   gap: 0.75rem;
@@ -996,6 +1018,191 @@ a {
   place-items: center;
   align-content: center;
   min-height: calc(100vh - 70px);
+}
+
+.training-runner {
+  width: min(100% - 2rem, 780px);
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 5rem) 0;
+}
+.training-runner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+}
+.training-runner-header h1,
+.training-terminal h1 {
+  margin: 0.2rem 0 0;
+  font-size: clamp(2rem, 7vw, 3.8rem);
+}
+.runner-cancel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.58rem 0.75rem;
+  border: 1px solid #643d38;
+  border-radius: 8px;
+  color: #f2aaa0;
+  background: #291a18;
+  cursor: pointer;
+}
+.runner-progress {
+  height: 6px;
+  margin: 1.4rem 0;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+.runner-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+.runner-work-card,
+.rest-screen {
+  padding: clamp(1.2rem, 4vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+}
+.runner-unit-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.runner-exercise + .runner-exercise {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.runner-exercise > p {
+  margin: 1.5rem 0 0.25rem;
+  color: var(--accent);
+  font-size: 0.73rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.runner-exercise h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 5vw, 2.7rem);
+}
+.runner-targets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.8rem;
+}
+.runner-targets span {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.runner-exercise details {
+  margin-top: 1rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.runner-exercise summary {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+.runner-instructions {
+  margin: 1.4rem 0 0;
+  padding: 0.9rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+  background: var(--surface-2);
+}
+.runner-timer {
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
+  margin: 2rem 0;
+}
+.runner-timer span {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+.runner-timer strong {
+  font-size: clamp(3.8rem, 17vw, 7rem);
+  line-height: 1;
+  letter-spacing: -0.08em;
+}
+.runner-result {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.4rem;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 750;
+}
+.runner-result textarea {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: 0;
+  color: var(--ink);
+  background: #10110d;
+  font: inherit;
+  font-weight: 400;
+  resize: vertical;
+}
+.runner-result textarea:focus {
+  border-color: var(--accent);
+}
+.runner-main-action {
+  width: 100%;
+  min-height: 64px;
+  margin-top: 1.6rem;
+  font-size: 1rem;
+}
+.rest-screen {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  min-height: 390px;
+  align-content: center;
+  text-align: center;
+}
+.rest-screen > strong {
+  font-size: clamp(4rem, 18vw, 8rem);
+  letter-spacing: -0.09em;
+  line-height: 1;
+}
+.rest-screen > span {
+  color: var(--muted);
+}
+.training-terminal {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  min-height: calc(100vh - 68px);
+  text-align: center;
+}
+.training-terminal > svg {
+  width: 54px;
+  height: 54px;
+  color: var(--accent);
+}
+.training-terminal p {
+  color: var(--muted);
 }
 
 .assessments-header {

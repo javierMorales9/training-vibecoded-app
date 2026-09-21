@@ -9,6 +9,7 @@ import {
   Clock3,
   Copy,
   Plus,
+  Play,
   Trash2,
 } from 'lucide-react'
 import {
@@ -18,9 +19,16 @@ import {
   listWorkoutQueueFn,
   reorderWorkoutQueueFn,
 } from '../server/functions/workouts'
+import {
+  getActiveTrainingSessionFn,
+  startTrainingSessionFn,
+} from '../server/functions/training-sessions'
 
 export const Route = createFileRoute('/_authenticated/workouts')({
-  loader: () => listWorkoutQueueFn(),
+  loader: async () => ({
+    queue: await listWorkoutQueueFn(),
+    activeSession: await getActiveTrainingSessionFn(),
+  }),
   component: WorkoutQueuePage,
 })
 
@@ -31,13 +39,14 @@ function formatDuration(milliseconds: number) {
 }
 
 function WorkoutQueuePage() {
-  const queue = Route.useLoaderData()
+  const { queue, activeSession } = Route.useLoaderData()
   const navigate = useNavigate()
   const router = useRouter()
   const create = useServerFn(createWorkoutFn)
   const duplicate = useServerFn(duplicateWorkoutFn)
   const remove = useServerFn(deleteWorkoutFn)
   const reorder = useServerFn(reorderWorkoutQueueFn)
+  const start = useServerFn(startTrainingSessionFn)
   const [busyId, setBusyId] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
@@ -109,6 +118,29 @@ function WorkoutQueuePage() {
     }
   }
 
+  const startWorkout = async (workoutId: string) => {
+    setBusyId(workoutId)
+    setError(null)
+    try {
+      const session = await start({ data: { workoutId } })
+      if (session) {
+        await router.invalidate()
+        await navigate({
+          to: '/workouts/session/$sessionId',
+          params: { sessionId: session.id },
+        })
+      }
+    } catch (caught) {
+      setError(
+        caught instanceof Error
+          ? caught.message
+          : 'No se pudo iniciar el entrenamiento.',
+      )
+    } finally {
+      setBusyId(null)
+    }
+  }
+
   return (
     <div className="workouts-page">
       <header className="page-header workouts-header">
@@ -116,8 +148,7 @@ function WorkoutQueuePage() {
           <p className="eyebrow">Planificación</p>
           <h1>Entrenamientos</h1>
           <p>
-            Prepara y ordena tu cola. La ejecución se añadirá en la siguiente
-            entrega.
+            Prepara y ordena tu cola. Inicia un entrenamiento cuando esté listo.
           </p>
         </div>
         <button
@@ -131,6 +162,33 @@ function WorkoutQueuePage() {
       </header>
 
       {error ? <p className="form-error workout-error">{error}</p> : null}
+      {activeSession ? (
+        <section className="active-session-banner">
+          <div>
+            <p className="eyebrow">Entrenamiento en curso</p>
+            <strong>{activeSession.workoutName}</strong>
+            <span>
+              {activeSession.phase === 'RESTING'
+                ? 'En descanso'
+                : activeSession.phase === 'WORKING'
+                  ? 'En ejecución'
+                  : 'Preparado para empezar'}
+            </span>
+          </div>
+          <button
+            type="button"
+            className="primary-button"
+            onClick={() =>
+              void navigate({
+                to: '/workouts/session/$sessionId',
+                params: { sessionId: activeSession.id },
+              })
+            }
+          >
+            Reanudar <ArrowRight size={17} />
+          </button>
+        </section>
+      ) : null}
       {queue.items.length ? (
         <section className="workout-queue" aria-label="Cola de entrenamientos">
           {queue.items.map((workout, index) => (
@@ -162,6 +220,16 @@ function WorkoutQueuePage() {
                   >
                     Editar <ArrowRight size={17} />
                   </button>
+                  {workout.startable ? (
+                    <button
+                      type="button"
+                      className="row-action start-workout-action"
+                      disabled={busyId !== null}
+                      onClick={() => void startWorkout(workout.id)}
+                    >
+                      <Play size={16} /> Iniciar
+                    </button>
+                  ) : null}
                 </div>
                 <div className="workout-summary-line">
                   <span>

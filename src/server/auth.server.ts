@@ -91,7 +91,12 @@ export async function requireWebSession() {
 export function assertSameOrigin() {
   const origin = getRequestHeader('origin')
   if (!origin) return
-  if (new URL(origin).origin !== getConfig().appOrigin)
+  const requestOrigin = new URL(getRequest().url).origin
+  const configuredOrigin = getConfig().appOrigin
+  if (
+    new URL(origin).origin !== requestOrigin &&
+    new URL(origin).origin !== configuredOrigin
+  )
     throw new Error('INVALID_ORIGIN')
 }
 

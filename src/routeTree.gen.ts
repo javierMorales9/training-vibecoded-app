@@ -28,6 +28,7 @@ import { Route as ApiV1ExerciseVariantsRouteImport } from './routes/api.v1.exerc
 import { Route as ApiV1OpenapiDotjsonRouteImport } from './routes/api.v1.openapi[.]json'
 import { Route as ApiV1WorkoutQueueRouteImport } from './routes/api.v1.workout-queue'
 import { Route as ApiV1WorkoutsRouteImport } from './routes/api.v1.workouts'
+import { Route as AuthenticatedWorkoutsSessionSessionIdRouteImport } from './routes/_authenticated.workouts_.session.$sessionId'
 import { Route as ApiV1AssessmentsAssessmentIdRouteImport } from './routes/api.v1.assessments.$assessmentId'
 import { Route as ApiV1ExerciseVariantsVariantIdRouteImport } from './routes/api.v1.exercise-variants.$variantId'
 import { Route as ApiV1WorkoutsWorkoutIdRouteImport } from './routes/api.v1.workouts.$workoutId'
@@ -135,6 +136,12 @@ const ApiV1WorkoutsRoute = ApiV1WorkoutsRouteImport.update({
   path: '/api/v1/workouts',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedWorkoutsSessionSessionIdRoute =
+  AuthenticatedWorkoutsSessionSessionIdRouteImport.update({
+    id: '/workouts_/session/$sessionId',
+    path: '/workouts/session/$sessionId',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
 const ApiV1AssessmentsAssessmentIdRoute =
   ApiV1AssessmentsAssessmentIdRouteImport.update({
     id: '/$assessmentId',
@@ -190,6 +197,7 @@ export interface FileRoutesByFullPath {
   '/api/v1/openapi.json': typeof ApiV1OpenapiDotjsonRoute
   '/api/v1/workout-queue': typeof ApiV1WorkoutQueueRoute
   '/api/v1/workouts': typeof ApiV1WorkoutsRouteWithChildren
+  '/workouts/session/$sessionId': typeof AuthenticatedWorkoutsSessionSessionIdRoute
   '/api/v1/assessments/$assessmentId': typeof ApiV1AssessmentsAssessmentIdRoute
   '/api/v1/exercise-variants/$variantId': typeof ApiV1ExerciseVariantsVariantIdRoute
   '/api/v1/workouts/$workoutId': typeof ApiV1WorkoutsWorkoutIdRouteWithChildren
@@ -216,6 +224,7 @@ export interface FileRoutesByTo {
   '/api/v1/openapi.json': typeof ApiV1OpenapiDotjsonRoute
   '/api/v1/workout-queue': typeof ApiV1WorkoutQueueRoute
   '/api/v1/workouts': typeof ApiV1WorkoutsRouteWithChildren
+  '/workouts/session/$sessionId': typeof AuthenticatedWorkoutsSessionSessionIdRoute
   '/api/v1/assessments/$assessmentId': typeof ApiV1AssessmentsAssessmentIdRoute
   '/api/v1/exercise-variants/$variantId': typeof ApiV1ExerciseVariantsVariantIdRoute
   '/api/v1/workouts/$workoutId': typeof ApiV1WorkoutsWorkoutIdRouteWithChildren
@@ -244,6 +253,7 @@ export interface FileRoutesById {
   '/api/v1/openapi.json': typeof ApiV1OpenapiDotjsonRoute
   '/api/v1/workout-queue': typeof ApiV1WorkoutQueueRoute
   '/api/v1/workouts': typeof ApiV1WorkoutsRouteWithChildren
+  '/_authenticated/workouts_/session/$sessionId': typeof AuthenticatedWorkoutsSessionSessionIdRoute
   '/api/v1/assessments/$assessmentId': typeof ApiV1AssessmentsAssessmentIdRoute
   '/api/v1/exercise-variants/$variantId': typeof ApiV1ExerciseVariantsVariantIdRoute
   '/api/v1/workouts/$workoutId': typeof ApiV1WorkoutsWorkoutIdRouteWithChildren
@@ -272,6 +282,7 @@ export interface FileRouteTypes {
     | '/api/v1/openapi.json'
     | '/api/v1/workout-queue'
     | '/api/v1/workouts'
+    | '/workouts/session/$sessionId'
     | '/api/v1/assessments/$assessmentId'
     | '/api/v1/exercise-variants/$variantId'
     | '/api/v1/workouts/$workoutId'
@@ -298,6 +309,7 @@ export interface FileRouteTypes {
     | '/api/v1/openapi.json'
     | '/api/v1/workout-queue'
     | '/api/v1/workouts'
+    | '/workouts/session/$sessionId'
     | '/api/v1/assessments/$assessmentId'
     | '/api/v1/exercise-variants/$variantId'
     | '/api/v1/workouts/$workoutId'
@@ -325,6 +337,7 @@ export interface FileRouteTypes {
     | '/api/v1/openapi.json'
     | '/api/v1/workout-queue'
     | '/api/v1/workouts'
+    | '/_authenticated/workouts_/session/$sessionId'
     | '/api/v1/assessments/$assessmentId'
     | '/api/v1/exercise-variants/$variantId'
     | '/api/v1/workouts/$workoutId'
@@ -484,6 +497,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiV1WorkoutsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/workouts_/session/$sessionId': {
+      id: '/_authenticated/workouts_/session/$sessionId'
+      path: '/workouts/session/$sessionId'
+      fullPath: '/workouts/session/$sessionId'
+      preLoaderRoute: typeof AuthenticatedWorkoutsSessionSessionIdRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
     '/api/v1/assessments/$assessmentId': {
       id: '/api/v1/assessments/$assessmentId'
       path: '/$assessmentId'
@@ -537,6 +557,7 @@ interface AuthenticatedRouteChildren {
   AuthenticatedApiDocsRoute: typeof AuthenticatedApiDocsRoute
   AuthenticatedAssessmentsAssessmentIdRoute: typeof AuthenticatedAssessmentsAssessmentIdRoute
   AuthenticatedWorkoutsWorkoutIdRoute: typeof AuthenticatedWorkoutsWorkoutIdRoute
+  AuthenticatedWorkoutsSessionSessionIdRoute: typeof AuthenticatedWorkoutsSessionSessionIdRoute
 }
 
 const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
@@ -548,6 +569,8 @@ const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
   AuthenticatedAssessmentsAssessmentIdRoute:
     AuthenticatedAssessmentsAssessmentIdRoute,
   AuthenticatedWorkoutsWorkoutIdRoute: AuthenticatedWorkoutsWorkoutIdRoute,
+  AuthenticatedWorkoutsSessionSessionIdRoute:
+    AuthenticatedWorkoutsSessionSessionIdRoute,
 }
 
 const AuthenticatedRouteWithChildren = AuthenticatedRoute._addFileChildren(
