@@ -99,3 +99,66 @@ export const capabilityLevelRequirements = sqliteTable(
     requiredValue: integer('required_value').notNull(),
   },
 )
+
+export const assessments = sqliteTable('assessments', {
+  id: text('id').primaryKey(),
+  status: text('status').notNull(),
+  startedAt: integer('started_at').notNull(),
+  completedAt: integer('completed_at'),
+  cancelledAt: integer('cancelled_at'),
+  notes: text('notes'),
+  createdAt: integer('created_at').notNull(),
+  updatedAt: integer('updated_at').notNull(),
+})
+
+export const assessmentCapabilities = sqliteTable('assessment_capabilities', {
+  id: text('id').primaryKey(),
+  assessmentId: text('assessment_id')
+    .notNull()
+    .references(() => assessments.id, { onDelete: 'cascade' }),
+  capability: text('capability').notNull(),
+  position: integer('position').notNull(),
+  status: text('status').notNull(),
+  previousMaximumLevel: integer('previous_maximum_level'),
+  startingLevel: integer('starting_level').notNull(),
+  maximumLevel: integer('maximum_level'),
+  startedAt: integer('started_at'),
+  completedAt: integer('completed_at'),
+})
+
+export const assessmentLevelResults = sqliteTable('assessment_level_results', {
+  id: text('id').primaryKey(),
+  assessmentCapabilityId: text('assessment_capability_id')
+    .notNull()
+    .references(() => assessmentCapabilities.id, { onDelete: 'cascade' }),
+  capabilityLevelDefinitionId: text('capability_level_definition_id')
+    .notNull()
+    .references(() => capabilityLevelDefinitions.id, {
+      onDelete: 'restrict',
+    }),
+  level: integer('level').notNull(),
+  exerciseVariantId: text('exercise_variant_id')
+    .notNull()
+    .references(() => exerciseVariants.id, { onDelete: 'restrict' }),
+  exerciseNameSnapshot: text('exercise_name_snapshot').notNull(),
+  variantNameSnapshot: text('variant_name_snapshot').notNull(),
+  instructionsSnapshot: text('instructions_snapshot'),
+  outcome: text('outcome').notNull(),
+  answeredAt: integer('answered_at').notNull(),
+})
+
+export const assessmentLevelMeasurements = sqliteTable(
+  'assessment_level_measurements',
+  {
+    id: text('id').primaryKey(),
+    assessmentLevelResultId: text('assessment_level_result_id')
+      .notNull()
+      .references(() => assessmentLevelResults.id, { onDelete: 'cascade' }),
+    position: integer('position').notNull(),
+    label: text('label').notNull(),
+    metricKind: text('metric_kind').notNull(),
+    scope: text('scope').notNull(),
+    requiredValue: integer('required_value').notNull(),
+    actualValue: integer('actual_value'),
+  },
+)

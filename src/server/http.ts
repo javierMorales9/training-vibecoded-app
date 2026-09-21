@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto'
 import { ApiAuthenticationError } from './auth.server'
 import { CatalogCursorError } from '../application/catalog'
+import { AssessmentCursorError } from '../application/assessments'
 import { ZodError } from 'zod'
 
 export function jsonResponse(data: unknown, init: ResponseInit = {}) {
@@ -80,7 +81,10 @@ export function apiErrorResponse(error: unknown, request: Request) {
       request,
     )
   }
-  if (error instanceof CatalogCursorError) {
+  if (
+    error instanceof CatalogCursorError ||
+    error instanceof AssessmentCursorError
+  ) {
     return problemResponse(
       400,
       error.code,

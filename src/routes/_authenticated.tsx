@@ -1,4 +1,4 @@
-import { Dumbbell, KeyRound, LogOut } from 'lucide-react'
+import { ClipboardCheck, Dumbbell, KeyRound, LogOut } from 'lucide-react'
 import {
   Link,
   Outlet,
@@ -42,6 +42,14 @@ function AuthenticatedLayout() {
           </span>
         </Link>
         <nav className="topbar-actions" aria-label="Navegación principal">
+          <Link
+            to="/assessments"
+            className="icon-link"
+            activeProps={{ 'data-active': true }}
+          >
+            <ClipboardCheck size={18} />
+            <span>Evaluaciones</span>
+          </Link>
           <Link
             to="/settings"
             className="icon-link"

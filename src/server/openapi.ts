@@ -2,9 +2,9 @@ export const openApiDocument = {
   openapi: '3.1.0',
   info: {
     title: 'Desencadenado Training API',
-    version: '0.1.0',
+    version: '0.2.0',
     description:
-      'API personal para consultar el catálogo y preparar futuras integraciones de entrenamiento.',
+      'API personal de lectura para consultar el catálogo, las evaluaciones y los niveles actuales.',
   },
   servers: [{ url: '/api/v1' }],
   security: [{ bearerAuth: [] }],
@@ -83,6 +83,54 @@ export const openApiDocument = {
       get: {
         summary: 'Niveles y requisitos de evaluación',
         responses: { '200': { description: 'Definiciones' } },
+      },
+    },
+    '/assessments': {
+      get: {
+        summary: 'Historial de evaluaciones',
+        parameters: [
+          {
+            name: 'status',
+            in: 'query',
+            schema: {
+              type: 'array',
+              items: {
+                type: 'string',
+                enum: ['IN_PROGRESS', 'COMPLETED', 'CANCELLED'],
+              },
+            },
+          },
+          { name: 'cursor', in: 'query', schema: { type: 'string' } },
+          {
+            name: 'limit',
+            in: 'query',
+            schema: { type: 'integer', minimum: 1, maximum: 100, default: 50 },
+          },
+        ],
+        responses: { '200': { description: 'Página de evaluaciones' } },
+      },
+    },
+    '/assessments/{assessmentId}': {
+      get: {
+        summary: 'Detalle de una evaluación',
+        parameters: [
+          {
+            name: 'assessmentId',
+            in: 'path',
+            required: true,
+            schema: { type: 'string', format: 'uuid' },
+          },
+        ],
+        responses: {
+          '200': { description: 'Evaluación con resultados congelados' },
+          '404': { description: 'No encontrada' },
+        },
+      },
+    },
+    '/current-capability-levels': {
+      get: {
+        summary: 'Niveles actuales de las cinco capacidades',
+        responses: { '200': { description: 'Niveles derivados' } },
       },
     },
     '/media-assets/{mediaId}/content': {

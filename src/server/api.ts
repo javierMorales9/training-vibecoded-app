@@ -1,6 +1,7 @@
 import { z } from 'zod'
 import { exerciseTypes } from '../domain/catalog'
 import { listCatalogInputSchema } from '../contracts/catalog'
+import { listAssessmentsInputSchema } from '../contracts/assessment'
 
 function nullableNumber(value: string | null) {
   return value === null || value === '' ? null : Number(value)
@@ -19,3 +20,13 @@ export function parseCatalogQuery(url: URL) {
 
 export const apiVariantIdSchema = z.uuid()
 export const apiExerciseTypeSchema = z.enum(exerciseTypes)
+
+export function parseAssessmentsQuery(url: URL) {
+  return listAssessmentsInputSchema.parse({
+    statuses: url.searchParams.getAll('status'),
+    cursor: url.searchParams.get('cursor'),
+    limit: nullableNumber(url.searchParams.get('limit')) ?? 50,
+  })
+}
+
+export const apiAssessmentIdSchema = z.uuid()

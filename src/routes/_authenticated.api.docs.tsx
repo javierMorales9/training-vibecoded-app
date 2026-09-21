@@ -25,6 +25,17 @@ const endpoints = [
     '/api/v1/capability-level-definitions',
     'Requisitos masculinos de evaluación',
   ],
+  ['GET', '/api/v1/assessments', 'Historial de evaluaciones'],
+  [
+    'GET',
+    '/api/v1/assessments/{assessmentId}',
+    'Resultados y criterios congelados',
+  ],
+  [
+    'GET',
+    '/api/v1/current-capability-levels',
+    'Niveles actuales derivados del último test',
+  ],
   ['GET', '/api/v1/media-assets/{mediaId}/content', 'Contenido audiovisual'],
   ['GET', '/api/v1/openapi.json', 'Contrato OpenAPI 3.1'],
 ]
@@ -41,7 +52,7 @@ function ApiDocsPage() {
         </p>
       </header>
       <section className="settings-card">
-        <h2>Endpoints de Entrega 1</h2>
+        <h2>Endpoints disponibles</h2>
         <div className="endpoint-list">
           {endpoints.map(([method, path, description]) => (
             <div className="endpoint-row" key={path}>

@@ -13,13 +13,18 @@ import { Route as AuthenticatedRouteImport } from './routes/_authenticated'
 import { Route as HealthzRouteImport } from './routes/healthz'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated.index'
+import { Route as AuthenticatedAssessmentsRouteImport } from './routes/_authenticated.assessments'
 import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated.settings'
 import { Route as MediaMediaIdRouteImport } from './routes/media.$mediaId'
 import { Route as AuthenticatedApiDocsRouteImport } from './routes/_authenticated.api.docs'
+import { Route as AuthenticatedAssessmentsAssessmentIdRouteImport } from './routes/_authenticated.assessments_.$assessmentId'
+import { Route as ApiV1AssessmentsRouteImport } from './routes/api.v1.assessments'
 import { Route as ApiV1CapabilityLevelDefinitionsRouteImport } from './routes/api.v1.capability-level-definitions'
+import { Route as ApiV1CurrentCapabilityLevelsRouteImport } from './routes/api.v1.current-capability-levels'
 import { Route as ApiV1ExerciseCatalogOptionsRouteImport } from './routes/api.v1.exercise-catalog-options'
 import { Route as ApiV1ExerciseVariantsRouteImport } from './routes/api.v1.exercise-variants'
 import { Route as ApiV1OpenapiDotjsonRouteImport } from './routes/api.v1.openapi[.]json'
+import { Route as ApiV1AssessmentsAssessmentIdRouteImport } from './routes/api.v1.assessments.$assessmentId'
 import { Route as ApiV1ExerciseVariantsVariantIdRouteImport } from './routes/api.v1.exercise-variants.$variantId'
 import { Route as ApiV1MediaAssetsMediaIdContentRouteImport } from './routes/api.v1.media-assets.$mediaId.content'
 
@@ -42,6 +47,12 @@ const AuthenticatedIndexRoute = AuthenticatedIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
+const AuthenticatedAssessmentsRoute =
+  AuthenticatedAssessmentsRouteImport.update({
+    id: '/assessments',
+    path: '/assessments',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
 const AuthenticatedSettingsRoute = AuthenticatedSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -57,10 +68,27 @@ const AuthenticatedApiDocsRoute = AuthenticatedApiDocsRouteImport.update({
   path: '/api/docs',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
+const AuthenticatedAssessmentsAssessmentIdRoute =
+  AuthenticatedAssessmentsAssessmentIdRouteImport.update({
+    id: '/assessments_/$assessmentId',
+    path: '/assessments/$assessmentId',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
+const ApiV1AssessmentsRoute = ApiV1AssessmentsRouteImport.update({
+  id: '/api/v1/assessments',
+  path: '/api/v1/assessments',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiV1CapabilityLevelDefinitionsRoute =
   ApiV1CapabilityLevelDefinitionsRouteImport.update({
     id: '/api/v1/capability-level-definitions',
     path: '/api/v1/capability-level-definitions',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiV1CurrentCapabilityLevelsRoute =
+  ApiV1CurrentCapabilityLevelsRouteImport.update({
+    id: '/api/v1/current-capability-levels',
+    path: '/api/v1/current-capability-levels',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ApiV1ExerciseCatalogOptionsRoute =
@@ -79,6 +107,12 @@ const ApiV1OpenapiDotjsonRoute = ApiV1OpenapiDotjsonRouteImport.update({
   path: '/api/v1/openapi.json',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiV1AssessmentsAssessmentIdRoute =
+  ApiV1AssessmentsAssessmentIdRouteImport.update({
+    id: '/$assessmentId',
+    path: '/$assessmentId',
+    getParentRoute: () => ApiV1AssessmentsRoute,
+  } as any)
 const ApiV1ExerciseVariantsVariantIdRoute =
   ApiV1ExerciseVariantsVariantIdRouteImport.update({
     id: '/$variantId',
@@ -96,27 +130,37 @@ export interface FileRoutesByFullPath {
   '/': typeof AuthenticatedIndexRoute
   '/healthz': typeof HealthzRoute
   '/login': typeof LoginRoute
+  '/assessments': typeof AuthenticatedAssessmentsRoute
   '/settings': typeof AuthenticatedSettingsRoute
   '/media/$mediaId': typeof MediaMediaIdRoute
   '/api/docs': typeof AuthenticatedApiDocsRoute
+  '/assessments/$assessmentId': typeof AuthenticatedAssessmentsAssessmentIdRoute
+  '/api/v1/assessments': typeof ApiV1AssessmentsRouteWithChildren
   '/api/v1/capability-level-definitions': typeof ApiV1CapabilityLevelDefinitionsRoute
+  '/api/v1/current-capability-levels': typeof ApiV1CurrentCapabilityLevelsRoute
   '/api/v1/exercise-catalog-options': typeof ApiV1ExerciseCatalogOptionsRoute
   '/api/v1/exercise-variants': typeof ApiV1ExerciseVariantsRouteWithChildren
   '/api/v1/openapi.json': typeof ApiV1OpenapiDotjsonRoute
+  '/api/v1/assessments/$assessmentId': typeof ApiV1AssessmentsAssessmentIdRoute
   '/api/v1/exercise-variants/$variantId': typeof ApiV1ExerciseVariantsVariantIdRoute
   '/api/v1/media-assets/$mediaId/content': typeof ApiV1MediaAssetsMediaIdContentRoute
 }
 export interface FileRoutesByTo {
   '/healthz': typeof HealthzRoute
   '/login': typeof LoginRoute
+  '/assessments': typeof AuthenticatedAssessmentsRoute
   '/settings': typeof AuthenticatedSettingsRoute
   '/media/$mediaId': typeof MediaMediaIdRoute
   '/': typeof AuthenticatedIndexRoute
   '/api/docs': typeof AuthenticatedApiDocsRoute
+  '/assessments/$assessmentId': typeof AuthenticatedAssessmentsAssessmentIdRoute
+  '/api/v1/assessments': typeof ApiV1AssessmentsRouteWithChildren
   '/api/v1/capability-level-definitions': typeof ApiV1CapabilityLevelDefinitionsRoute
+  '/api/v1/current-capability-levels': typeof ApiV1CurrentCapabilityLevelsRoute
   '/api/v1/exercise-catalog-options': typeof ApiV1ExerciseCatalogOptionsRoute
   '/api/v1/exercise-variants': typeof ApiV1ExerciseVariantsRouteWithChildren
   '/api/v1/openapi.json': typeof ApiV1OpenapiDotjsonRoute
+  '/api/v1/assessments/$assessmentId': typeof ApiV1AssessmentsAssessmentIdRoute
   '/api/v1/exercise-variants/$variantId': typeof ApiV1ExerciseVariantsVariantIdRoute
   '/api/v1/media-assets/$mediaId/content': typeof ApiV1MediaAssetsMediaIdContentRoute
 }
@@ -125,14 +169,19 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteWithChildren
   '/healthz': typeof HealthzRoute
   '/login': typeof LoginRoute
+  '/_authenticated/assessments': typeof AuthenticatedAssessmentsRoute
   '/_authenticated/settings': typeof AuthenticatedSettingsRoute
   '/media/$mediaId': typeof MediaMediaIdRoute
   '/_authenticated/': typeof AuthenticatedIndexRoute
   '/_authenticated/api/docs': typeof AuthenticatedApiDocsRoute
+  '/_authenticated/assessments_/$assessmentId': typeof AuthenticatedAssessmentsAssessmentIdRoute
+  '/api/v1/assessments': typeof ApiV1AssessmentsRouteWithChildren
   '/api/v1/capability-level-definitions': typeof ApiV1CapabilityLevelDefinitionsRoute
+  '/api/v1/current-capability-levels': typeof ApiV1CurrentCapabilityLevelsRoute
   '/api/v1/exercise-catalog-options': typeof ApiV1ExerciseCatalogOptionsRoute
   '/api/v1/exercise-variants': typeof ApiV1ExerciseVariantsRouteWithChildren
   '/api/v1/openapi.json': typeof ApiV1OpenapiDotjsonRoute
+  '/api/v1/assessments/$assessmentId': typeof ApiV1AssessmentsAssessmentIdRoute
   '/api/v1/exercise-variants/$variantId': typeof ApiV1ExerciseVariantsVariantIdRoute
   '/api/v1/media-assets/$mediaId/content': typeof ApiV1MediaAssetsMediaIdContentRoute
 }
@@ -142,27 +191,37 @@ export interface FileRouteTypes {
     | '/'
     | '/healthz'
     | '/login'
+    | '/assessments'
     | '/settings'
     | '/media/$mediaId'
     | '/api/docs'
+    | '/assessments/$assessmentId'
+    | '/api/v1/assessments'
     | '/api/v1/capability-level-definitions'
+    | '/api/v1/current-capability-levels'
     | '/api/v1/exercise-catalog-options'
     | '/api/v1/exercise-variants'
     | '/api/v1/openapi.json'
+    | '/api/v1/assessments/$assessmentId'
     | '/api/v1/exercise-variants/$variantId'
     | '/api/v1/media-assets/$mediaId/content'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/healthz'
     | '/login'
+    | '/assessments'
     | '/settings'
     | '/media/$mediaId'
     | '/'
     | '/api/docs'
+    | '/assessments/$assessmentId'
+    | '/api/v1/assessments'
     | '/api/v1/capability-level-definitions'
+    | '/api/v1/current-capability-levels'
     | '/api/v1/exercise-catalog-options'
     | '/api/v1/exercise-variants'
     | '/api/v1/openapi.json'
+    | '/api/v1/assessments/$assessmentId'
     | '/api/v1/exercise-variants/$variantId'
     | '/api/v1/media-assets/$mediaId/content'
   id:
@@ -170,14 +229,19 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/healthz'
     | '/login'
+    | '/_authenticated/assessments'
     | '/_authenticated/settings'
     | '/media/$mediaId'
     | '/_authenticated/'
     | '/_authenticated/api/docs'
+    | '/_authenticated/assessments_/$assessmentId'
+    | '/api/v1/assessments'
     | '/api/v1/capability-level-definitions'
+    | '/api/v1/current-capability-levels'
     | '/api/v1/exercise-catalog-options'
     | '/api/v1/exercise-variants'
     | '/api/v1/openapi.json'
+    | '/api/v1/assessments/$assessmentId'
     | '/api/v1/exercise-variants/$variantId'
     | '/api/v1/media-assets/$mediaId/content'
   fileRoutesById: FileRoutesById
@@ -187,7 +251,9 @@ export interface RootRouteChildren {
   HealthzRoute: typeof HealthzRoute
   LoginRoute: typeof LoginRoute
   MediaMediaIdRoute: typeof MediaMediaIdRoute
+  ApiV1AssessmentsRoute: typeof ApiV1AssessmentsRouteWithChildren
   ApiV1CapabilityLevelDefinitionsRoute: typeof ApiV1CapabilityLevelDefinitionsRoute
+  ApiV1CurrentCapabilityLevelsRoute: typeof ApiV1CurrentCapabilityLevelsRoute
   ApiV1ExerciseCatalogOptionsRoute: typeof ApiV1ExerciseCatalogOptionsRoute
   ApiV1ExerciseVariantsRoute: typeof ApiV1ExerciseVariantsRouteWithChildren
   ApiV1OpenapiDotjsonRoute: typeof ApiV1OpenapiDotjsonRoute
@@ -224,6 +290,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedIndexRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
+    '/_authenticated/assessments': {
+      id: '/_authenticated/assessments'
+      path: '/assessments'
+      fullPath: '/assessments'
+      preLoaderRoute: typeof AuthenticatedAssessmentsRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
     '/_authenticated/settings': {
       id: '/_authenticated/settings'
       path: '/settings'
@@ -245,11 +318,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedApiDocsRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
+    '/_authenticated/assessments_/$assessmentId': {
+      id: '/_authenticated/assessments_/$assessmentId'
+      path: '/assessments/$assessmentId'
+      fullPath: '/assessments/$assessmentId'
+      preLoaderRoute: typeof AuthenticatedAssessmentsAssessmentIdRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/api/v1/assessments': {
+      id: '/api/v1/assessments'
+      path: '/api/v1/assessments'
+      fullPath: '/api/v1/assessments'
+      preLoaderRoute: typeof ApiV1AssessmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/v1/capability-level-definitions': {
       id: '/api/v1/capability-level-definitions'
       path: '/api/v1/capability-level-definitions'
       fullPath: '/api/v1/capability-level-definitions'
       preLoaderRoute: typeof ApiV1CapabilityLevelDefinitionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/current-capability-levels': {
+      id: '/api/v1/current-capability-levels'
+      path: '/api/v1/current-capability-levels'
+      fullPath: '/api/v1/current-capability-levels'
+      preLoaderRoute: typeof ApiV1CurrentCapabilityLevelsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/v1/exercise-catalog-options': {
@@ -273,6 +367,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiV1OpenapiDotjsonRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/v1/assessments/$assessmentId': {
+      id: '/api/v1/assessments/$assessmentId'
+      path: '/$assessmentId'
+      fullPath: '/api/v1/assessments/$assessmentId'
+      preLoaderRoute: typeof ApiV1AssessmentsAssessmentIdRouteImport
+      parentRoute: typeof ApiV1AssessmentsRoute
+    }
     '/api/v1/exercise-variants/$variantId': {
       id: '/api/v1/exercise-variants/$variantId'
       path: '/$variantId'
@@ -291,20 +392,36 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedRouteChildren {
+  AuthenticatedAssessmentsRoute: typeof AuthenticatedAssessmentsRoute
   AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
   AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
   AuthenticatedApiDocsRoute: typeof AuthenticatedApiDocsRoute
+  AuthenticatedAssessmentsAssessmentIdRoute: typeof AuthenticatedAssessmentsAssessmentIdRoute
 }
 
 const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
+  AuthenticatedAssessmentsRoute: AuthenticatedAssessmentsRoute,
   AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
   AuthenticatedIndexRoute: AuthenticatedIndexRoute,
   AuthenticatedApiDocsRoute: AuthenticatedApiDocsRoute,
+  AuthenticatedAssessmentsAssessmentIdRoute:
+    AuthenticatedAssessmentsAssessmentIdRoute,
 }
 
 const AuthenticatedRouteWithChildren = AuthenticatedRoute._addFileChildren(
   AuthenticatedRouteChildren,
 )
+
+interface ApiV1AssessmentsRouteChildren {
+  ApiV1AssessmentsAssessmentIdRoute: typeof ApiV1AssessmentsAssessmentIdRoute
+}
+
+const ApiV1AssessmentsRouteChildren: ApiV1AssessmentsRouteChildren = {
+  ApiV1AssessmentsAssessmentIdRoute: ApiV1AssessmentsAssessmentIdRoute,
+}
+
+const ApiV1AssessmentsRouteWithChildren =
+  ApiV1AssessmentsRoute._addFileChildren(ApiV1AssessmentsRouteChildren)
 
 interface ApiV1ExerciseVariantsRouteChildren {
   ApiV1ExerciseVariantsVariantIdRoute: typeof ApiV1ExerciseVariantsVariantIdRoute
@@ -324,7 +441,9 @@ const rootRouteChildren: RootRouteChildren = {
   HealthzRoute: HealthzRoute,
   LoginRoute: LoginRoute,
   MediaMediaIdRoute: MediaMediaIdRoute,
+  ApiV1AssessmentsRoute: ApiV1AssessmentsRouteWithChildren,
   ApiV1CapabilityLevelDefinitionsRoute: ApiV1CapabilityLevelDefinitionsRoute,
+  ApiV1CurrentCapabilityLevelsRoute: ApiV1CurrentCapabilityLevelsRoute,
   ApiV1ExerciseCatalogOptionsRoute: ApiV1ExerciseCatalogOptionsRoute,
   ApiV1ExerciseVariantsRoute: ApiV1ExerciseVariantsRouteWithChildren,
   ApiV1OpenapiDotjsonRoute: ApiV1OpenapiDotjsonRoute,
