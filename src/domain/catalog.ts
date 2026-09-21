@@ -9,6 +9,14 @@ export const exerciseTypes = [
 
 export type ExerciseType = (typeof exerciseTypes)[number]
 
+export function normalizeCatalogSearch(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLocaleLowerCase('es')
+    .replace(/[^\p{L}\p{N}]+/gu, '')
+}
+
 export const exerciseTypeLabels: Record<ExerciseType, string> = {
   PUSH_UP: 'Flexión',
   VERTICAL_PUSH: 'Flexión vertical',
@@ -39,6 +47,7 @@ export interface CatalogVariantSummary {
   bodyGroup: string
   difficultyMin: number | null
   difficultyMax: number | null
+  isPrimaryProgression: boolean
   cover: CatalogMedia | null
   mediaCount: number
   imageCount: number

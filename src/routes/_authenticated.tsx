@@ -1,4 +1,10 @@
-import { ClipboardCheck, Dumbbell, KeyRound, LogOut } from 'lucide-react'
+import {
+  ClipboardCheck,
+  Dumbbell,
+  KeyRound,
+  ListOrdered,
+  LogOut,
+} from 'lucide-react'
 import {
   Link,
   Outlet,
@@ -42,6 +48,14 @@ function AuthenticatedLayout() {
           </span>
         </Link>
         <nav className="topbar-actions" aria-label="Navegación principal">
+          <Link
+            to="/workouts"
+            className="icon-link"
+            activeProps={{ 'data-active': true }}
+          >
+            <ListOrdered size={18} />
+            <span>Entrenamientos</span>
+          </Link>
           <Link
             to="/assessments"
             className="icon-link"

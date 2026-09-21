@@ -18,6 +18,7 @@ const input = (overrides: Record<string, unknown> = {}) => ({
   exerciseTypes: [],
   difficultyMin: null,
   difficultyMax: null,
+  primaryProgression: null,
   cursor: null,
   limit: 24,
   ...overrides,
@@ -76,6 +77,19 @@ describe('catalog', () => {
     ).toBe(true)
   })
 
+  it('ignores accents, hyphens and spaces in searches', () => {
+    expect(
+      listCatalogVariants(input({ q: 'flexion hindu', limit: 100 })).items.some(
+        (variant) => variant.name === 'Flexión hindú',
+      ),
+    ).toBe(true)
+    expect(
+      listCatalogVariants(
+        input({ q: 'semidominada horizontal', limit: 100 }),
+      ).items.some((variant) => variant.name === 'Semi-dominada horizontal'),
+    ).toBe(true)
+  })
+
   it('returns an empty page for searches containing only punctuation', () => {
     expect(listCatalogVariants(input({ q: '---', limit: 100 })).items).toEqual(
       [],
@@ -95,6 +109,24 @@ describe('catalog', () => {
           variant.difficultyMin <= 3 &&
           variant.difficultyMax >= 3,
       ),
+    ).toBe(true)
+  })
+
+  it('distinguishes the primary progression from supplementary variants', () => {
+    const primary = listCatalogVariants(
+      input({ primaryProgression: true, limit: 100 }),
+    )
+    const supplementary = listCatalogVariants(
+      input({ primaryProgression: false, limit: 100 }),
+    )
+
+    expect(primary.items).toHaveLength(25)
+    expect(primary.items.every((variant) => variant.isPrimaryProgression)).toBe(
+      true,
+    )
+    expect(supplementary.items).toHaveLength(46)
+    expect(
+      supplementary.items.every((variant) => !variant.isPrimaryProgression),
     ).toBe(true)
   })
 

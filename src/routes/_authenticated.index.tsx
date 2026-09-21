@@ -2,7 +2,14 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { useServerFn } from '@tanstack/react-start'
-import { ImageIcon, Search, SlidersHorizontal, Video, X } from 'lucide-react'
+import {
+  ImageIcon,
+  Search,
+  SlidersHorizontal,
+  TrendingUp,
+  Video,
+  X,
+} from 'lucide-react'
 import {
   getCatalogOptionsFn,
   listCatalogVariantsFn,
@@ -18,6 +25,7 @@ interface CatalogSearch {
   types?: string
   min?: number
   max?: number
+  progression?: 'primary' | 'supplementary'
   variant?: string
 }
 
@@ -47,6 +55,10 @@ function validateSearch(search: Record<string, unknown>): CatalogSearch {
       : undefined,
     min,
     max: min && max && max < min ? min : max,
+    progression:
+      search.progression === 'primary' || search.progression === 'supplementary'
+        ? search.progression
+        : undefined,
     variant: typeof search.variant === 'string' ? search.variant : undefined,
   }
 }
@@ -57,6 +69,12 @@ function inputFromSearch(search: CatalogSearch, cursor: string | null = null) {
     exerciseTypes: (search.types?.split(',') ?? []) as ExerciseType[],
     difficultyMin: search.min ?? null,
     difficultyMax: search.max ?? null,
+    primaryProgression:
+      search.progression === 'primary'
+        ? true
+        : search.progression === 'supplementary'
+          ? false
+          : null,
     cursor,
     limit: 24,
   }
@@ -69,6 +87,7 @@ export const Route = createFileRoute('/_authenticated/')({
     types: search.types,
     min: search.min,
     max: search.max,
+    progression: search.progression,
   }),
   loader: async ({ deps }) => {
     const [firstPage, options] = await Promise.all([
@@ -94,8 +113,9 @@ function CatalogPage() {
       types: search.types,
       min: search.min,
       max: search.max,
+      progression: search.progression,
     }),
-    [search.q, search.types, search.min, search.max],
+    [search.q, search.types, search.min, search.max, search.progression],
   )
   const query = useInfiniteQuery({
     queryKey: ['catalog', filters],
@@ -108,7 +128,7 @@ function CatalogPage() {
   const variants = query.data.pages.flatMap((page) => page.items)
   const selectedTypes = search.types?.split(',') ?? []
   const hasFilters = Boolean(
-    search.q || search.types || search.min || search.max,
+    search.q || search.types || search.min || search.max || search.progression,
   )
   const normalizedSearchText = searchText.trim()
   const isSearchPending = normalizedSearchText !== (search.q ?? '')
@@ -224,6 +244,35 @@ function CatalogPage() {
               <span>{option.count}</span>
             </button>
           ))}
+        </div>
+        <div className="filter-heading">
+          <TrendingUp size={17} /> Progresión
+        </div>
+        <div className="progression-filters">
+          <button
+            type="button"
+            data-active={!search.progression}
+            onClick={() => updateSearch({ progression: undefined })}
+          >
+            Todas{' '}
+            <span>
+              {options.progression.primary + options.progression.supplementary}
+            </span>
+          </button>
+          <button
+            type="button"
+            data-active={search.progression === 'primary'}
+            onClick={() => updateSearch({ progression: 'primary' })}
+          >
+            Progresión principal <span>{options.progression.primary}</span>
+          </button>
+          <button
+            type="button"
+            data-active={search.progression === 'supplementary'}
+            onClick={() => updateSearch({ progression: 'supplementary' })}
+          >
+            Complementarias <span>{options.progression.supplementary}</span>
+          </button>
         </div>
         <div className="difficulty-filters">
           <span>Dificultad que se solape con</span>

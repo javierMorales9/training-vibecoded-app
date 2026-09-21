@@ -36,6 +36,23 @@ const endpoints = [
     '/api/v1/current-capability-levels',
     'Niveles actuales derivados del último test',
   ],
+  ['GET · PUT', '/api/v1/workout-queue', 'Consulta y reordenación atómica'],
+  ['POST', '/api/v1/workouts', 'Crear al final de la cola'],
+  [
+    'GET · PUT · DELETE',
+    '/api/v1/workouts/{workoutId}',
+    'Consultar, sustituir o eliminar un pendiente',
+  ],
+  [
+    'POST',
+    '/api/v1/workouts/{workoutId}/duplicate',
+    'Duplicar tras el original',
+  ],
+  [
+    'GET',
+    '/api/v1/workouts/{workoutId}/validation',
+    'Comprobar si está listo para iniciar',
+  ],
   ['GET', '/api/v1/media-assets/{mediaId}/content', 'Contenido audiovisual'],
   ['GET', '/api/v1/openapi.json', 'Contrato OpenAPI 3.1'],
 ]

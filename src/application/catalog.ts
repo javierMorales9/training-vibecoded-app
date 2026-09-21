@@ -1,7 +1,11 @@
 import { createHash } from 'node:crypto'
 import type Database from 'better-sqlite3'
 import { getDatabase } from '../infrastructure/db/database'
-import { exerciseTypeLabels, exerciseTypes } from '../domain/catalog'
+import {
+  exerciseTypeLabels,
+  exerciseTypes,
+  normalizeCatalogSearch,
+} from '../domain/catalog'
 import type {
   CatalogMedia,
   CatalogVariantDetail,
@@ -20,6 +24,7 @@ interface VariantRow {
   body_group: string
   difficulty_min: number | null
   difficulty_max: number | null
+  is_primary_progression: 0 | 1
   description?: string
   source_page_start?: number | null
   source_page_end?: number | null
@@ -52,10 +57,11 @@ interface CursorPayload {
 
 function normalizeFilters(input: ListCatalogInput) {
   return {
-    q: input.q.trim().toLocaleLowerCase('es'),
+    q: normalizeCatalogSearch(input.q),
     exerciseTypes: [...new Set(input.exerciseTypes)].sort(),
     difficultyMin: input.difficultyMin,
     difficultyMax: input.difficultyMax,
+    primaryProgression: input.primaryProgression,
   }
 }
 
@@ -87,17 +93,6 @@ function decodeCursor(cursor: string, input: ListCatalogInput): CursorPayload {
   } catch {
     throw new CatalogCursorError()
   }
-}
-
-function ftsExpression(query: string) {
-  const tokens = query
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .split(/[^\p{L}\p{N}]+/u)
-    .filter(Boolean)
-  return tokens
-    .map((token) => `"${token.replaceAll('"', '""')}"*`)
-    .join(' AND ')
 }
 
 function mediaUrl(
@@ -137,6 +132,7 @@ function summaryFromRow(row: VariantRow, api = false): CatalogVariantSummary {
     bodyGroup: row.body_group,
     difficultyMin: row.difficulty_min,
     difficultyMax: row.difficulty_max,
+    isPrimaryProgression: Boolean(row.is_primary_progression),
     cover,
     mediaCount: row.media_count,
     imageCount: row.image_count,
@@ -148,6 +144,10 @@ const summarySelect = `
   SELECT
     v.id, v.slug, v.name, v.exercise_name, v.exercise_type, v.body_group,
     v.difficulty_min, v.difficulty_max, v.description, v.source_page_start, v.source_page_end,
+    EXISTS (
+      SELECT 1 FROM capability_level_definitions d
+      WHERE d.exercise_variant_id = v.id
+    ) AS is_primary_progression,
     (
       SELECT m.id FROM media_assets m
       WHERE m.exercise_variant_id = v.id AND m.kind = 'IMAGE'
@@ -185,18 +185,8 @@ export function listCatalogVariants(
   const sqlite = getDatabase().sqlite
   const where = ['v.is_active = 1']
   const params: Array<string | number> = []
-
-  if (input.q) {
-    const expression = ftsExpression(input.q)
-    if (expression) {
-      where.push(`v.rowid IN (
-        SELECT rowid FROM exercise_variants_fts WHERE exercise_variants_fts MATCH ?
-      )`)
-      params.push(expression)
-    } else {
-      where.push('0 = 1')
-    }
-  }
+  const normalizedQuery = normalizeCatalogSearch(input.q)
+  const hasSearchInput = input.q.trim().length > 0
   if (input.exerciseTypes.length) {
     where.push(
       `v.exercise_type IN (${input.exerciseTypes.map(() => '?').join(', ')})`,
@@ -214,27 +204,40 @@ export function listCatalogVariants(
       params.push(input.difficultyMax)
     }
   }
-
-  if (input.cursor) {
-    const cursor = decodeCursor(input.cursor, input)
-    where.push(`(
-      v.name COLLATE NOCASE > ? COLLATE NOCASE
-      OR (v.name COLLATE NOCASE = ? COLLATE NOCASE AND v.id > ?)
+  if (input.primaryProgression !== null) {
+    where.push(`${input.primaryProgression ? '' : 'NOT '}EXISTS (
+      SELECT 1 FROM capability_level_definitions d
+      WHERE d.exercise_variant_id = v.id
     )`)
-    params.push(cursor.name, cursor.name, cursor.id)
   }
 
-  params.push(input.limit + 1)
   const rows = sqlite
     .prepare(
       `${summarySelect}
        WHERE ${where.join(' AND ')}
-       ORDER BY v.name COLLATE NOCASE ASC, v.id ASC
-       LIMIT ?`,
+       ORDER BY v.name COLLATE NOCASE ASC, v.id ASC`,
     )
     .all(...params) as VariantRow[]
-  const hasMore = rows.length > input.limit
-  const visibleRows = rows.slice(0, input.limit)
+  // This single-user catalog is small. Filtering normalized text here lets a
+  // query ignore accents, hyphens and spaces without maintaining a second index.
+  const matchingRows = hasSearchInput
+    ? normalizedQuery
+      ? rows.filter((row) =>
+          normalizeCatalogSearch(
+            `${row.name} ${row.exercise_name} ${row.description ?? ''}`,
+          ).includes(normalizedQuery),
+        )
+      : []
+    : rows
+  const cursor = input.cursor ? decodeCursor(input.cursor, input) : null
+  const cursorStart = cursor
+    ? matchingRows.findIndex(
+        (row) => row.name === cursor.name && row.id === cursor.id,
+      ) + 1
+    : 0
+  const pageRows = matchingRows.slice(cursorStart)
+  const hasMore = pageRows.length > input.limit
+  const visibleRows = pageRows.slice(0, input.limit)
   const last = visibleRows.at(-1)
 
   return {
@@ -311,6 +314,20 @@ export function getCatalogOptions() {
         .all() as Array<{ exercise_type: ExerciseType; count: number }>
     ).map((row) => [row.exercise_type, row.count]),
   )
+  const progressionCounts = sqlite
+    .prepare(
+      `
+      SELECT
+        COUNT(*) AS total,
+        SUM(EXISTS (
+          SELECT 1 FROM capability_level_definitions d
+          WHERE d.exercise_variant_id = v.id
+        )) AS primary_count
+      FROM exercise_variants v
+      WHERE v.is_active = 1
+    `,
+    )
+    .get() as { total: number; primary_count: number }
   return {
     exerciseTypes: exerciseTypes.map((value) => ({
       value,
@@ -318,6 +335,10 @@ export function getCatalogOptions() {
       count: counts.get(value) ?? 0,
     })),
     difficulty: { min: 1, max: 5 },
+    progression: {
+      primary: progressionCounts.primary_count,
+      supplementary: progressionCounts.total - progressionCounts.primary_count,
+    },
   }
 }
 

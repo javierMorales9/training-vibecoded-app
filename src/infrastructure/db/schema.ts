@@ -162,3 +162,64 @@ export const assessmentLevelMeasurements = sqliteTable(
     actualValue: integer('actual_value'),
   },
 )
+
+export const workouts = sqliteTable('workouts', {
+  id: text('id').primaryKey(),
+  name: text('name').notNull(),
+  notes: text('notes'),
+  status: text('status').notNull(),
+  queuePosition: integer('queue_position'),
+  version: integer('version').notNull(),
+  createdAt: integer('created_at').notNull(),
+  updatedAt: integer('updated_at').notNull(),
+  consumedAt: integer('consumed_at'),
+})
+
+export const workoutBlocks = sqliteTable('workout_blocks', {
+  id: text('id').primaryKey(),
+  workoutId: text('workout_id')
+    .notNull()
+    .references(() => workouts.id, { onDelete: 'cascade' }),
+  position: integer('position').notNull(),
+  name: text('name'),
+  instructions: text('instructions'),
+  method: text('method').notNull(),
+  unitCount: integer('unit_count'),
+  betweenUnitsRestMs: integer('between_units_rest_ms'),
+  afterBlockRestMs: integer('after_block_rest_ms'),
+  pyramidDurationMs: integer('pyramid_duration_ms'),
+  pyramidInitialReps: integer('pyramid_initial_reps'),
+  pyramidRestMsPerRep: integer('pyramid_rest_ms_per_rep'),
+})
+
+export const workoutBlockItems = sqliteTable('workout_block_items', {
+  id: text('id').primaryKey(),
+  workoutBlockId: text('workout_block_id')
+    .notNull()
+    .references(() => workoutBlocks.id, { onDelete: 'cascade' }),
+  position: integer('position').notNull(),
+  selectionKind: text('selection_kind').notNull(),
+  exerciseVariantId: text('exercise_variant_id').references(
+    () => exerciseVariants.id,
+    { onDelete: 'restrict' },
+  ),
+  capability: text('capability'),
+  levelOffset: integer('level_offset'),
+})
+
+export const workoutBlockItemTargets = sqliteTable(
+  'workout_block_item_targets',
+  {
+    id: text('id').primaryKey(),
+    workoutBlockItemId: text('workout_block_item_id')
+      .notNull()
+      .references(() => workoutBlockItems.id, { onDelete: 'cascade' }),
+    position: integer('position').notNull(),
+    unitIndex: integer('unit_index'),
+    label: text('label').notNull(),
+    metricKind: text('metric_kind').notNull(),
+    scope: text('scope').notNull(),
+    minimumValue: integer('minimum_value').notNull(),
+    maximumValue: integer('maximum_value').notNull(),
+  },
+)

@@ -2,6 +2,12 @@ import { randomUUID } from 'node:crypto'
 import { ApiAuthenticationError } from './auth.server'
 import { CatalogCursorError } from '../application/catalog'
 import { AssessmentCursorError } from '../application/assessments'
+import {
+  WorkoutNotFoundError,
+  WorkoutQueueConflictError,
+  WorkoutVersionError,
+} from '../application/workouts'
+import { ApiContractError } from './workout-api'
 import { ZodError } from 'zod'
 
 export function jsonResponse(data: unknown, init: ResponseInit = {}) {
@@ -63,6 +69,42 @@ export function problemResponse(
 }
 
 export function apiErrorResponse(error: unknown, request: Request) {
+  if (error instanceof ApiContractError) {
+    return problemResponse(
+      error.status,
+      error.code,
+      error.title,
+      error.message,
+      request,
+    )
+  }
+  if (error instanceof WorkoutNotFoundError) {
+    return problemResponse(
+      404,
+      'WORKOUT_NOT_FOUND',
+      'Entrenamiento no encontrado',
+      'No existe un entrenamiento pendiente con ese identificador.',
+      request,
+    )
+  }
+  if (error instanceof WorkoutVersionError) {
+    return problemResponse(
+      412,
+      'VERSION_MISMATCH',
+      'Versión desactualizada',
+      'El recurso ha cambiado desde que se leyó.',
+      request,
+    )
+  }
+  if (error instanceof WorkoutQueueConflictError) {
+    return problemResponse(
+      409,
+      'WORKOUT_QUEUE_CONFLICT',
+      'Conflicto en la cola',
+      'El orden debe contener exactamente todos los pendientes actuales.',
+      request,
+    )
+  }
   if (error instanceof ApiAuthenticationError) {
     if (error.reason === 'FORBIDDEN') {
       return problemResponse(

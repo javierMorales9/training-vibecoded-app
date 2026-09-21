@@ -15,18 +15,25 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated.index'
 import { Route as AuthenticatedAssessmentsRouteImport } from './routes/_authenticated.assessments'
 import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated.settings'
+import { Route as AuthenticatedWorkoutsRouteImport } from './routes/_authenticated.workouts'
 import { Route as MediaMediaIdRouteImport } from './routes/media.$mediaId'
 import { Route as AuthenticatedApiDocsRouteImport } from './routes/_authenticated.api.docs'
 import { Route as AuthenticatedAssessmentsAssessmentIdRouteImport } from './routes/_authenticated.assessments_.$assessmentId'
+import { Route as AuthenticatedWorkoutsWorkoutIdRouteImport } from './routes/_authenticated.workouts_.$workoutId'
 import { Route as ApiV1AssessmentsRouteImport } from './routes/api.v1.assessments'
 import { Route as ApiV1CapabilityLevelDefinitionsRouteImport } from './routes/api.v1.capability-level-definitions'
 import { Route as ApiV1CurrentCapabilityLevelsRouteImport } from './routes/api.v1.current-capability-levels'
 import { Route as ApiV1ExerciseCatalogOptionsRouteImport } from './routes/api.v1.exercise-catalog-options'
 import { Route as ApiV1ExerciseVariantsRouteImport } from './routes/api.v1.exercise-variants'
 import { Route as ApiV1OpenapiDotjsonRouteImport } from './routes/api.v1.openapi[.]json'
+import { Route as ApiV1WorkoutQueueRouteImport } from './routes/api.v1.workout-queue'
+import { Route as ApiV1WorkoutsRouteImport } from './routes/api.v1.workouts'
 import { Route as ApiV1AssessmentsAssessmentIdRouteImport } from './routes/api.v1.assessments.$assessmentId'
 import { Route as ApiV1ExerciseVariantsVariantIdRouteImport } from './routes/api.v1.exercise-variants.$variantId'
+import { Route as ApiV1WorkoutsWorkoutIdRouteImport } from './routes/api.v1.workouts.$workoutId'
 import { Route as ApiV1MediaAssetsMediaIdContentRouteImport } from './routes/api.v1.media-assets.$mediaId.content'
+import { Route as ApiV1WorkoutsWorkoutIdDuplicateRouteImport } from './routes/api.v1.workouts.$workoutId.duplicate'
+import { Route as ApiV1WorkoutsWorkoutIdValidationRouteImport } from './routes/api.v1.workouts.$workoutId.validation'
 
 const AuthenticatedRoute = AuthenticatedRouteImport.update({
   id: '/_authenticated',
@@ -58,6 +65,11 @@ const AuthenticatedSettingsRoute = AuthenticatedSettingsRouteImport.update({
   path: '/settings',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
+const AuthenticatedWorkoutsRoute = AuthenticatedWorkoutsRouteImport.update({
+  id: '/workouts',
+  path: '/workouts',
+  getParentRoute: () => AuthenticatedRoute,
+} as any)
 const MediaMediaIdRoute = MediaMediaIdRouteImport.update({
   id: '/media/$mediaId',
   path: '/media/$mediaId',
@@ -72,6 +84,12 @@ const AuthenticatedAssessmentsAssessmentIdRoute =
   AuthenticatedAssessmentsAssessmentIdRouteImport.update({
     id: '/assessments_/$assessmentId',
     path: '/assessments/$assessmentId',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
+const AuthenticatedWorkoutsWorkoutIdRoute =
+  AuthenticatedWorkoutsWorkoutIdRouteImport.update({
+    id: '/workouts_/$workoutId',
+    path: '/workouts/$workoutId',
     getParentRoute: () => AuthenticatedRoute,
   } as any)
 const ApiV1AssessmentsRoute = ApiV1AssessmentsRouteImport.update({
@@ -107,6 +125,16 @@ const ApiV1OpenapiDotjsonRoute = ApiV1OpenapiDotjsonRouteImport.update({
   path: '/api/v1/openapi.json',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiV1WorkoutQueueRoute = ApiV1WorkoutQueueRouteImport.update({
+  id: '/api/v1/workout-queue',
+  path: '/api/v1/workout-queue',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiV1WorkoutsRoute = ApiV1WorkoutsRouteImport.update({
+  id: '/api/v1/workouts',
+  path: '/api/v1/workouts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiV1AssessmentsAssessmentIdRoute =
   ApiV1AssessmentsAssessmentIdRouteImport.update({
     id: '/$assessmentId',
@@ -119,11 +147,28 @@ const ApiV1ExerciseVariantsVariantIdRoute =
     path: '/$variantId',
     getParentRoute: () => ApiV1ExerciseVariantsRoute,
   } as any)
+const ApiV1WorkoutsWorkoutIdRoute = ApiV1WorkoutsWorkoutIdRouteImport.update({
+  id: '/$workoutId',
+  path: '/$workoutId',
+  getParentRoute: () => ApiV1WorkoutsRoute,
+} as any)
 const ApiV1MediaAssetsMediaIdContentRoute =
   ApiV1MediaAssetsMediaIdContentRouteImport.update({
     id: '/api/v1/media-assets/$mediaId/content',
     path: '/api/v1/media-assets/$mediaId/content',
     getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiV1WorkoutsWorkoutIdDuplicateRoute =
+  ApiV1WorkoutsWorkoutIdDuplicateRouteImport.update({
+    id: '/duplicate',
+    path: '/duplicate',
+    getParentRoute: () => ApiV1WorkoutsWorkoutIdRoute,
+  } as any)
+const ApiV1WorkoutsWorkoutIdValidationRoute =
+  ApiV1WorkoutsWorkoutIdValidationRouteImport.update({
+    id: '/validation',
+    path: '/validation',
+    getParentRoute: () => ApiV1WorkoutsWorkoutIdRoute,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -132,37 +177,51 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/assessments': typeof AuthenticatedAssessmentsRoute
   '/settings': typeof AuthenticatedSettingsRoute
+  '/workouts': typeof AuthenticatedWorkoutsRoute
   '/media/$mediaId': typeof MediaMediaIdRoute
   '/api/docs': typeof AuthenticatedApiDocsRoute
   '/assessments/$assessmentId': typeof AuthenticatedAssessmentsAssessmentIdRoute
+  '/workouts/$workoutId': typeof AuthenticatedWorkoutsWorkoutIdRoute
   '/api/v1/assessments': typeof ApiV1AssessmentsRouteWithChildren
   '/api/v1/capability-level-definitions': typeof ApiV1CapabilityLevelDefinitionsRoute
   '/api/v1/current-capability-levels': typeof ApiV1CurrentCapabilityLevelsRoute
   '/api/v1/exercise-catalog-options': typeof ApiV1ExerciseCatalogOptionsRoute
   '/api/v1/exercise-variants': typeof ApiV1ExerciseVariantsRouteWithChildren
   '/api/v1/openapi.json': typeof ApiV1OpenapiDotjsonRoute
+  '/api/v1/workout-queue': typeof ApiV1WorkoutQueueRoute
+  '/api/v1/workouts': typeof ApiV1WorkoutsRouteWithChildren
   '/api/v1/assessments/$assessmentId': typeof ApiV1AssessmentsAssessmentIdRoute
   '/api/v1/exercise-variants/$variantId': typeof ApiV1ExerciseVariantsVariantIdRoute
+  '/api/v1/workouts/$workoutId': typeof ApiV1WorkoutsWorkoutIdRouteWithChildren
   '/api/v1/media-assets/$mediaId/content': typeof ApiV1MediaAssetsMediaIdContentRoute
+  '/api/v1/workouts/$workoutId/duplicate': typeof ApiV1WorkoutsWorkoutIdDuplicateRoute
+  '/api/v1/workouts/$workoutId/validation': typeof ApiV1WorkoutsWorkoutIdValidationRoute
 }
 export interface FileRoutesByTo {
   '/healthz': typeof HealthzRoute
   '/login': typeof LoginRoute
   '/assessments': typeof AuthenticatedAssessmentsRoute
   '/settings': typeof AuthenticatedSettingsRoute
+  '/workouts': typeof AuthenticatedWorkoutsRoute
   '/media/$mediaId': typeof MediaMediaIdRoute
   '/': typeof AuthenticatedIndexRoute
   '/api/docs': typeof AuthenticatedApiDocsRoute
   '/assessments/$assessmentId': typeof AuthenticatedAssessmentsAssessmentIdRoute
+  '/workouts/$workoutId': typeof AuthenticatedWorkoutsWorkoutIdRoute
   '/api/v1/assessments': typeof ApiV1AssessmentsRouteWithChildren
   '/api/v1/capability-level-definitions': typeof ApiV1CapabilityLevelDefinitionsRoute
   '/api/v1/current-capability-levels': typeof ApiV1CurrentCapabilityLevelsRoute
   '/api/v1/exercise-catalog-options': typeof ApiV1ExerciseCatalogOptionsRoute
   '/api/v1/exercise-variants': typeof ApiV1ExerciseVariantsRouteWithChildren
   '/api/v1/openapi.json': typeof ApiV1OpenapiDotjsonRoute
+  '/api/v1/workout-queue': typeof ApiV1WorkoutQueueRoute
+  '/api/v1/workouts': typeof ApiV1WorkoutsRouteWithChildren
   '/api/v1/assessments/$assessmentId': typeof ApiV1AssessmentsAssessmentIdRoute
   '/api/v1/exercise-variants/$variantId': typeof ApiV1ExerciseVariantsVariantIdRoute
+  '/api/v1/workouts/$workoutId': typeof ApiV1WorkoutsWorkoutIdRouteWithChildren
   '/api/v1/media-assets/$mediaId/content': typeof ApiV1MediaAssetsMediaIdContentRoute
+  '/api/v1/workouts/$workoutId/duplicate': typeof ApiV1WorkoutsWorkoutIdDuplicateRoute
+  '/api/v1/workouts/$workoutId/validation': typeof ApiV1WorkoutsWorkoutIdValidationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -171,19 +230,26 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/_authenticated/assessments': typeof AuthenticatedAssessmentsRoute
   '/_authenticated/settings': typeof AuthenticatedSettingsRoute
+  '/_authenticated/workouts': typeof AuthenticatedWorkoutsRoute
   '/media/$mediaId': typeof MediaMediaIdRoute
   '/_authenticated/': typeof AuthenticatedIndexRoute
   '/_authenticated/api/docs': typeof AuthenticatedApiDocsRoute
   '/_authenticated/assessments_/$assessmentId': typeof AuthenticatedAssessmentsAssessmentIdRoute
+  '/_authenticated/workouts_/$workoutId': typeof AuthenticatedWorkoutsWorkoutIdRoute
   '/api/v1/assessments': typeof ApiV1AssessmentsRouteWithChildren
   '/api/v1/capability-level-definitions': typeof ApiV1CapabilityLevelDefinitionsRoute
   '/api/v1/current-capability-levels': typeof ApiV1CurrentCapabilityLevelsRoute
   '/api/v1/exercise-catalog-options': typeof ApiV1ExerciseCatalogOptionsRoute
   '/api/v1/exercise-variants': typeof ApiV1ExerciseVariantsRouteWithChildren
   '/api/v1/openapi.json': typeof ApiV1OpenapiDotjsonRoute
+  '/api/v1/workout-queue': typeof ApiV1WorkoutQueueRoute
+  '/api/v1/workouts': typeof ApiV1WorkoutsRouteWithChildren
   '/api/v1/assessments/$assessmentId': typeof ApiV1AssessmentsAssessmentIdRoute
   '/api/v1/exercise-variants/$variantId': typeof ApiV1ExerciseVariantsVariantIdRoute
+  '/api/v1/workouts/$workoutId': typeof ApiV1WorkoutsWorkoutIdRouteWithChildren
   '/api/v1/media-assets/$mediaId/content': typeof ApiV1MediaAssetsMediaIdContentRoute
+  '/api/v1/workouts/$workoutId/duplicate': typeof ApiV1WorkoutsWorkoutIdDuplicateRoute
+  '/api/v1/workouts/$workoutId/validation': typeof ApiV1WorkoutsWorkoutIdValidationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -193,37 +259,51 @@ export interface FileRouteTypes {
     | '/login'
     | '/assessments'
     | '/settings'
+    | '/workouts'
     | '/media/$mediaId'
     | '/api/docs'
     | '/assessments/$assessmentId'
+    | '/workouts/$workoutId'
     | '/api/v1/assessments'
     | '/api/v1/capability-level-definitions'
     | '/api/v1/current-capability-levels'
     | '/api/v1/exercise-catalog-options'
     | '/api/v1/exercise-variants'
     | '/api/v1/openapi.json'
+    | '/api/v1/workout-queue'
+    | '/api/v1/workouts'
     | '/api/v1/assessments/$assessmentId'
     | '/api/v1/exercise-variants/$variantId'
+    | '/api/v1/workouts/$workoutId'
     | '/api/v1/media-assets/$mediaId/content'
+    | '/api/v1/workouts/$workoutId/duplicate'
+    | '/api/v1/workouts/$workoutId/validation'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/healthz'
     | '/login'
     | '/assessments'
     | '/settings'
+    | '/workouts'
     | '/media/$mediaId'
     | '/'
     | '/api/docs'
     | '/assessments/$assessmentId'
+    | '/workouts/$workoutId'
     | '/api/v1/assessments'
     | '/api/v1/capability-level-definitions'
     | '/api/v1/current-capability-levels'
     | '/api/v1/exercise-catalog-options'
     | '/api/v1/exercise-variants'
     | '/api/v1/openapi.json'
+    | '/api/v1/workout-queue'
+    | '/api/v1/workouts'
     | '/api/v1/assessments/$assessmentId'
     | '/api/v1/exercise-variants/$variantId'
+    | '/api/v1/workouts/$workoutId'
     | '/api/v1/media-assets/$mediaId/content'
+    | '/api/v1/workouts/$workoutId/duplicate'
+    | '/api/v1/workouts/$workoutId/validation'
   id:
     | '__root__'
     | '/_authenticated'
@@ -231,19 +311,26 @@ export interface FileRouteTypes {
     | '/login'
     | '/_authenticated/assessments'
     | '/_authenticated/settings'
+    | '/_authenticated/workouts'
     | '/media/$mediaId'
     | '/_authenticated/'
     | '/_authenticated/api/docs'
     | '/_authenticated/assessments_/$assessmentId'
+    | '/_authenticated/workouts_/$workoutId'
     | '/api/v1/assessments'
     | '/api/v1/capability-level-definitions'
     | '/api/v1/current-capability-levels'
     | '/api/v1/exercise-catalog-options'
     | '/api/v1/exercise-variants'
     | '/api/v1/openapi.json'
+    | '/api/v1/workout-queue'
+    | '/api/v1/workouts'
     | '/api/v1/assessments/$assessmentId'
     | '/api/v1/exercise-variants/$variantId'
+    | '/api/v1/workouts/$workoutId'
     | '/api/v1/media-assets/$mediaId/content'
+    | '/api/v1/workouts/$workoutId/duplicate'
+    | '/api/v1/workouts/$workoutId/validation'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -257,6 +344,8 @@ export interface RootRouteChildren {
   ApiV1ExerciseCatalogOptionsRoute: typeof ApiV1ExerciseCatalogOptionsRoute
   ApiV1ExerciseVariantsRoute: typeof ApiV1ExerciseVariantsRouteWithChildren
   ApiV1OpenapiDotjsonRoute: typeof ApiV1OpenapiDotjsonRoute
+  ApiV1WorkoutQueueRoute: typeof ApiV1WorkoutQueueRoute
+  ApiV1WorkoutsRoute: typeof ApiV1WorkoutsRouteWithChildren
   ApiV1MediaAssetsMediaIdContentRoute: typeof ApiV1MediaAssetsMediaIdContentRoute
 }
 
@@ -304,6 +393,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedSettingsRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
+    '/_authenticated/workouts': {
+      id: '/_authenticated/workouts'
+      path: '/workouts'
+      fullPath: '/workouts'
+      preLoaderRoute: typeof AuthenticatedWorkoutsRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
     '/media/$mediaId': {
       id: '/media/$mediaId'
       path: '/media/$mediaId'
@@ -323,6 +419,13 @@ declare module '@tanstack/react-router' {
       path: '/assessments/$assessmentId'
       fullPath: '/assessments/$assessmentId'
       preLoaderRoute: typeof AuthenticatedAssessmentsAssessmentIdRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/workouts_/$workoutId': {
+      id: '/_authenticated/workouts_/$workoutId'
+      path: '/workouts/$workoutId'
+      fullPath: '/workouts/$workoutId'
+      preLoaderRoute: typeof AuthenticatedWorkoutsWorkoutIdRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
     '/api/v1/assessments': {
@@ -367,6 +470,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiV1OpenapiDotjsonRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/v1/workout-queue': {
+      id: '/api/v1/workout-queue'
+      path: '/api/v1/workout-queue'
+      fullPath: '/api/v1/workout-queue'
+      preLoaderRoute: typeof ApiV1WorkoutQueueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/workouts': {
+      id: '/api/v1/workouts'
+      path: '/api/v1/workouts'
+      fullPath: '/api/v1/workouts'
+      preLoaderRoute: typeof ApiV1WorkoutsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/v1/assessments/$assessmentId': {
       id: '/api/v1/assessments/$assessmentId'
       path: '/$assessmentId'
@@ -381,6 +498,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiV1ExerciseVariantsVariantIdRouteImport
       parentRoute: typeof ApiV1ExerciseVariantsRoute
     }
+    '/api/v1/workouts/$workoutId': {
+      id: '/api/v1/workouts/$workoutId'
+      path: '/$workoutId'
+      fullPath: '/api/v1/workouts/$workoutId'
+      preLoaderRoute: typeof ApiV1WorkoutsWorkoutIdRouteImport
+      parentRoute: typeof ApiV1WorkoutsRoute
+    }
     '/api/v1/media-assets/$mediaId/content': {
       id: '/api/v1/media-assets/$mediaId/content'
       path: '/api/v1/media-assets/$mediaId/content'
@@ -388,24 +512,42 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiV1MediaAssetsMediaIdContentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/v1/workouts/$workoutId/duplicate': {
+      id: '/api/v1/workouts/$workoutId/duplicate'
+      path: '/duplicate'
+      fullPath: '/api/v1/workouts/$workoutId/duplicate'
+      preLoaderRoute: typeof ApiV1WorkoutsWorkoutIdDuplicateRouteImport
+      parentRoute: typeof ApiV1WorkoutsWorkoutIdRoute
+    }
+    '/api/v1/workouts/$workoutId/validation': {
+      id: '/api/v1/workouts/$workoutId/validation'
+      path: '/validation'
+      fullPath: '/api/v1/workouts/$workoutId/validation'
+      preLoaderRoute: typeof ApiV1WorkoutsWorkoutIdValidationRouteImport
+      parentRoute: typeof ApiV1WorkoutsWorkoutIdRoute
+    }
   }
 }
 
 interface AuthenticatedRouteChildren {
   AuthenticatedAssessmentsRoute: typeof AuthenticatedAssessmentsRoute
   AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
+  AuthenticatedWorkoutsRoute: typeof AuthenticatedWorkoutsRoute
   AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
   AuthenticatedApiDocsRoute: typeof AuthenticatedApiDocsRoute
   AuthenticatedAssessmentsAssessmentIdRoute: typeof AuthenticatedAssessmentsAssessmentIdRoute
+  AuthenticatedWorkoutsWorkoutIdRoute: typeof AuthenticatedWorkoutsWorkoutIdRoute
 }
 
 const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
   AuthenticatedAssessmentsRoute: AuthenticatedAssessmentsRoute,
   AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
+  AuthenticatedWorkoutsRoute: AuthenticatedWorkoutsRoute,
   AuthenticatedIndexRoute: AuthenticatedIndexRoute,
   AuthenticatedApiDocsRoute: AuthenticatedApiDocsRoute,
   AuthenticatedAssessmentsAssessmentIdRoute:
     AuthenticatedAssessmentsAssessmentIdRoute,
+  AuthenticatedWorkoutsWorkoutIdRoute: AuthenticatedWorkoutsWorkoutIdRoute,
 }
 
 const AuthenticatedRouteWithChildren = AuthenticatedRoute._addFileChildren(
@@ -436,6 +578,35 @@ const ApiV1ExerciseVariantsRouteWithChildren =
     ApiV1ExerciseVariantsRouteChildren,
   )
 
+interface ApiV1WorkoutsWorkoutIdRouteChildren {
+  ApiV1WorkoutsWorkoutIdDuplicateRoute: typeof ApiV1WorkoutsWorkoutIdDuplicateRoute
+  ApiV1WorkoutsWorkoutIdValidationRoute: typeof ApiV1WorkoutsWorkoutIdValidationRoute
+}
+
+const ApiV1WorkoutsWorkoutIdRouteChildren: ApiV1WorkoutsWorkoutIdRouteChildren =
+  {
+    ApiV1WorkoutsWorkoutIdDuplicateRoute: ApiV1WorkoutsWorkoutIdDuplicateRoute,
+    ApiV1WorkoutsWorkoutIdValidationRoute:
+      ApiV1WorkoutsWorkoutIdValidationRoute,
+  }
+
+const ApiV1WorkoutsWorkoutIdRouteWithChildren =
+  ApiV1WorkoutsWorkoutIdRoute._addFileChildren(
+    ApiV1WorkoutsWorkoutIdRouteChildren,
+  )
+
+interface ApiV1WorkoutsRouteChildren {
+  ApiV1WorkoutsWorkoutIdRoute: typeof ApiV1WorkoutsWorkoutIdRouteWithChildren
+}
+
+const ApiV1WorkoutsRouteChildren: ApiV1WorkoutsRouteChildren = {
+  ApiV1WorkoutsWorkoutIdRoute: ApiV1WorkoutsWorkoutIdRouteWithChildren,
+}
+
+const ApiV1WorkoutsRouteWithChildren = ApiV1WorkoutsRoute._addFileChildren(
+  ApiV1WorkoutsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRoute: AuthenticatedRouteWithChildren,
   HealthzRoute: HealthzRoute,
@@ -447,6 +618,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiV1ExerciseCatalogOptionsRoute: ApiV1ExerciseCatalogOptionsRoute,
   ApiV1ExerciseVariantsRoute: ApiV1ExerciseVariantsRouteWithChildren,
   ApiV1OpenapiDotjsonRoute: ApiV1OpenapiDotjsonRoute,
+  ApiV1WorkoutQueueRoute: ApiV1WorkoutQueueRoute,
+  ApiV1WorkoutsRoute: ApiV1WorkoutsRouteWithChildren,
   ApiV1MediaAssetsMediaIdContentRoute: ApiV1MediaAssetsMediaIdContentRoute,
 }
 export const routeTree = rootRouteImport

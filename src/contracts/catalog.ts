@@ -10,6 +10,7 @@ export const listCatalogInputSchema = z
       .default([]),
     difficultyMin: z.number().int().min(1).max(5).nullable().default(null),
     difficultyMax: z.number().int().min(1).max(5).nullable().default(null),
+    primaryProgression: z.boolean().nullable().default(null),
     cursor: z.string().max(2048).nullable().default(null),
     limit: z.number().int().min(1).max(100).default(24),
   })
