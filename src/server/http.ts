@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto'
 import { ApiAuthenticationError } from './auth.server'
 import { CatalogCursorError } from '../application/catalog'
 import { AssessmentCursorError } from '../application/assessments'
+import { TrainingSessionCursorError } from '../application/training-sessions'
 import {
   WorkoutNotFoundError,
   WorkoutQueueConflictError,
@@ -125,7 +126,8 @@ export function apiErrorResponse(error: unknown, request: Request) {
   }
   if (
     error instanceof CatalogCursorError ||
-    error instanceof AssessmentCursorError
+    error instanceof AssessmentCursorError ||
+    error instanceof TrainingSessionCursorError
   ) {
     return problemResponse(
       400,

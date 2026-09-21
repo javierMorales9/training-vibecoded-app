@@ -31,6 +31,8 @@ const endpoints = [
     '/api/v1/assessments/{assessmentId}',
     'Resultados y criterios congelados',
   ],
+  ['GET', '/api/v1/workout-sessions', 'Historial de entrenamientos'],
+  ['GET', '/api/v1/workout-sessions/{sessionId}', 'Detalle de una sesión'],
   [
     'GET',
     '/api/v1/current-capability-levels',

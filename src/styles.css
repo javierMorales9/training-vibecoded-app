@@ -193,6 +193,198 @@ a {
   color: var(--muted);
   font-size: 0.76rem;
 }
+
+.history-link,
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--lime);
+  text-decoration: none;
+}
+
+.history-link {
+  margin: 0 0 1.25rem;
+  font-weight: 700;
+}
+
+.history-page,
+.history-detail-page {
+  width: min(100% - 2rem, 1040px);
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.history-header,
+.history-detail-header {
+  align-items: end;
+}
+
+.history-filters,
+.history-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: var(--panel);
+}
+
+.history-filters select,
+.history-filters input,
+.history-notes textarea {
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+}
+
+.history-filters label {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.history-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.history-scroll-sentinel {
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.history-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  background: var(--panel);
+}
+
+.history-card-link {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.history-repeat-button {
+  flex: 0 0 auto;
+}
+
+.history-card h2,
+.history-unit h3 {
+  margin: 0.45rem 0 0.2rem;
+}
+
+.history-card time,
+.history-unit p {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.history-card-stats {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--lime);
+  font-weight: 700;
+}
+
+.history-card-stats span {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.history-units,
+.history-notes {
+  margin-top: 2rem;
+}
+
+.history-unit {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-top: 0.75rem;
+  background: var(--panel);
+}
+
+.history-unit > header,
+.history-unit > footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.history-unit-item {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--border);
+}
+.history-exercise-image {
+  width: 128px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 0.55rem;
+  background: var(--surface-2);
+}
+.history-targets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.history-unit-item span {
+  display: inline-block;
+  margin-right: 0.65rem;
+  color: var(--lime);
+  font-size: 0.86rem;
+}
+
+.history-notes {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.history-notes textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+@media (max-width: 640px) {
+  .history-page,
+  .history-detail-page {
+    width: min(100% - 1.25rem, 1040px);
+    padding-top: 1.5rem;
+  }
+
+  .history-card,
+  .history-detail-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
 .workout-queue {
   display: grid;
   gap: 0.75rem;
@@ -216,14 +408,35 @@ a {
   font-weight: 900;
 }
 .workout-card-main {
+  position: relative;
   min-width: 0;
   padding: 1rem 1.2rem;
+}
+.workout-card-open {
+  cursor: pointer;
+}
+.workout-card-open:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -3px;
 }
 .workout-card-heading {
   display: flex;
   align-items: start;
   justify-content: space-between;
   gap: 1rem;
+}
+.workout-primary-actions {
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.start-workout-action {
+  min-height: 2.5rem;
+  padding: 0.55rem 0.85rem;
 }
 .workout-card-heading h2 {
   margin: 0;
@@ -2622,6 +2835,18 @@ a {
   }
   .workout-card-heading {
     display: block;
+  }
+  .workout-primary-actions {
+    position: static;
+    transform: none;
+    margin-top: 0.7rem;
+  }
+  .history-unit-item {
+    grid-template-columns: 90px minmax(0, 1fr);
+  }
+  .history-exercise-image {
+    width: 90px;
+    height: 78px;
   }
   .workout-card-heading .row-action {
     padding-left: 0;

@@ -1,5 +1,10 @@
 import { useState } from 'react'
-import { createFileRoute, useNavigate, useRouter } from '@tanstack/react-router'
+import {
+  createFileRoute,
+  Link,
+  useNavigate,
+  useRouter,
+} from '@tanstack/react-router'
 import { useServerFn } from '@tanstack/react-start'
 import {
   ArrowDown,
@@ -8,6 +13,7 @@ import {
   Blocks,
   Clock3,
   Copy,
+  History,
   Plus,
   Play,
   Trash2,
@@ -160,6 +166,14 @@ function WorkoutQueuePage() {
           <Plus size={18} /> Nuevo entrenamiento
         </button>
       </header>
+      <Link
+        className="history-link"
+        to="/workouts/history"
+        search={{ status: '', exerciseType: '', from: '', to: '' }}
+      >
+        <History size={17} /> Ver historial de entrenamientos{' '}
+        <ArrowRight size={16} />
+      </Link>
 
       {error ? <p className="form-error workout-error">{error}</p> : null}
       {activeSession ? (
@@ -194,7 +208,26 @@ function WorkoutQueuePage() {
           {queue.items.map((workout, index) => (
             <article className="workout-queue-card" key={workout.id}>
               <div className="queue-position">{index + 1}</div>
-              <div className="workout-card-main">
+              <div
+                className="workout-card-main workout-card-open"
+                role="link"
+                tabIndex={0}
+                onClick={() =>
+                  void navigate({
+                    to: '/workouts/$workoutId',
+                    params: { workoutId: workout.id },
+                  })
+                }
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault()
+                    void navigate({
+                      to: '/workouts/$workoutId',
+                      params: { workoutId: workout.id },
+                    })
+                  }
+                }}
+              >
                 <div className="workout-card-heading">
                   <div>
                     <h2>{workout.name}</h2>
@@ -208,28 +241,21 @@ function WorkoutQueuePage() {
                         : `Borrador · ${workout.issueCount} pendiente${workout.issueCount === 1 ? '' : 's'}`}
                     </span>
                   </div>
-                  <button
-                    type="button"
-                    className="row-action"
-                    onClick={() =>
-                      void navigate({
-                        to: '/workouts/$workoutId',
-                        params: { workoutId: workout.id },
-                      })
-                    }
-                  >
-                    Editar <ArrowRight size={17} />
-                  </button>
-                  {workout.startable ? (
-                    <button
-                      type="button"
-                      className="row-action start-workout-action"
-                      disabled={busyId !== null}
-                      onClick={() => void startWorkout(workout.id)}
-                    >
-                      <Play size={16} /> Iniciar
-                    </button>
-                  ) : null}
+                  <div className="workout-primary-actions">
+                    {workout.startable ? (
+                      <button
+                        type="button"
+                        className="primary-button start-workout-action"
+                        disabled={busyId !== null}
+                        onClick={(event) => {
+                          event.stopPropagation()
+                          void startWorkout(workout.id)
+                        }}
+                      >
+                        <Play size={16} /> Iniciar
+                      </button>
+                    ) : null}
+                  </div>
                 </div>
                 <div className="workout-summary-line">
                   <span>

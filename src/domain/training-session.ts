@@ -1,4 +1,5 @@
 import type { TrainingMethod, WorkoutTarget } from './workout'
+import type { ExerciseType } from './catalog'
 
 export type TrainingSessionStatus = 'ACTIVE' | 'COMPLETED' | 'CANCELLED'
 export type TrainingSessionPhase =
@@ -8,6 +9,7 @@ export interface TrainingSessionItemSnapshot {
   variantId: string
   exerciseName: string
   variantName: string
+  exerciseType: ExerciseType
   description: string
   media: Array<{
     id: string
@@ -35,6 +37,7 @@ export interface TrainingSessionUnit {
   completedAt: string | null
   restStartedAt: string | null
   restCompletedAt: string | null
+  actualResult: string | null
 }
 
 export interface TrainingSession {
@@ -48,6 +51,7 @@ export interface TrainingSession {
   completedAt: string | null
   cancelledAt: string | null
   cancelReason: string | null
+  notes: string | null
   completionRatio: number | null
   totalWorkMs: number
   totalRestMs: number

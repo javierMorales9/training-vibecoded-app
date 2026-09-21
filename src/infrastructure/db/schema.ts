@@ -239,6 +239,7 @@ export const trainingSessions = sqliteTable('training_sessions', {
   completedAt: integer('completed_at'),
   cancelledAt: integer('cancelled_at'),
   cancelReason: text('cancel_reason'),
+  notes: text('notes'),
   completionRatio: real('completion_ratio'),
   totalWorkMs: integer('total_work_ms').notNull(),
   totalRestMs: integer('total_rest_ms').notNull(),

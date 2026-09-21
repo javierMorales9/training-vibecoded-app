@@ -2,6 +2,7 @@ import { z } from 'zod'
 import { exerciseTypes } from '../domain/catalog'
 import { listCatalogInputSchema } from '../contracts/catalog'
 import { listAssessmentsInputSchema } from '../contracts/assessment'
+import { listTrainingSessionsInputSchema } from '../contracts/training-session'
 
 function nullableNumber(value: string | null) {
   return value === null || value === '' ? null : Number(value)
@@ -39,4 +40,16 @@ export function parseAssessmentsQuery(url: URL) {
   })
 }
 
+export function parseTrainingSessionsQuery(url: URL) {
+  return listTrainingSessionsInputSchema.parse({
+    statuses: url.searchParams.getAll('status'),
+    exerciseTypes: url.searchParams.getAll('exerciseType'),
+    startedFrom: nullableNumber(url.searchParams.get('startedFrom')),
+    startedTo: nullableNumber(url.searchParams.get('startedTo')),
+    cursor: url.searchParams.get('cursor'),
+    limit: nullableNumber(url.searchParams.get('limit')) ?? 30,
+  })
+}
+
 export const apiAssessmentIdSchema = z.uuid()
+export const apiTrainingSessionIdSchema = z.uuid()

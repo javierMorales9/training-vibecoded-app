@@ -1,14 +1,26 @@
+import { createHash } from 'node:crypto'
 import { v7 as uuidv7 } from 'uuid'
 import type Database from 'better-sqlite3'
 import { getDatabase } from '../infrastructure/db/database'
 import { capabilityLabels } from '../domain/assessment'
+import type { ExerciseType } from '../domain/catalog'
 import type {
   TrainingSession,
   TrainingSessionItemSnapshot,
   TrainingSessionUnit,
 } from '../domain/training-session'
 import type { WorkoutBlockInput, WorkoutTarget } from '../domain/workout'
-import { validateWorkout, getWorkoutInputForExecution } from './workouts'
+import {
+  createWorkout,
+  getWorkoutInputForExecution,
+  getWorkoutInputForHistoryCopy,
+  validateWorkout,
+} from './workouts'
+import {
+  listTrainingSessionsInputSchema,
+  updateTrainingSessionNotesSchema,
+} from '../contracts/training-session'
+import type { ListTrainingSessionsInput } from '../contracts/training-session'
 
 type SessionRow = {
   id: string
@@ -24,6 +36,7 @@ type SessionRow = {
   completion_ratio: number | null
   total_work_ms: number
   total_rest_ms: number
+  notes: string | null
 }
 
 type UnitRow = {
@@ -41,6 +54,7 @@ type UnitRow = {
   completed_at: number | null
   rest_started_at: number | null
   rest_completed_at: number | null
+  actual_result_json: string | null
 }
 
 interface VariantSnapshotRow {
@@ -48,6 +62,7 @@ interface VariantSnapshotRow {
   name: string
   exercise_name: string
   description: string
+  exercise_type: ExerciseType
 }
 
 export class ActiveTrainingSessionError extends Error {
@@ -67,6 +82,13 @@ export class TrainingSessionNotFoundError extends Error {
 export class TrainingSessionTransitionError extends Error {
   constructor() {
     super('Esta acción ya no está disponible para la sesión actual.')
+  }
+}
+
+export class TrainingSessionCursorError extends Error {
+  readonly code = 'INVALID_CURSOR'
+  constructor() {
+    super('El cursor no es válido para estos filtros.')
   }
 }
 
@@ -97,7 +119,7 @@ function snapshotVariant(
 ): TrainingSessionItemSnapshot {
   const variant = sqlite
     .prepare(
-      `SELECT id, name, exercise_name, description
+      `SELECT id, name, exercise_name, description, exercise_type
        FROM exercise_variants WHERE id = ? AND is_active = 1`,
     )
     .get(variantId) as VariantSnapshotRow | undefined
@@ -120,6 +142,7 @@ function snapshotVariant(
     variantId,
     exerciseName: variant.exercise_name,
     variantName: variant.name,
+    exerciseType: variant.exercise_type,
     description: variant.description,
     media: media.map((item) => ({
       id: item.id,
@@ -242,6 +265,7 @@ function readSession(
     completedAt: iso(session.completed_at),
     cancelledAt: iso(session.cancelled_at),
     cancelReason: session.cancel_reason,
+    notes: session.notes,
     completionRatio: session.completion_ratio,
     totalWorkMs: session.total_work_ms,
     totalRestMs: session.total_rest_ms,
@@ -262,6 +286,10 @@ function readSession(
       completedAt: iso(unit.completed_at),
       restStartedAt: iso(unit.rest_started_at),
       restCompletedAt: iso(unit.rest_completed_at),
+      actualResult: unit.actual_result_json
+        ? ((JSON.parse(unit.actual_result_json) as { note?: string | null })
+            .note ?? null)
+        : null,
     })),
   }
 }
@@ -299,6 +327,157 @@ export function getActiveTrainingSession() {
 
 export function getTrainingSession(sessionId: string) {
   return readSession(getDatabase().sqlite, sessionId)
+}
+
+interface TrainingSessionCursor {
+  version: 1
+  fingerprint: string
+  startedAt: number
+  id: string
+}
+
+function historyFingerprint(input: ListTrainingSessionsInput) {
+  return createHash('sha256')
+    .update(
+      JSON.stringify({
+        statuses: [...new Set(input.statuses)].sort(),
+        exerciseTypes: [...new Set(input.exerciseTypes)].sort(),
+        startedFrom: input.startedFrom,
+        startedTo: input.startedTo,
+      }),
+    )
+    .digest('base64url')
+    .slice(0, 16)
+}
+
+function decodeHistoryCursor(cursor: string, input: ListTrainingSessionsInput) {
+  try {
+    const parsed = JSON.parse(
+      Buffer.from(cursor, 'base64url').toString('utf8'),
+    ) as TrainingSessionCursor
+    if (
+      parsed.version !== 1 ||
+      parsed.fingerprint !== historyFingerprint(input) ||
+      !Number.isInteger(parsed.startedAt) ||
+      !parsed.id
+    )
+      throw new Error('invalid')
+    return parsed
+  } catch {
+    throw new TrainingSessionCursorError()
+  }
+}
+
+function encodeHistoryCursor(cursor: TrainingSessionCursor) {
+  return Buffer.from(JSON.stringify(cursor), 'utf8').toString('base64url')
+}
+
+export function listTrainingSessions(rawInput: ListTrainingSessionsInput) {
+  const input = listTrainingSessionsInputSchema.parse(rawInput)
+  const sqlite = getDatabase().sqlite
+  const where = ["status IN ('COMPLETED', 'CANCELLED')"]
+  const params: Array<string | number> = []
+  if (input.statuses.length) {
+    where.push(`status IN (${input.statuses.map(() => '?').join(', ')})`)
+    params.push(...input.statuses)
+  }
+  if (input.startedFrom !== null) {
+    where.push('started_at >= ?')
+    params.push(input.startedFrom)
+  }
+  if (input.startedTo !== null) {
+    where.push('started_at <= ?')
+    params.push(input.startedTo)
+  }
+  if (input.exerciseTypes.length) {
+    where.push(`EXISTS (
+      SELECT 1 FROM training_session_units history_units, json_each(history_units.items_snapshot_json) history_item
+      WHERE history_units.training_session_id = training_sessions.id
+        AND json_extract(history_item.value, '$.exerciseType') IN (${input.exerciseTypes.map(() => '?').join(', ')})
+    )`)
+    params.push(...input.exerciseTypes)
+  }
+  if (input.cursor) {
+    const cursor = decodeHistoryCursor(input.cursor, input)
+    where.push('(started_at < ? OR (started_at = ? AND id < ?))')
+    params.push(cursor.startedAt, cursor.startedAt, cursor.id)
+  }
+  params.push(input.limit + 1)
+  const rows = sqlite
+    .prepare(
+      `SELECT * FROM training_sessions
+       WHERE ${where.join(' AND ')}
+       ORDER BY started_at DESC, id DESC LIMIT ?`,
+    )
+    .all(...params) as SessionRow[]
+  const visible = rows.slice(0, input.limit)
+  const typesStatement = sqlite.prepare(`
+    SELECT DISTINCT json_extract(history_item.value, '$.exerciseType') AS exercise_type
+    FROM training_session_units history_units, json_each(history_units.items_snapshot_json) history_item
+    WHERE history_units.training_session_id = ? ORDER BY exercise_type
+  `)
+  const items = visible.map((row) => {
+    const endedAt = row.completed_at ?? row.cancelled_at
+    return {
+      id: row.id,
+      workoutName: row.workout_name_snapshot,
+      status: row.status,
+      startedAt: new Date(row.started_at).toISOString(),
+      endedAt: iso(endedAt),
+      durationMs: endedAt ? endedAt - row.started_at : 0,
+      totalWorkMs: row.total_work_ms,
+      totalRestMs: row.total_rest_ms,
+      completionRatio: row.completion_ratio,
+      exerciseTypes: (
+        typesStatement.all(row.id) as Array<{ exercise_type: ExerciseType }>
+      ).map((type) => type.exercise_type),
+    }
+  })
+  const last = visible.at(-1)
+  return {
+    items,
+    page: {
+      hasMore: rows.length > input.limit,
+      nextCursor:
+        rows.length > input.limit && last
+          ? encodeHistoryCursor({
+              version: 1,
+              fingerprint: historyFingerprint(input),
+              startedAt: last.started_at,
+              id: last.id,
+            })
+          : null,
+    },
+  }
+}
+
+export function getTrainingSessionHistory(sessionId: string) {
+  const session = readSession(getDatabase().sqlite, sessionId)
+  return session && session.status !== 'ACTIVE' ? session : null
+}
+
+export function updateTrainingSessionNotes(sessionId: string, notes: string) {
+  const input = updateTrainingSessionNotesSchema.parse({ sessionId, notes })
+  const sqlite = getDatabase().sqlite
+  const result = sqlite
+    .prepare(
+      `UPDATE training_sessions SET notes = ?, updated_at = ?
+       WHERE id = ? AND status IN ('COMPLETED', 'CANCELLED')`,
+    )
+    .run(input.notes || null, Date.now(), input.sessionId)
+  if (!result.changes) throw new TrainingSessionNotFoundError()
+  return getTrainingSessionHistory(input.sessionId)
+}
+
+export function repeatTrainingSession(sessionId: string) {
+  const session = getTrainingSessionHistory(sessionId)
+  if (!session) throw new TrainingSessionNotFoundError()
+  const source = getWorkoutInputForHistoryCopy(session.workoutId)
+  if (!source) throw new TrainingSessionNotFoundError()
+  return createWorkout({
+    ...source,
+    name: `${session.workoutName} (repetición)`.slice(0, 120),
+  })
 }
 
 export function startTrainingSession(workoutId: string) {

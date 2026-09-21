@@ -484,6 +484,52 @@ export const openApiDocument = {
         responses: { '200': { description: 'Contenido binario' } },
       },
     },
+    '/workout-sessions': {
+      get: {
+        summary: 'Historial de entrenamientos finalizados',
+        parameters: [
+          {
+            name: 'status',
+            in: 'query',
+            schema: {
+              type: 'array',
+              items: { type: 'string', enum: ['COMPLETED', 'CANCELLED'] },
+            },
+          },
+          {
+            name: 'exerciseType',
+            in: 'query',
+            schema: { type: 'array', items: { type: 'string' } },
+          },
+          { name: 'startedFrom', in: 'query', schema: { type: 'integer' } },
+          { name: 'startedTo', in: 'query', schema: { type: 'integer' } },
+          { name: 'cursor', in: 'query', schema: { type: 'string' } },
+          {
+            name: 'limit',
+            in: 'query',
+            schema: { type: 'integer', minimum: 1, maximum: 100, default: 30 },
+          },
+        ],
+        responses: { '200': { description: 'Página de sesiones terminales' } },
+      },
+    },
+    '/workout-sessions/{sessionId}': {
+      get: {
+        summary: 'Detalle inmutable de una sesión finalizada',
+        parameters: [
+          {
+            name: 'sessionId',
+            in: 'path',
+            required: true,
+            schema: { type: 'string', format: 'uuid' },
+          },
+        ],
+        responses: {
+          '200': { description: 'Sesión con unidades, objetivos y resultados' },
+          '404': { description: 'Sesión activa o inexistente' },
+        },
+      },
+    },
     '/openapi.json': {
       get: {
         summary: 'Este documento OpenAPI',

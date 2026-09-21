@@ -1,5 +1,6 @@
 import {
   ClipboardCheck,
+  BookOpen,
   Dumbbell,
   KeyRound,
   ListOrdered,
@@ -38,7 +39,7 @@ function AuthenticatedLayout() {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <Link to="/" className="brand" aria-label="Ir al catálogo">
+        <Link to="/workouts" className="brand" aria-label="Ir a entrenamientos">
           <span className="brand-mark" aria-hidden="true">
             <Dumbbell size={20} strokeWidth={2.4} />
           </span>
@@ -63,6 +64,14 @@ function AuthenticatedLayout() {
           >
             <ClipboardCheck size={18} />
             <span>Evaluaciones</span>
+          </Link>
+          <Link
+            to="/catalog"
+            className="icon-link"
+            activeProps={{ 'data-active': true }}
+          >
+            <BookOpen size={18} />
+            <span>Catálogo</span>
           </Link>
           <Link
             to="/settings"

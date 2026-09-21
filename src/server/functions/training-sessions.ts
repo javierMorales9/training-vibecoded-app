@@ -2,8 +2,10 @@ import { createServerFn } from '@tanstack/react-start'
 import {
   cancelTrainingSessionSchema,
   completeTrainingWorkSchema,
+  listTrainingSessionsInputSchema,
   startTrainingSessionSchema,
   trainingSessionIdSchema,
+  updateTrainingSessionNotesSchema,
 } from '../../contracts/training-session'
 import {
   beginTrainingUnit,
@@ -11,7 +13,11 @@ import {
   completeTrainingWork,
   getActiveTrainingSession,
   getTrainingSession,
+  getTrainingSessionHistory,
+  listTrainingSessions,
+  repeatTrainingSession,
   startTrainingSession,
+  updateTrainingSessionNotes,
 } from '../../application/training-sessions'
 import { assertSameOrigin, requireWebSession } from '../auth.server'
 
@@ -27,6 +33,36 @@ export const getTrainingSessionFn = createServerFn({ method: 'GET' })
   .handler(async ({ data }) => {
     await requireWebSession()
     return getTrainingSession(data.sessionId)
+  })
+
+export const listTrainingSessionsFn = createServerFn({ method: 'GET' })
+  .validator(listTrainingSessionsInputSchema)
+  .handler(async ({ data }) => {
+    await requireWebSession()
+    return listTrainingSessions(data)
+  })
+
+export const getTrainingSessionHistoryFn = createServerFn({ method: 'GET' })
+  .validator(trainingSessionIdSchema)
+  .handler(async ({ data }) => {
+    await requireWebSession()
+    return getTrainingSessionHistory(data.sessionId)
+  })
+
+export const repeatTrainingSessionFn = createServerFn({ method: 'POST' })
+  .validator(trainingSessionIdSchema)
+  .handler(async ({ data }) => {
+    await requireWebSession()
+    assertSameOrigin()
+    return repeatTrainingSession(data.sessionId)
+  })
+
+export const updateTrainingSessionNotesFn = createServerFn({ method: 'POST' })
+  .validator(updateTrainingSessionNotesSchema)
+  .handler(async ({ data }) => {
+    await requireWebSession()
+    assertSameOrigin()
+    return updateTrainingSessionNotes(data.sessionId, data.notes)
   })
 
 export const startTrainingSessionFn = createServerFn({ method: 'POST' })

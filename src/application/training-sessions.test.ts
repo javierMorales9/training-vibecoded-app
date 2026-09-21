@@ -11,7 +11,11 @@ import {
   cancelTrainingSession,
   completeTrainingWork,
   getActiveTrainingSession,
+  getTrainingSessionHistory,
+  listTrainingSessions,
+  repeatTrainingSession,
   startTrainingSession,
+  updateTrainingSessionNotes,
 } from './training-sessions'
 
 const testDirectory = fs.mkdtempSync(
@@ -95,5 +99,44 @@ describe('training sessions', () => {
     expect(cancelled?.status).toBe('CANCELLED')
     expect(cancelled?.completionRatio).toBeGreaterThanOrEqual(0)
     expect(getActiveTrainingSession()).toBeNull()
+  })
+
+  it('only exposes terminal sessions in history and repeats them as a pending workout', () => {
+    const created = workout()
+    const session = startTrainingSession(created.id)!
+    expect(
+      listTrainingSessions({
+        statuses: [],
+        exerciseTypes: [],
+        startedFrom: null,
+        startedTo: null,
+        cursor: null,
+        limit: 30,
+      }).items,
+    ).toHaveLength(0)
+
+    beginTrainingUnit(session.id)
+    completeTrainingWork(session.id, '12 repeticiones')
+    beginTrainingUnit(session.id)
+    completeTrainingWork(session.id, null)
+    beginTrainingUnit(session.id)
+    completeTrainingWork(session.id, null)
+
+    const history = listTrainingSessions({
+      statuses: ['COMPLETED'],
+      exerciseTypes: [],
+      startedFrom: null,
+      startedTo: null,
+      cursor: null,
+      limit: 30,
+    })
+    expect(history.items).toHaveLength(1)
+    const detail = getTrainingSessionHistory(session.id)
+    expect(detail?.status).toBe('COMPLETED')
+    expect(detail?.units[0].actualResult).toBe('12 repeticiones')
+    expect(updateTrainingSessionNotes(session.id, 'Buen ritmo')?.notes).toBe(
+      'Buen ritmo',
+    )
+    expect(repeatTrainingSession(session.id)?.status).toBe('PENDING')
   })
 })

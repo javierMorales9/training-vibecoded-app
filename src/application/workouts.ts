@@ -452,6 +452,14 @@ export function getWorkoutInputForExecution(
   }
 }
 
+export function getWorkoutInputForHistoryCopy(workoutId: string) {
+  const sqlite = getDatabase().sqlite
+  const workout = sqlite
+    .prepare('SELECT * FROM workouts WHERE id = ?')
+    .get(workoutId) as WorkoutRow | undefined
+  return workout ? inputForValidation(getInputFromRows(sqlite, workout)) : null
+}
+
 export function listWorkoutQueue() {
   const sqlite = getDatabase().sqlite
   const rows = sqlite

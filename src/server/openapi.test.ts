@@ -11,10 +11,12 @@ describe('OpenAPI contract', () => {
         '/workouts/{workoutId}',
         '/workouts/{workoutId}/duplicate',
         '/workouts/{workoutId}/validation',
+        '/workout-sessions',
+        '/workout-sessions/{sessionId}',
       ]),
     )
     expect(paths.some((path) => path.includes('start'))).toBe(false)
-    expect(paths.some((path) => path.includes('session'))).toBe(false)
+    expect(paths.some((path) => path.includes('session/start'))).toBe(false)
   })
 
   it('does not expose assessment writes', () => {
