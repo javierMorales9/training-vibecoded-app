@@ -61,6 +61,17 @@ function TrainingSessionPage() {
     return () => window.clearInterval(interval)
   }, [session?.phase])
   useEffect(() => {
+    if (!session || session.status !== 'ACTIVE') return
+    const keepAlive = () => {
+      void fetch('/healthz', { cache: 'no-store', credentials: 'same-origin' }).catch(
+        () => undefined,
+      )
+    }
+    keepAlive()
+    const interval = window.setInterval(keepAlive, 2 * 60 * 1000)
+    return () => window.clearInterval(interval)
+  }, [session?.id, session?.status])
+  useEffect(() => {
     const lock = navigator as Navigator & {
       wakeLock?: {
         request: (type: 'screen') => Promise<{ release: () => Promise<void> }>
