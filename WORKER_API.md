@@ -11,6 +11,9 @@ TRAINING_API_BASE_URL=http://localhost:3000/api/v1
 TRAINING_API_TOKEN=...
 ```
 
+The currently deployed instance is `https://javitrain.up.railway.app`. Its
+credentials belong only in `.env.worker`; do not place its token in this guide.
+
 Never copy the token into source code, Markdown, commits or client-side bundles. Send it only as:
 
 ```http
