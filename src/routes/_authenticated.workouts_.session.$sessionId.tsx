@@ -85,12 +85,21 @@ function TrainingSessionPage() {
     [],
   )
 
-  const enableSound = () => {
+  const enableSound = async () => {
     try {
       audioContext.current ??= new AudioContext()
       if (audioContext.current.state === 'suspended') {
-        void audioContext.current.resume()
+        await audioContext.current.resume()
       }
+      // iOS requires at least one scheduled node inside the user gesture that
+      // starts the workout before it will allow a later timer notification.
+      const unlock = audioContext.current.createOscillator()
+      const gain = audioContext.current.createGain()
+      gain.gain.setValueAtTime(0.0001, audioContext.current.currentTime)
+      unlock.connect(gain)
+      gain.connect(audioContext.current.destination)
+      unlock.start()
+      unlock.stop(audioContext.current.currentTime + 0.02)
     } catch {
       // Sound is only a convenience.
     }
@@ -119,12 +128,24 @@ function TrainingSessionPage() {
   const playNotification = () => {
     try {
       const context = audioContext.current
-      if (!context) return
-      const oscillator = context.createOscillator()
-      oscillator.frequency.value = 740
-      oscillator.connect(context.destination)
-      oscillator.start()
-      oscillator.stop(context.currentTime + 0.45)
+      if (!context || context.state !== 'running') return
+      const start = context.currentTime
+      const gain = context.createGain()
+      gain.connect(context.destination)
+      ;[740, 880, 1040, 880].forEach((frequency, index) => {
+        const oscillator = context.createOscillator()
+        const offset = index * 0.34
+        oscillator.type = 'sine'
+        oscillator.frequency.setValueAtTime(frequency, start + offset)
+        oscillator.connect(gain)
+        oscillator.start(start + offset)
+        oscillator.stop(start + offset + 0.22)
+      })
+      gain.gain.setValueAtTime(0.0001, start)
+      gain.gain.exponentialRampToValueAtTime(0.2, start + 0.015)
+      gain.gain.setValueAtTime(0.2, start + 1.18)
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + 1.3)
+      navigator.vibrate?.([100, 90, 100, 90, 160])
     } catch {
       // Sound is only a convenience.
     }
@@ -158,7 +179,7 @@ function TrainingSessionPage() {
   }
   const action = async (kind: 'BEGIN' | 'FINISH') => {
     if (busy || !session) return
-    if (kind === 'BEGIN') enableSound()
+    if (kind === 'BEGIN') await enableSound()
     setBusy(true)
     try {
       const next =
