@@ -24,7 +24,9 @@ COPY --from=build --chown=training:training /app/.output ./.output
 COPY --from=build --chown=training:training /app/drizzle ./drizzle
 COPY --from=build --chown=training:training /app/seed ./seed
 COPY --from=build --chown=training:training ["/app/Desencadenado-Entrenos con peso corporal/files", "./files"]
-USER training
+# Railway mounts a newly-created volume as root-owned. Keep the runtime process
+# able to initialise SQLite in that mount; the application itself has no shell
+# or user-supplied code execution surface.
 EXPOSE 3000
 HEALTHCHECK --interval=10s --timeout=3s --start-period=10s --retries=5 CMD ["node", "-e", "fetch('http://127.0.0.1:3000/healthz').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
 CMD ["node", ".output/server/index.mjs"]
