@@ -49,13 +49,12 @@ function completeWithMaximums(maximums: number[]) {
   let assessment = startAssessment()
   while (assessment?.status === 'IN_PROGRESS' && assessment.currentStep) {
     const target = maximums[assessment.currentStep.position - 1]
-    const outcome = assessment.currentStep.level < target ? 'PASSED' : 'FAILED'
+    const outcome = assessment.currentStep.level <= target ? 'PASSED' : 'FAILED'
     assessment = recordAssessmentResult({
       assessmentId: assessment.id,
       capability: assessment.currentStep.capability,
       level: assessment.currentStep.level,
-      outcome:
-        assessment.currentStep.level === 5 && target === 5 ? 'PASSED' : outcome,
+      outcome,
       measurements: [],
     })
   }
@@ -80,7 +79,7 @@ describe('assessments', () => {
     let assessment = answerCurrent('PASSED')
     expect(assessment?.currentStep?.level).toBe(2)
     assessment = answerCurrent('FAILED')
-    expect(assessment?.capabilities[0].maximumLevel).toBe(2)
+    expect(assessment?.capabilities[0].maximumLevel).toBe(1)
     expect(assessment?.currentStep?.capability).toBe('VERTICAL_PUSH')
     expect(assessment?.currentStep?.level).toBe(1)
   })

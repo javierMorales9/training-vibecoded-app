@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { BookOpen, X } from 'lucide-react'
 import { useServerFn } from '@tanstack/react-start'
@@ -14,6 +14,9 @@ export function VariantModal({
   onClose: () => void
 }) {
   const closeRef = useRef<HTMLButtonElement>(null)
+  const onCloseRef = useRef(onClose)
+  const pushedHistoryEntry = useRef(false)
+  const dismissing = useRef(false)
   const getVariant = useServerFn(getCatalogVariantFn)
   const query = useQuery({
     queryKey: ['catalog-variant', variantId],
@@ -21,9 +24,35 @@ export function VariantModal({
   })
 
   useEffect(() => {
+    onCloseRef.current = onClose
+  }, [onClose])
+
+  const dismiss = useCallback(() => {
+    if (dismissing.current) return
+    dismissing.current = true
+    if (pushedHistoryEntry.current) {
+      pushedHistoryEntry.current = false
+      window.history.back()
+    }
+    onCloseRef.current()
+  }, [])
+
+  useEffect(() => {
+    window.history.pushState({ variantModal: true }, '')
+    pushedHistoryEntry.current = true
+    const handlePopState = () => {
+      pushedHistoryEntry.current = false
+      dismissing.current = true
+      onCloseRef.current()
+    }
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  useEffect(() => {
     closeRef.current?.focus()
     const keydown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose()
+      if (event.key === 'Escape') dismiss()
     }
     document.body.style.overflow = 'hidden'
     window.addEventListener('keydown', keydown)
@@ -31,13 +60,15 @@ export function VariantModal({
       document.body.style.overflow = ''
       window.removeEventListener('keydown', keydown)
     }
-  }, [onClose])
+  }, [dismiss])
 
   return (
     <div
       className="modal-backdrop"
       role="presentation"
-      onMouseDown={(event) => event.target === event.currentTarget && onClose()}
+      onMouseDown={(event) =>
+        event.target === event.currentTarget && dismiss()
+      }
     >
       <section
         className="variant-modal"
@@ -49,7 +80,7 @@ export function VariantModal({
           ref={closeRef}
           className="modal-close"
           type="button"
-          onClick={onClose}
+          onClick={dismiss}
           aria-label="Cerrar detalle"
         >
           <X />

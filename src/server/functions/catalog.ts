@@ -5,6 +5,7 @@ import {
 } from '../../contracts/catalog'
 import {
   getCatalogOptions,
+  getCapabilityLevelDefinitions,
   getCatalogVariant,
   listCatalogVariants,
 } from '../../application/catalog'
@@ -30,3 +31,10 @@ export const getCatalogOptionsFn = createServerFn({ method: 'GET' }).handler(
     return getCatalogOptions()
   },
 )
+
+export const getCapabilityLevelDefinitionsFn = createServerFn({
+  method: 'GET',
+}).handler(async () => {
+  await requireWebSession()
+  return getCapabilityLevelDefinitions()
+})

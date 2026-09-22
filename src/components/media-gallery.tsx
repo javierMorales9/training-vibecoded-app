@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   ChevronLeft,
   ChevronRight,
@@ -23,12 +23,12 @@ function youtubeEmbedUrl(url: string) {
 
 export function MediaGallery({
   media,
-  title,
 }: {
   media: CatalogMedia[]
   title: string
 }) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
   const active = media[activeIndex]
 
   useEffect(() => setActiveIndex(0), [media])
@@ -56,17 +56,39 @@ export function MediaGallery({
     )
   }
   const embed = active.kind === 'VIDEO' ? youtubeEmbedUrl(active.url) : null
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    const start = touchStart.current
+    touchStart.current = null
+    if (!start || media.length < 2) return
+    const touch = event.changedTouches[0]
+    if (!touch) return
+    const horizontalDistance = touch.clientX - start.x
+    const verticalDistance = touch.clientY - start.y
+    if (
+      Math.abs(horizontalDistance) < 48 ||
+      Math.abs(horizontalDistance) <= Math.abs(verticalDistance)
+    )
+      return
+    move(horizontalDistance < 0 ? 1 : -1)
+  }
 
   return (
     <div className="gallery">
-      <div className="gallery-stage">
+      <div
+        className="gallery-stage"
+        onTouchStart={(event) => {
+          const touch = event.touches[0]
+          touchStart.current = touch
+            ? { x: touch.clientX, y: touch.clientY }
+            : null
+        }}
+        onTouchEnd={handleTouchEnd}
+        onTouchCancel={() => {
+          touchStart.current = null
+        }}
+      >
         {active.kind === 'IMAGE' ? (
-          <ProtectedImage
-            src={active.url}
-            alt={active.altText}
-            linkToOriginal
-            linkLabel={`Abrir imagen de ${title}`}
-          />
+          <ProtectedImage src={active.url} alt={active.altText} />
         ) : embed ? (
           <iframe
             src={embed}

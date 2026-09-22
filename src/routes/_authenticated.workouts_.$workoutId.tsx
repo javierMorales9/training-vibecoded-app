@@ -41,27 +41,34 @@ import {
   normalizeCatalogSearch,
 } from '../domain/catalog'
 import { getWorkoutFn, updateWorkoutFn } from '../server/functions/workouts'
-import { listCatalogVariantsFn } from '../server/functions/catalog'
+import {
+  getCapabilityLevelDefinitionsFn,
+  listCatalogVariantsFn,
+} from '../server/functions/catalog'
+import { getCurrentCapabilityLevelsFn } from '../server/functions/assessments'
 import { ProtectedImage } from '../components/protected-image'
 import { VariantModal } from '../components/variant-modal'
 
 export const Route = createFileRoute('/_authenticated/workouts_/$workoutId')({
   loader: async ({ params }) => {
-    const [workout, catalog] = await Promise.all([
-      getWorkoutFn({ data: { workoutId: params.workoutId } }),
-      listCatalogVariantsFn({
-        data: {
-          q: '',
-          exerciseTypes: [],
-          difficultyMin: null,
-          difficultyMax: null,
-          primaryProgression: null,
-          cursor: null,
-          limit: 100,
-        },
-      }),
-    ])
-    return { workout, catalog: catalog.items }
+    const [workout, catalog, currentLevels, levelDefinitions] =
+      await Promise.all([
+        getWorkoutFn({ data: { workoutId: params.workoutId } }),
+        listCatalogVariantsFn({
+          data: {
+            q: '',
+            exerciseTypes: [],
+            difficultyMin: null,
+            difficultyMax: null,
+            primaryProgression: null,
+            cursor: null,
+            limit: 100,
+          },
+        }),
+        getCurrentCapabilityLevelsFn(),
+        getCapabilityLevelDefinitionsFn(),
+      ])
+    return { workout, catalog: catalog.items, currentLevels, levelDefinitions }
   },
   component: WorkoutEditorPage,
 })
@@ -388,6 +395,8 @@ function WorkoutEditorPage() {
                     index={index}
                     total={draft.blocks.length}
                     catalog={loaderData.catalog}
+                    currentLevels={loaderData.currentLevels}
+                    levelDefinitions={loaderData.levelDefinitions}
                     onChange={(next) => replaceBlock(index, next)}
                     onMove={(direction) => moveBlock(index, direction)}
                     onDelete={() =>
@@ -430,6 +439,8 @@ function BlockEditor({
   index,
   total,
   catalog,
+  currentLevels,
+  levelDefinitions,
   onChange,
   onMove,
   onDelete,
@@ -438,6 +449,14 @@ function BlockEditor({
   index: number
   total: number
   catalog: CatalogOption[]
+  currentLevels: Array<{ capability: Capability; level: number | null }>
+  levelDefinitions: Array<{
+    capability: Capability
+    level: number
+    exerciseVariantId: string
+    exerciseName: string
+    variantName: string
+  }>
   onChange: (block: WorkoutBlockInput) => void
   onMove: (direction: -1 | 1) => void
   onDelete: () => void
@@ -618,6 +637,8 @@ function BlockEditor({
                 unitCount={unitCount}
                 unitLabel={block.method === 'SUPERSET' ? 'Ronda' : 'Serie'}
                 catalog={catalog}
+                currentLevels={currentLevels}
+                levelDefinitions={levelDefinitions}
                 onChange={(next) => {
                   const items = [...block.items]
                   items[itemIndex] = next
@@ -690,6 +711,8 @@ function ExerciseItemEditor({
   unitCount,
   unitLabel,
   catalog,
+  currentLevels,
+  levelDefinitions,
   onChange,
 }: {
   item: WorkoutBlockItemInput
@@ -698,6 +721,14 @@ function ExerciseItemEditor({
   unitCount: number | null
   unitLabel: 'Serie' | 'Ronda'
   catalog: CatalogOption[]
+  currentLevels: Array<{ capability: Capability; level: number | null }>
+  levelDefinitions: Array<{
+    capability: Capability
+    level: number
+    exerciseVariantId: string
+    exerciseName: string
+    variantName: string
+  }>
   onChange: (item: WorkoutBlockItemInput) => void
 }) {
   const [query, setQuery] = useState('')
@@ -733,6 +764,28 @@ function ExerciseItemEditor({
     (variant) => variant.id === selectedVariantId,
   )
   const selectedName = selectionName(selection, catalog)
+  const currentLevel =
+    selection.kind === 'CAPABILITY_RELATIVE' && selection.capability
+      ? (currentLevels.find(
+          (level) => level.capability === selection.capability,
+        )?.level ?? null)
+      : null
+  const resolvedLevel =
+    selection.kind === 'CAPABILITY_RELATIVE' &&
+    currentLevel !== null &&
+    selection.levelOffset !== null
+      ? Math.max(1, Math.min(5, currentLevel + selection.levelOffset))
+      : null
+  const resolvedDefinition =
+    selection.kind === 'CAPABILITY_RELATIVE' &&
+    selection.capability &&
+    resolvedLevel
+      ? levelDefinitions.find(
+          (definition) =>
+            definition.capability === selection.capability &&
+            definition.level === resolvedLevel,
+        )
+      : null
 
   return (
     <section className="exercise-item-editor">
@@ -958,52 +1011,78 @@ function ExerciseItemEditor({
           </div>
         )
       ) : (
-        <div className="relative-picker two-columns">
-          <label>
-            Capacidad
-            <select
-              value={selection.capability ?? ''}
-              onChange={(event) =>
-                onChange({
-                  ...item,
-                  selection: {
-                    ...selection,
-                    capability: (event.target.value ||
-                      null) as Capability | null,
-                  },
-                })
+        <>
+          <div className="relative-picker two-columns">
+            <label>
+              Capacidad
+              <select
+                value={selection.capability ?? ''}
+                onChange={(event) =>
+                  onChange({
+                    ...item,
+                    selection: {
+                      ...selection,
+                      capability: (event.target.value ||
+                        null) as Capability | null,
+                    },
+                  })
+                }
+              >
+                {capabilities.map((capability) => (
+                  <option value={capability} key={capability}>
+                    {capabilityLabels[capability]}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Nivel
+              <select
+                value={selection.levelOffset ?? ''}
+                onChange={(event) =>
+                  onChange({
+                    ...item,
+                    selection: {
+                      ...selection,
+                      levelOffset:
+                        event.target.value === ''
+                          ? null
+                          : (Number(event.target.value) as -1 | 0 | 1),
+                    },
+                  })
+                }
+              >
+                <option value={-1}>Nivel actual − 1</option>
+                <option value={0}>Nivel actual</option>
+                <option value={1}>Nivel actual + 1</option>
+              </select>
+            </label>
+          </div>
+          {resolvedDefinition ? (
+            <button
+              type="button"
+              className="relative-resolution"
+              onClick={() =>
+                setViewingVariantId(resolvedDefinition.exerciseVariantId)
               }
             >
-              {capabilities.map((capability) => (
-                <option value={capability} key={capability}>
-                  {capabilityLabels[capability]}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Nivel
-            <select
-              value={selection.levelOffset ?? ''}
-              onChange={(event) =>
-                onChange({
-                  ...item,
-                  selection: {
-                    ...selection,
-                    levelOffset:
-                      event.target.value === ''
-                        ? null
-                        : (Number(event.target.value) as -1 | 0 | 1),
-                  },
-                })
-              }
-            >
-              <option value={-1}>Nivel actual − 1</option>
-              <option value={0}>Nivel actual</option>
-              <option value={1}>Nivel actual + 1</option>
-            </select>
-          </label>
-        </div>
+              <span>Ejercicio resuelto según tu evaluación · Ver detalle</span>
+              <strong>
+                Nivel {resolvedLevel}: {resolvedDefinition.exerciseName} ·{' '}
+                {resolvedDefinition.variantName}
+              </strong>
+            </button>
+          ) : (
+            <div className="relative-resolution">
+              <span>Ejercicio resuelto según tu evaluación</span>
+              {currentLevel === null ? (
+              <strong>Aún no hay un nivel evaluado para esta capacidad.</strong>
+              ) : (
+              <strong>No hay una variante definida para ese nivel.</strong>
+              )}
+            </div>
+          )}
+        </>
       )}
 
       {showTargets ? (

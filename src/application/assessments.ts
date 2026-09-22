@@ -264,6 +264,22 @@ function currentLevelForCapability(
     : row.last_level + 1
 }
 
+function maximumPassedLevelForCapability(
+  sqlite: Database.Database,
+  assessmentCapabilityId: string,
+) {
+  const row = sqlite
+    .prepare(
+      `SELECT MAX(level) AS maximum_level
+       FROM assessment_level_results
+       WHERE assessment_capability_id = ? AND outcome = 'PASSED'`,
+    )
+    .get(assessmentCapabilityId) as { maximum_level: number | null }
+  // The current model has five levels and does not represent level zero.
+  // A failure at the entry level therefore remains at level one.
+  return row.maximum_level ?? 1
+}
+
 export function getAssessmentDetail(
   assessmentId: string,
   options: { api?: boolean } = {},
@@ -508,13 +524,17 @@ export function recordAssessmentResult(input: RecordAssessmentResultInput) {
 
     const nextLevel = nextLevelAfterResult(input.level, input.outcome)
     if (nextLevel === null) {
+      const maximumLevel = maximumPassedLevelForCapability(
+        sqlite,
+        capability.id,
+      )
       sqlite
         .prepare(
           `UPDATE assessment_capabilities
            SET status = 'COMPLETED', maximum_level = ?, completed_at = ?
            WHERE id = ?`,
         )
-        .run(input.level, now, capability.id)
+        .run(maximumLevel, now, capability.id)
       const nextCapability = sqlite
         .prepare(
           `SELECT * FROM assessment_capabilities

@@ -513,6 +513,31 @@ a {
   background: color-mix(in srgb, var(--paper) 92%, transparent);
   backdrop-filter: blur(14px);
 }
+.relative-resolution {
+  display: grid;
+  gap: 0.25rem;
+  width: 100%;
+  margin-top: 0.7rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  text-align: left;
+  background: var(--surface-2);
+}
+.relative-resolution:where(button) {
+  cursor: pointer;
+}
+.relative-resolution:where(button):hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  background: color-mix(in srgb, var(--surface-2) 84%, var(--accent));
+}
+.relative-resolution span {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+.relative-resolution strong {
+  color: var(--accent);
+}
 .editor-topbar-actions {
   display: flex;
   justify-self: end;
@@ -2333,6 +2358,7 @@ a {
   place-items: center;
   height: min(67vh, 650px);
   overflow: hidden;
+  touch-action: pan-y;
   border-radius: 12px;
   background: #22241e;
 }
@@ -2762,7 +2788,16 @@ a {
     min-width: 0;
   }
   .topbar {
+    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
     padding-inline: 0.65rem;
+  }
+  .topbar-actions {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.2rem;
   }
   .variant-modal {
     max-height: calc(100vh - 0.6rem);
@@ -2852,6 +2887,7 @@ a {
     padding-left: 0;
   }
   .editor-topbar {
+    position: static;
     grid-template-columns: auto 1fr auto;
   }
   .editor-save-state {
@@ -2866,6 +2902,15 @@ a {
   }
   .block-card-header {
     grid-template-columns: auto auto minmax(0, 1fr);
+    align-items: start;
+  }
+  .block-heading-copy {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .block-heading-copy > strong {
+    white-space: normal;
   }
   .block-card-header select {
     width: 100%;
