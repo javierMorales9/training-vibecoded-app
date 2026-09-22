@@ -1027,7 +1027,7 @@ a {
 }
 .selected-variant {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.8rem;
   margin-top: 0.8rem;
@@ -1035,6 +1035,27 @@ a {
   border: 1px solid var(--accent);
   border-radius: 10px;
   background: #141610;
+}
+.selected-variant-preview {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+}
+.selected-variant-preview:hover .selected-variant-copy strong {
+  color: var(--accent);
+}
+.selected-variant-preview:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 7px;
 }
 .selected-variant .variant-choice-media {
   border-radius: 7px;
@@ -2740,6 +2761,9 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .selected-variant {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .selected-variant-preview {
     grid-template-columns: 120px minmax(0, 1fr);
   }
   .selected-variant-actions {
@@ -2936,11 +2960,14 @@ a {
     justify-content: center;
   }
   .selected-variant {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .selected-variant-preview {
     grid-template-columns: 92px minmax(0, 1fr);
   }
   .selected-variant-actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   .selected-variant-actions button {
     justify-content: center;

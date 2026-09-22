@@ -786,6 +786,11 @@ function ExerciseItemEditor({
             definition.level === resolvedLevel,
         )
       : null
+  const resolvedVariant = resolvedDefinition
+    ? catalog.find(
+        (variant) => variant.id === resolvedDefinition.exerciseVariantId,
+      )
+    : null
 
   return (
     <section className="exercise-item-editor">
@@ -826,30 +831,11 @@ function ExerciseItemEditor({
 
       {selection.kind === 'EXPLICIT_VARIANT' ? (
         selectedVariant ? (
-          <div className="selected-variant">
-            <PickerThumbnail variant={selectedVariant} />
-            <div className="selected-variant-copy">
-              <small>{selectedVariant.exerciseTypeLabel}</small>
-              <strong>{selectedVariant.name}</strong>
-              <span>{selectedVariant.exerciseName}</span>
-            </div>
-            <div className="selected-variant-actions">
-              <button
-                type="button"
-                onClick={() => setViewingVariantId(selectedVariant.id)}
-              >
-                <Eye size={15} /> Ver detalle
-              </button>
-              <button
-                type="button"
-                onClick={() =>
-                  onChange({ ...item, selection: emptySelection() })
-                }
-              >
-                <X size={15} /> Deseleccionar
-              </button>
-            </div>
-          </div>
+          <SelectedVariantCard
+            variant={selectedVariant}
+            onView={() => setViewingVariantId(selectedVariant.id)}
+            onClear={() => onChange({ ...item, selection: emptySelection() })}
+          />
         ) : (
           <div className="variant-browser">
             <label className="search-field variant-browser-search">
@@ -1058,20 +1044,12 @@ function ExerciseItemEditor({
               </select>
             </label>
           </div>
-          {resolvedDefinition ? (
-            <button
-              type="button"
-              className="relative-resolution"
-              onClick={() =>
-                setViewingVariantId(resolvedDefinition.exerciseVariantId)
-              }
-            >
-              <span>Ejercicio resuelto según tu evaluación · Ver detalle</span>
-              <strong>
-                Nivel {resolvedLevel}: {resolvedDefinition.exerciseName} ·{' '}
-                {resolvedDefinition.variantName}
-              </strong>
-            </button>
+          {resolvedDefinition && resolvedVariant ? (
+            <SelectedVariantCard
+              variant={resolvedVariant}
+              eyebrow={`Nivel ${resolvedLevel} · ${resolvedDefinition.exerciseName}`}
+              onView={() => setViewingVariantId(resolvedVariant.id)}
+            />
           ) : (
             <div className="relative-resolution">
               <span>Ejercicio resuelto según tu evaluación</span>
@@ -1189,6 +1167,43 @@ function TargetEditor({
           />
         ))}
       </div>
+    </div>
+  )
+}
+
+function SelectedVariantCard({
+  variant,
+  eyebrow = variant.exerciseTypeLabel,
+  onView,
+  onClear,
+}: {
+  variant: CatalogOption
+  eyebrow?: string
+  onView: () => void
+  onClear?: () => void
+}) {
+  return (
+    <div className="selected-variant">
+      <button
+        type="button"
+        className="selected-variant-preview"
+        onClick={onView}
+        aria-label={`Ver detalle de ${variant.name}`}
+      >
+        <PickerThumbnail variant={variant} />
+        <span className="selected-variant-copy">
+          <small>{eyebrow}</small>
+          <strong>{variant.name}</strong>
+          <span>{variant.exerciseName}</span>
+        </span>
+      </button>
+      {onClear ? (
+        <div className="selected-variant-actions">
+          <button type="button" onClick={onClear}>
+            <X size={15} /> Deseleccionar
+          </button>
+        </div>
+      ) : null}
     </div>
   )
 }
