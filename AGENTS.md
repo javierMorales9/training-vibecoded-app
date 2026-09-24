@@ -1,5 +1,6 @@
 # Project invariants
 
+- When the owner does not specify an environment, treat the remote app as the target. Use local work only for development and verification, then apply requested data changes to the remote app through its supported interface. Keep remote credentials out of Git and logs.
 - This is a single-user application. Do not add tenants, organisations, user registration or horizontal-scaling machinery.
 - Code, database identifiers and HTTP contracts use English. Product copy is Spanish.
 - `training.sqlite` is the sole application database. Keep SQLite migrations and seeds deterministic and idempotent.

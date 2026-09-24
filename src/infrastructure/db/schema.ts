@@ -262,6 +262,8 @@ export const trainingSessionUnits = sqliteTable('training_session_units', {
   plannedRestMs: integer('planned_rest_ms').notNull(),
   status: text('status').notNull(),
   startedAt: integer('started_at'),
+  pausedAt: integer('paused_at'),
+  pausedMs: integer('paused_ms').notNull().default(0),
   completedAt: integer('completed_at'),
   restStartedAt: integer('rest_started_at'),
   restCompletedAt: integer('rest_completed_at'),

@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
-import { afterAll, beforeEach, describe, expect, it } from 'vitest'
+import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { closeDatabase, getDatabase } from '../infrastructure/db/database'
 import { resetConfigForTests } from '../server/config'
 import { createWorkout, newBlock } from './workouts'
@@ -13,7 +13,9 @@ import {
   getActiveTrainingSession,
   getTrainingSessionHistory,
   listTrainingSessions,
+  pausePyramidWork,
   repeatTrainingSession,
+  resumePyramidWork,
   startTrainingSession,
   updateTrainingSessionNotes,
 } from './training-sessions'
@@ -99,6 +101,30 @@ describe('training sessions', () => {
     expect(cancelled?.status).toBe('CANCELLED')
     expect(cancelled?.completionRatio).toBeGreaterThanOrEqual(0)
     expect(getActiveTrainingSession()).toBeNull()
+  })
+
+  it('persists pyramid pauses and excludes paused time from work', () => {
+    const created = workout('PYRAMID')
+    const session = startTrainingSession(created.id)!
+    let now = Date.now()
+    const clock = vi.spyOn(Date, 'now').mockImplementation(() => now)
+    try {
+      beginTrainingUnit(session.id)
+      now += 60_000
+      expect(pausePyramidWork(session.id)?.units[0].pausedAt).not.toBeNull()
+      expect(() => pausePyramidWork(session.id)).toThrow()
+      now += 120_000
+      closeDatabase()
+      expect(getActiveTrainingSession()?.units[0].pausedAt).not.toBeNull()
+      expect(resumePyramidWork(session.id)?.units[0].pausedMs).toBe(120_000)
+      now += 30_000
+      const finished = completeTrainingWork(session.id, null)
+      expect(finished?.totalWorkMs).toBe(90_000)
+      expect(finished?.units[0].pausedAt).toBeNull()
+      expect(() => resumePyramidWork(session.id)).toThrow()
+    } finally {
+      clock.mockRestore()
+    }
   })
 
   it('only exposes terminal sessions in history and repeats them as a pending workout', () => {

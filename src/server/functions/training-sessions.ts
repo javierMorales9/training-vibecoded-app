@@ -15,7 +15,9 @@ import {
   getTrainingSession,
   getTrainingSessionHistory,
   listTrainingSessions,
+  pausePyramidWork,
   repeatTrainingSession,
+  resumePyramidWork,
   startTrainingSession,
   updateTrainingSessionNotes,
 } from '../../application/training-sessions'
@@ -87,6 +89,22 @@ export const completeTrainingWorkFn = createServerFn({ method: 'POST' })
     await requireWebSession()
     assertSameOrigin()
     return completeTrainingWork(data.sessionId, data.actualResult)
+  })
+
+export const pausePyramidWorkFn = createServerFn({ method: 'POST' })
+  .validator(trainingSessionIdSchema)
+  .handler(async ({ data }) => {
+    await requireWebSession()
+    assertSameOrigin()
+    return pausePyramidWork(data.sessionId)
+  })
+
+export const resumePyramidWorkFn = createServerFn({ method: 'POST' })
+  .validator(trainingSessionIdSchema)
+  .handler(async ({ data }) => {
+    await requireWebSession()
+    assertSameOrigin()
+    return resumePyramidWork(data.sessionId)
   })
 
 export const cancelTrainingSessionFn = createServerFn({ method: 'POST' })

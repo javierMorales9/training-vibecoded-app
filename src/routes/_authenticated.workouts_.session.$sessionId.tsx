@@ -11,16 +11,20 @@ import {
   Clock3,
   Dumbbell,
   Info,
+  Pause,
   Play,
   Square,
   XCircle,
 } from 'lucide-react'
 import { MediaGallery } from '../components/media-gallery'
+import type { TrainingSessionUnit } from '../domain/training-session'
 import {
   beginTrainingUnitFn,
   cancelTrainingSessionFn,
   completeTrainingWorkFn,
   getTrainingSessionFn,
+  pausePyramidWorkFn,
+  resumePyramidWorkFn,
 } from '../server/functions/training-sessions'
 
 export const Route = createFileRoute(
@@ -36,6 +40,45 @@ function formatClock(milliseconds: number) {
   return `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`
 }
 
+function UnitExercises({ unit }: { unit: TrainingSessionUnit }) {
+  return unit.items.map((item) => (
+    <article className="runner-exercise" key={item.variantId}>
+      <p>{item.exerciseName}</p>
+      <h2>{item.variantName}</h2>
+      <div className="runner-targets">
+        {item.targets.map((target, index) => {
+          const minimum =
+            target.metricKind === 'DURATION'
+              ? target.minimumValue / 1000
+              : target.minimumValue
+          const maximum =
+            target.metricKind === 'DURATION'
+              ? target.maximumValue / 1000
+              : target.maximumValue
+          return (
+            <span key={index}>
+              {minimum === maximum ? minimum : `${minimum}–${maximum}`}{' '}
+              {target.metricKind === 'DURATION' ? 's' : 'reps'}
+            </span>
+          )
+        })}
+      </div>
+      <details>
+        <summary>
+          <Info size={15} /> Ver descripción
+        </summary>
+        <p>{item.description}</p>
+        {item.media.length ? (
+          <MediaGallery
+            media={item.media}
+            title={`${item.exerciseName}: ${item.variantName}`}
+          />
+        ) : null}
+      </details>
+    </article>
+  ))
+}
+
 function TrainingSessionPage() {
   const initial = Route.useLoaderData()
   const { sessionId } = Route.useParams()
@@ -43,6 +86,8 @@ function TrainingSessionPage() {
   const navigate = useNavigate()
   const begin = useServerFn(beginTrainingUnitFn)
   const finish = useServerFn(completeTrainingWorkFn)
+  const pause = useServerFn(pausePyramidWorkFn)
+  const resume = useServerFn(resumePyramidWorkFn)
   const cancel = useServerFn(cancelTrainingSessionFn)
   const [session, setSession] = useState(initial)
   const [now, setNow] = useState(Date.now())
@@ -63,9 +108,10 @@ function TrainingSessionPage() {
   useEffect(() => {
     if (!session || session.status !== 'ACTIVE') return
     const keepAlive = () => {
-      void fetch('/healthz', { cache: 'no-store', credentials: 'same-origin' }).catch(
-        () => undefined,
-      )
+      void fetch('/healthz', {
+        cache: 'no-store',
+        credentials: 'same-origin',
+      }).catch(() => undefined)
     }
     keepAlive()
     const interval = window.setInterval(keepAlive, 2 * 60 * 1000)
@@ -124,7 +170,9 @@ function TrainingSessionPage() {
   )
   const elapsed =
     session?.phase === 'WORKING' && current?.startedAt
-      ? now - Date.parse(current.startedAt)
+      ? (current.pausedAt ? Date.parse(current.pausedAt) : now) -
+        Date.parse(current.startedAt) -
+        current.pausedMs
       : 0
   const pyramidRemaining = Math.max(0, (current?.plannedWorkMs ?? 0) - elapsed)
   const restElapsed =
@@ -201,6 +249,19 @@ function TrainingSessionPage() {
             })
       if (kind === 'FINISH') setActualResult('')
       await refresh(next)
+    } finally {
+      setBusy(false)
+    }
+  }
+  const togglePyramidPause = async () => {
+    if (busy || !session || !current) return
+    setBusy(true)
+    try {
+      await refresh(
+        await (current.pausedAt
+          ? resume({ data: { sessionId } })
+          : pause({ data: { sessionId } })),
+      )
     } finally {
       setBusy(false)
     }
@@ -288,6 +349,13 @@ function TrainingSessionPage() {
               ? 'Puedes empezar cuando quieras.'
               : 'Descanso terminado.'}
           </span>
+          <div className="rest-next-exercise">
+            <p className="eyebrow">Siguiente ejercicio</p>
+            <UnitExercises unit={current} />
+            {current.instructions ? (
+              <p className="runner-instructions">{current.instructions}</p>
+            ) : null}
+          </div>
           <button
             type="button"
             className="primary-button runner-main-action"
@@ -309,42 +377,7 @@ function TrainingSessionPage() {
                   : `Serie ${current.position + 1}`}
             </span>
           </div>
-          {current.items.map((item) => (
-            <article className="runner-exercise" key={item.variantId}>
-              <p>{item.exerciseName}</p>
-              <h2>{item.variantName}</h2>
-              <div className="runner-targets">
-                {item.targets.map((target, index) => {
-                  const minimum =
-                    target.metricKind === 'DURATION'
-                      ? target.minimumValue / 1000
-                      : target.minimumValue
-                  const maximum =
-                    target.metricKind === 'DURATION'
-                      ? target.maximumValue / 1000
-                      : target.maximumValue
-                  return (
-                    <span key={index}>
-                      {minimum === maximum ? minimum : `${minimum}–${maximum}`}{' '}
-                      {target.metricKind === 'DURATION' ? 's' : 'reps'}
-                    </span>
-                  )
-                })}
-              </div>
-              <details>
-                <summary>
-                  <Info size={15} /> Ver descripción
-                </summary>
-                <p>{item.description}</p>
-                {item.media.length ? (
-                  <MediaGallery
-                    media={item.media}
-                    title={`${item.exerciseName}: ${item.variantName}`}
-                  />
-                ) : null}
-              </details>
-            </article>
-          ))}
+          <UnitExercises unit={current} />
           {current.instructions ? (
             <p className="runner-instructions">{current.instructions}</p>
           ) : null}
@@ -356,6 +389,17 @@ function TrainingSessionPage() {
               <strong>
                 {formatClock(isPyramid ? pyramidRemaining : elapsed)}
               </strong>
+              {isPyramid ? (
+                <button
+                  type="button"
+                  className="runner-pause"
+                  disabled={busy}
+                  onClick={() => void togglePyramidPause()}
+                >
+                  {current.pausedAt ? <Play size={17} /> : <Pause size={17} />}
+                  {current.pausedAt ? ' Reanudar' : ' Pausar'}
+                </button>
+              ) : null}
             </div>
           ) : null}
           {session.phase === 'WORKING' ? (

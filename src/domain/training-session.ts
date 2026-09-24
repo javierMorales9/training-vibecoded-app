@@ -34,6 +34,8 @@ export interface TrainingSessionUnit {
   plannedRestMs: number
   status: 'PENDING' | 'WORKING' | 'COMPLETED'
   startedAt: string | null
+  pausedAt: string | null
+  pausedMs: number
   completedAt: string | null
   restStartedAt: string | null
   restCompletedAt: string | null

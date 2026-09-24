@@ -51,6 +51,8 @@ type UnitRow = {
   planned_rest_ms: number
   status: TrainingSessionUnit['status']
   started_at: number | null
+  paused_at: number | null
+  paused_ms: number
   completed_at: number | null
   rest_started_at: number | null
   rest_completed_at: number | null
@@ -283,6 +285,8 @@ function readSession(
       plannedRestMs: unit.planned_rest_ms,
       status: unit.status,
       startedAt: iso(unit.started_at),
+      pausedAt: iso(unit.paused_at),
+      pausedMs: unit.paused_ms,
       completedAt: iso(unit.completed_at),
       restStartedAt: iso(unit.rest_started_at),
       restCompletedAt: iso(unit.rest_completed_at),
@@ -303,7 +307,7 @@ function updateTotals(
     .prepare(
       `SELECT
          COALESCE(SUM(CASE WHEN started_at IS NOT NULL AND completed_at IS NOT NULL
-           THEN completed_at - started_at ELSE 0 END), 0) AS work,
+           THEN MAX(0, completed_at - started_at - paused_ms) ELSE 0 END), 0) AS work,
          COALESCE(SUM(CASE WHEN rest_started_at IS NOT NULL AND rest_completed_at IS NOT NULL
            THEN rest_completed_at - rest_started_at ELSE 0 END), 0) AS rest
        FROM training_session_units WHERE training_session_id = ?`,
@@ -606,6 +610,63 @@ export function beginTrainingUnit(sessionId: string) {
   })()
 }
 
+export function pausePyramidWork(sessionId: string) {
+  const sqlite = getDatabase().sqlite
+  return sqlite.transaction(() => {
+    const session = readSession(sqlite, sessionId)
+    if (!session) throw new TrainingSessionNotFoundError()
+    const current = session.units.find(
+      (unit) => unit.position === session.currentUnitPosition,
+    )
+    if (
+      session.status !== 'ACTIVE' ||
+      session.phase !== 'WORKING' ||
+      current?.method !== 'PYRAMID' ||
+      current.status !== 'WORKING' ||
+      current.pausedAt
+    )
+      throw new TrainingSessionTransitionError()
+    const now = Date.now()
+    sqlite
+      .prepare('UPDATE training_session_units SET paused_at = ? WHERE id = ?')
+      .run(now, current.id)
+    sqlite
+      .prepare('UPDATE training_sessions SET updated_at = ? WHERE id = ?')
+      .run(now, sessionId)
+    return readSession(sqlite, sessionId)
+  })()
+}
+
+export function resumePyramidWork(sessionId: string) {
+  const sqlite = getDatabase().sqlite
+  return sqlite.transaction(() => {
+    const session = readSession(sqlite, sessionId)
+    if (!session) throw new TrainingSessionNotFoundError()
+    const current = session.units.find(
+      (unit) => unit.position === session.currentUnitPosition,
+    )
+    if (
+      session.status !== 'ACTIVE' ||
+      session.phase !== 'WORKING' ||
+      current?.method !== 'PYRAMID' ||
+      current.status !== 'WORKING' ||
+      !current.pausedAt
+    )
+      throw new TrainingSessionTransitionError()
+    const now = Date.now()
+    sqlite
+      .prepare(
+        `UPDATE training_session_units
+         SET paused_ms = paused_ms + ? - paused_at, paused_at = NULL WHERE id = ?`,
+      )
+      .run(now, current.id)
+    sqlite
+      .prepare('UPDATE training_sessions SET updated_at = ? WHERE id = ?')
+      .run(now, sessionId)
+    return readSession(sqlite, sessionId)
+  })()
+}
+
 export function completeTrainingWork(
   sessionId: string,
   actualResult: string | null,
@@ -625,11 +686,14 @@ export function completeTrainingWork(
     sqlite
       .prepare(
         `UPDATE training_session_units
-         SET status = 'COMPLETED', completed_at = ?, actual_result_json = ? WHERE id = ?`,
+         SET status = 'COMPLETED', completed_at = ?, actual_result_json = ?,
+             paused_ms = paused_ms + CASE WHEN paused_at IS NULL THEN 0 ELSE ? - paused_at END,
+             paused_at = NULL WHERE id = ?`,
       )
       .run(
         now,
         actualResult ? JSON.stringify({ note: actualResult }) : null,
+        now,
         current.id,
       )
     const next = session.units.find(
@@ -690,7 +754,11 @@ export function cancelTrainingSession(
             1,
             Math.max(
               0,
-              (now - Date.parse(working.startedAt)) / working.plannedWorkMs,
+              (now -
+                Date.parse(working.startedAt) -
+                working.pausedMs -
+                (working.pausedAt ? now - Date.parse(working.pausedAt) : 0)) /
+                working.plannedWorkMs,
             ),
           )
         : 0
@@ -700,10 +768,12 @@ export function cancelTrainingSession(
     if (working) {
       sqlite
         .prepare(
-          `UPDATE training_session_units SET completed_at = ?
+          `UPDATE training_session_units SET completed_at = ?,
+             paused_ms = paused_ms + CASE WHEN paused_at IS NULL THEN 0 ELSE ? - paused_at END,
+             paused_at = NULL
            WHERE id = ? AND completed_at IS NULL`,
         )
-        .run(now, working.id)
+        .run(now, now, working.id)
     }
     sqlite
       .prepare(
